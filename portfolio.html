@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | GRAPHIX WALA</title>
+    <meta name="description" content="View a selection of GRAPHIX WALA portfolio projects spanning branding, web design, social media, and motion graphics." />
+    <meta property="og:title" content="GRAPHIX WALA Portfolio" />
+    <meta property="og:description" content="A curated collection of premium brand and digital work." />
+    <meta property="og:url" content="https://graphixwala.com/portfolio.html" />
+    <link rel="canonical" href="https://graphixwala.com/portfolio.html" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="loading">
+    <div class="loader"><div class="ring"></div></div>
+    <div class="scroll-progress"></div>
+    <header class="site-header">
+      <div class="container navbar">
+        <a href="index.html" class="brand">GRAPHIX WALA</a>
+        <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a class="active" href="portfolio.html">Portfolio</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+          <a class="btn" href="contact.html">Get Quote</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container reveal">
+          <div class="eyebrow">Portfolio</div>
+          <h1>Selected projects where storytelling, clarity, and craft meet.</h1>
+          <p>Browse a portfolio of premium digital work created for ambitious startups, established brands, and growing companies.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="filter-row reveal">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="branding">Branding</button>
+            <button class="filter-btn" data-filter="web">Web Design</button>
+            <button class="filter-btn" data-filter="social">Social Media</button>
+            <button class="filter-btn" data-filter="video">Video</button>
+          </div>
+          <div class="portfolio-grid">
+            <article class="glass-card portfolio-card reveal" data-category="branding">
+              <img src="assets/portfolio-1.svg" alt="Northstar branding project" loading="lazy" />
+              <div class="portfolio-meta"><span>Branding</span><h3>Northstar Identity</h3><p>A premium brand refresh with a distinctive, modern visual language.</p></div>
+            </article>
+            <article class="glass-card portfolio-card reveal" data-category="web">
+              <img src="assets/portfolio-2.svg" alt="Aurex website project" loading="lazy" />
+              <div class="portfolio-meta"><span>Web Design</span><h3>Aurex Studio</h3><p>A sleek digital presence designed for confidence and conversion.</p></div>
+            </article>
+            <article class="glass-card portfolio-card reveal" data-category="social">
+              <img src="assets/portfolio-3.svg" alt="Lumen social media project" loading="lazy" />
+              <div class="portfolio-meta"><span>Social Media</span><h3>Lumen Campaign</h3><p>Campaign visuals, motion assets, and branded content that elevated engagement.</p></div>
+            </article>
+            <article class="glass-card portfolio-card reveal" data-category="video">
+              <img src="assets/portfolio-4.svg" alt="Pulse motion project" loading="lazy" />
+              <div class="portfolio-meta"><span>Video</span><h3>Pulse Motion Reel</h3><p>Short-form animation and storytelling crafted for launch visibility.</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="portfolioModal" class="modal">
+      <div class="modal-box">
+        <button class="modal-close" aria-label="Close">×</button>
+        <img id="modalImage" src="assets/portfolio-1.svg" alt="Portfolio preview" />
+        <h3 id="modalTitle">Project Preview</h3>
+        <p id="modalText" style="color: var(--muted);">Project details appear here.</p>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div><a href="index.html" class="brand">GRAPHIX WALA</a><p style="margin-top: .8rem; color: var(--muted);">Premium design, branding, and marketing solutions for modern businesses.</p></div>
+          <div><h3>Quick Links</h3><div class="footer-links" style="margin-top: .7rem;"><a href="about.html">About</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a></div></div>
+          <div><h3>Services</h3><div class="footer-links" style="margin-top: .7rem;"><span>Branding</span><span>Web Development</span><span>Marketing</span><span>Motion Graphics</span></div></div>
+          <div><h3>Newsletter</h3><p style="margin-top: .7rem; color: var(--muted);">Stay inspired with our latest strategy and design insights.</p></div>
+        </div>
+        <div class="copyright"><span>© 2026 GRAPHIX WALA. All rights reserved.</span><span>Design • Brand • Inspire</span></div>
+      </div>
+    </footer>
+    <div class="floating-actions"><a href="https://wa.me/919876543210" target="_blank" rel="noreferrer" aria-label="WhatsApp">WA</a><a href="tel:+919876543210" aria-label="Call Us">☎</a></div>
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+    <script src="script.js"></script>
+  </body>
+</html>

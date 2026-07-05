@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" role="img" aria-label="Hero illustration">
+  <rect width="720" height="720" rx="48" fill="#0b0b0b"/>
+  <circle cx="180" cy="182" r="110" fill="#ffcb06" fill-opacity="0.2"/>
+  <rect x="168" y="168" width="320" height="280" rx="34" fill="#171717" stroke="#ffffff22"/>
+  <rect x="200" y="214" width="250" height="22" rx="11" fill="#ffcb06"/>
+  <rect x="200" y="260" width="180" height="16" rx="8" fill="#ffffff22"/>
+  <rect x="200" y="296" width="220" height="16" rx="8" fill="#ffffff22"/>
+  <rect x="200" y="332" width="150" height="16" rx="8" fill="#ffffff22"/>
+  <circle cx="520" cy="500" r="92" fill="#ffcb06" fill-opacity="0.18"/>
+  <rect x="410" y="418" width="180" height="140" rx="24" fill="#191919" stroke="#ffffff22"/>
+  <path d="M448 518l34-34 30 30 50-58" stroke="#ffcb06" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

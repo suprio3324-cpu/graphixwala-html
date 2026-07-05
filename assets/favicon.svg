@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="GRAPHIX WALA logo">
+  <rect width="64" height="64" rx="18" fill="#000"/>
+  <path d="M18 17h11.2c8.4 0 13.4 4.9 13.4 12.3 0 7.2-4.8 12.2-13.4 12.2H18z" fill="#ffcb06"/>
+  <path d="M23 22.2h6.5c3.9 0 6.2 2 6.2 5.8 0 4-2.4 6-6.2 6H23z" fill="#000"/>
+</svg>
