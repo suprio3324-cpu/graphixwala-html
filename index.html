@@ -58,29 +58,77 @@
     </header>
 
     <main>
-      <section class="hero">
-        <div class="container hero-grid">
-          <div class="reveal hero-copy">
-            <div class="eyebrow">Design • Brand • Inspire</div>
-            <h1>
-              <span>WE BUILD</span>
-              <span class="hero-highlight">POWERFUL</span>
-              <span>DIGITAL</span>
-              <span>BRANDS.</span>
+      <section class="hero" id="hero">
+        <div class="hero__background" aria-hidden="true">
+          <div class="hero__orb hero__orb--one"></div>
+          <div class="hero__orb hero__orb--two"></div>
+          <div class="hero__grid"></div>
+          <div class="hero__noise"></div>
+        </div>
+        <div class="container hero__grid">
+          <div class="hero__content reveal">
+            <span class="hero__badge">Design • Brand • Inspire</span>
+            <h1 class="hero__title">
+              <span class="hero__word">We</span>
+              <span class="hero__word">Build</span>
+              <span class="hero__word">Powerful</span>
+              <span class="hero__word hero__word--accent">Digital</span>
+              <span class="hero__word">Brands</span>
+              <span class="hero__word">That</span>
+              <span class="hero__word">People</span>
+              <span class="hero__word">Remember.</span>
             </h1>
-            <p>GRAPHIX WALA is a premium creative studio crafting elegant identities, high-converting websites, and performance-driven marketing experiences for brands ready to stand out.</p>
-            <div class="hero-action">
-              <a class="btn" href="contact.html">Get Started</a>
-              <a class="btn-outline" href="portfolio.html">View Portfolio</a>
+            <p class="hero__description">GRAPHIX WALA is a premium branding, web design and digital marketing agency helping ambitious businesses grow online.</p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="contact.html">Get Started <span aria-hidden="true">→</span></a>
+              <a class="btn btn--secondary" href="portfolio.html">View Portfolio</a>
             </div>
-            <div class="scroll-indicator">Scroll to explore <span></span></div>
+            <div class="hero__rating">
+              <div class="hero__stars" aria-label="Rated 4.9 out of 5 stars">★★★★★</div>
+              <div class="hero__rating-copy">
+                <strong>4.9/5</strong>
+                <span>Trusted by 300+ clients</span>
+              </div>
+            </div>
           </div>
-          <div class="hero-card reveal">
-            <img src="assets/hero-illustration.svg" alt="Creative agency illustration" />
-            <div class="stat-grid">
-              <div class="stat"><strong class="counter" data-count="100" data-suffix="+">0</strong><span>Projects Completed</span></div>
-              <div class="stat"><strong class="counter" data-count="50" data-suffix="+">0</strong><span>Happy Clients</span></div>
-              <div class="stat"><strong class="counter" data-count="5" data-suffix="+">0</strong><span>Years Experience</span></div>
+
+          <div class="hero__visual reveal" data-parallax>
+            <div class="hero__visual-card">
+              <div class="hero__glow"></div>
+              <img src="assets/hero-image.webp" alt="Placeholder hero illustration" />
+              <div class="hero__visual-badge">
+                <span>Creative Studio</span>
+                <strong>Premium Launch System</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="trusted-brands" aria-labelledby="trusted-brands-title">
+        <div class="container">
+          <div class="trusted-brands__head reveal">
+            <p class="trusted-brands__eyebrow">Trusted by 300+ Brands</p>
+            <h2 id="trusted-brands-title">Brands that value bold ideas and calm execution.</h2>
+          </div>
+          <div class="trusted-brands__marquee" data-marquee>
+            <div class="trusted-brands__track">
+              <div class="trusted-brands__row">
+                <img src="assets/logo-1.svg" alt="Brand placeholder 1" />
+                <img src="assets/logo-2.svg" alt="Brand placeholder 2" />
+                <img src="assets/logo-3.svg" alt="Brand placeholder 3" />
+                <img src="assets/logo-4.svg" alt="Brand placeholder 4" />
+                <img src="assets/logo-5.svg" alt="Brand placeholder 5" />
+                <img src="assets/logo-6.svg" alt="Brand placeholder 6" />
+              </div>
+              <div class="trusted-brands__row" aria-hidden="true">
+                <img src="assets/logo-7.svg" alt="Brand placeholder 7" />
+                <img src="assets/logo-8.svg" alt="Brand placeholder 8" />
+                <img src="assets/logo-9.svg" alt="Brand placeholder 9" />
+                <img src="assets/logo-10.svg" alt="Brand placeholder 10" />
+                <img src="assets/logo-11.svg" alt="Brand placeholder 11" />
+                <img src="assets/logo-12.svg" alt="Brand placeholder 12" />
+              </div>
             </div>
           </div>
         </div>

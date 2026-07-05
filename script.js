@@ -13,13 +13,15 @@ const modalImage = document.getElementById('modalImage');
 const modalTitle = document.getElementById('modalTitle');
 const modalText = document.getElementById('modalText');
 const header = document.querySelector('.site-header');
-const heroCopy = document.querySelector('.hero-copy');
-const heroTitleLines = document.querySelectorAll('.hero h1 span');
-const heroButtons = document.querySelectorAll('.hero .hero-action a');
-const heroCard = document.querySelector('.hero-card');
-const heroImage = heroCard ? heroCard.querySelector('img') : null;
-const heroStats = document.querySelectorAll('.hero-card .stat');
-const heroIndicator = document.querySelector('.scroll-indicator');
+const heroSection = document.getElementById('hero');
+const heroWords = document.querySelectorAll('.hero__word');
+const heroDescription = document.querySelector('.hero__description');
+const heroActions = document.querySelector('.hero__actions');
+const heroRating = document.querySelector('.hero__rating');
+const heroVisual = document.querySelector('.hero__visual-card');
+const heroImage = heroVisual ? heroVisual.querySelector('img') : null;
+const parallelVisual = document.querySelector('[data-parallax]');
+const marquee = document.querySelector('[data-marquee]');
 
 if (loader) {
   window.addEventListener('load', () => {
@@ -81,38 +83,31 @@ document.addEventListener('DOMContentLoaded', () => {
   counters.forEach((counter) => observer.observe(counter));
 
   if (!prefersReducedMotion && window.gsap) {
-    const heroElements = [
-      document.querySelector('.hero .eyebrow'),
-      ...heroTitleLines,
-      document.querySelector('.hero p'),
-      ...heroButtons,
-      heroIndicator,
-      heroCard,
-      ...heroStats,
-    ].filter(Boolean);
-
-    window.gsap.set(heroElements, { opacity: 0, y: 24, scale: 0.98 });
-    window.gsap.set(heroCopy, { opacity: 0, y: 24 });
-    window.gsap.set(heroImage, { y: 10, opacity: 0 });
+    window.gsap.set(heroWords, { y: 24, opacity: 0 });
+    window.gsap.set([heroDescription, heroActions, heroRating, heroVisual], { y: 24, opacity: 0 });
+    window.gsap.set(heroImage, { y: 12, scale: 0.98, opacity: 0 });
 
     const heroTimeline = window.gsap.timeline({ defaults: { ease: 'power3.out' } });
     heroTimeline
-      .from(header || [], { y: -70, opacity: 0, duration: 0.8 })
-      .from(document.querySelector('.hero .eyebrow'), { y: 20, opacity: 0, duration: 0.5 }, '-=0.55')
-      .from(heroTitleLines, { y: 40, opacity: 0, stagger: 0.12, duration: 0.7 }, '-=0.35')
-      .from(document.querySelector('.hero p'), { y: 20, opacity: 0, duration: 0.6 }, '-=0.3')
-      .from(heroButtons, { scale: 0.92, opacity: 0, stagger: 0.12, duration: 0.5 }, '-=0.35')
-      .from(heroIndicator, { y: 16, opacity: 0, duration: 0.45 }, '-=0.25')
-      .from(heroCard, { y: 34, opacity: 0, scale: 0.97, duration: 0.8 }, '-=0.45')
-      .from(heroStats, { y: 18, opacity: 0, stagger: 0.08, duration: 0.45 }, '-=0.35');
+      .from(header || [], { y: -60, opacity: 0, duration: 0.7 })
+      .to(heroWords, { y: 0, opacity: 1, duration: 0.75, stagger: 0.08 }, '-=0.45')
+      .to(heroDescription, { y: 0, opacity: 1, duration: 0.65 }, '-=0.35')
+      .to(heroActions, { y: 0, opacity: 1, duration: 0.6 }, '-=0.3')
+      .to(heroRating, { y: 0, opacity: 1, duration: 0.55 }, '-=0.25')
+      .to(heroVisual, { y: 0, opacity: 1, duration: 0.8, scale: 1 }, '-=0.2');
 
     if (heroImage) {
-      window.gsap.to(heroImage, { y: -10, duration: 2.6, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+      window.gsap.to(heroImage, { y: -10, rotate: -1.5, duration: 2.8, repeat: -1, yoyo: true, ease: 'sine.inOut' });
     }
 
-    heroButtons.forEach((button, index) => {
-      window.gsap.to(button, { scale: 1.02, duration: 1.2 + index * 0.08, repeat: -1, yoyo: true, ease: 'sine.inOut' });
-    });
+    if (parallelVisual) {
+      window.addEventListener('mousemove', (event) => {
+        const bounds = heroSection.getBoundingClientRect();
+        const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+        const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+        window.gsap.to(parallelVisual, { x: x * 10, y: y * 10, rotateY: x * 8, rotateX: y * -8, duration: 0.8, ease: 'power2.out' });
+      });
+    }
 
     let lastScrollY = window.scrollY;
     let ticking = false;
@@ -141,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', onScroll, { passive: true });
     updateHeaderVisibility();
 
-    document.querySelectorAll('.section .reveal').forEach((item) => {
+    window.gsap.utils.toArray('.reveal').forEach((item) => {
       window.gsap.fromTo(item, { opacity: 0, y: 24 }, {
         opacity: 1,
         y: 0,
@@ -155,6 +150,15 @@ document.addEventListener('DOMContentLoaded', () => {
         },
       });
     });
+
+    if (marquee) {
+      window.gsap.to(marquee.querySelector('.trusted-brands__track'), {
+        x: '-50%',
+        duration: 20,
+        ease: 'none',
+        repeat: -1,
+      });
+    }
   } else {
     revealItems.forEach((item) => item.classList.add('visible'));
   }
