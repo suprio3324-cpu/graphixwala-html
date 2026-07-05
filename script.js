@@ -100,13 +100,19 @@ document.addEventListener('DOMContentLoaded', () => {
       window.gsap.to(heroImage, { y: -10, rotate: -1.5, duration: 2.8, repeat: -1, yoyo: true, ease: 'sine.inOut' });
     }
 
-    if (parallelVisual) {
-      window.addEventListener('mousemove', (event) => {
+    if (parallelVisual && heroSection) {
+      const resetParallax = () => {
+        window.gsap.to(parallelVisual, { x: 0, y: 0, rotateY: 0, rotateX: 0, duration: 0.75, ease: 'power2.out' });
+      };
+
+      heroSection.addEventListener('mousemove', (event) => {
         const bounds = heroSection.getBoundingClientRect();
         const x = (event.clientX - bounds.left) / bounds.width - 0.5;
         const y = (event.clientY - bounds.top) / bounds.height - 0.5;
         window.gsap.to(parallelVisual, { x: x * 10, y: y * 10, rotateY: x * 8, rotateX: y * -8, duration: 0.8, ease: 'power2.out' });
       });
+
+      heroSection.addEventListener('mouseleave', resetParallax);
     }
 
     let lastScrollY = window.scrollY;
