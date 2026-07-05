@@ -12,6 +12,14 @@ const modal = document.getElementById('portfolioModal');
 const modalImage = document.getElementById('modalImage');
 const modalTitle = document.getElementById('modalTitle');
 const modalText = document.getElementById('modalText');
+const header = document.querySelector('.site-header');
+const heroCopy = document.querySelector('.hero-copy');
+const heroTitleLines = document.querySelectorAll('.hero h1 span');
+const heroButtons = document.querySelectorAll('.hero .hero-action a');
+const heroCard = document.querySelector('.hero-card');
+const heroImage = heroCard ? heroCard.querySelector('img') : null;
+const heroStats = document.querySelectorAll('.hero-card .stat');
+const heroIndicator = document.querySelector('.scroll-indicator');
 
 if (loader) {
   window.addEventListener('load', () => {
@@ -22,13 +30,16 @@ if (loader) {
 
 document.addEventListener('DOMContentLoaded', () => {
   document.body.classList.remove('loading');
+
   if (progressBar) {
     const updateProgress = () => {
       const scrollTop = window.scrollY;
       const height = document.documentElement.scrollHeight - window.innerHeight;
       const progress = height > 0 ? (scrollTop / height) * 100 : 0;
       progressBar.style.width = `${progress}%`;
-      backToTop.style.display = scrollTop > 480 ? 'grid' : 'none';
+      if (backToTop) {
+        backToTop.style.display = scrollTop > 480 ? 'grid' : 'none';
+      }
     };
     updateProgress();
     window.addEventListener('scroll', updateProgress, { passive: true });
@@ -37,6 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
     navLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => navLinks.classList.remove('open')));
+  }
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (window.gsap && window.ScrollTrigger) {
+    window.gsap.registerPlugin(window.ScrollTrigger);
   }
 
   const observer = new IntersectionObserver((entries) => {
@@ -63,6 +80,85 @@ document.addEventListener('DOMContentLoaded', () => {
   revealItems.forEach((item) => observer.observe(item));
   counters.forEach((counter) => observer.observe(counter));
 
+  if (!prefersReducedMotion && window.gsap) {
+    const heroElements = [
+      document.querySelector('.hero .eyebrow'),
+      ...heroTitleLines,
+      document.querySelector('.hero p'),
+      ...heroButtons,
+      heroIndicator,
+      heroCard,
+      ...heroStats,
+    ].filter(Boolean);
+
+    window.gsap.set(heroElements, { opacity: 0, y: 24, scale: 0.98 });
+    window.gsap.set(heroCopy, { opacity: 0, y: 24 });
+    window.gsap.set(heroImage, { y: 10, opacity: 0 });
+
+    const heroTimeline = window.gsap.timeline({ defaults: { ease: 'power3.out' } });
+    heroTimeline
+      .from(header || [], { y: -70, opacity: 0, duration: 0.8 })
+      .from(document.querySelector('.hero .eyebrow'), { y: 20, opacity: 0, duration: 0.5 }, '-=0.55')
+      .from(heroTitleLines, { y: 40, opacity: 0, stagger: 0.12, duration: 0.7 }, '-=0.35')
+      .from(document.querySelector('.hero p'), { y: 20, opacity: 0, duration: 0.6 }, '-=0.3')
+      .from(heroButtons, { scale: 0.92, opacity: 0, stagger: 0.12, duration: 0.5 }, '-=0.35')
+      .from(heroIndicator, { y: 16, opacity: 0, duration: 0.45 }, '-=0.25')
+      .from(heroCard, { y: 34, opacity: 0, scale: 0.97, duration: 0.8 }, '-=0.45')
+      .from(heroStats, { y: 18, opacity: 0, stagger: 0.08, duration: 0.45 }, '-=0.35');
+
+    if (heroImage) {
+      window.gsap.to(heroImage, { y: -10, duration: 2.6, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+    }
+
+    heroButtons.forEach((button, index) => {
+      window.gsap.to(button, { scale: 1.02, duration: 1.2 + index * 0.08, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+    });
+
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    const updateHeaderVisibility = () => {
+      if (!header) {
+        ticking = false;
+        return;
+      }
+      if (window.scrollY > 90 && window.scrollY > lastScrollY) {
+        header.classList.add('is-hidden');
+      } else {
+        header.classList.remove('is-hidden');
+      }
+      lastScrollY = window.scrollY;
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateHeaderVisibility);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    updateHeaderVisibility();
+
+    document.querySelectorAll('.section .reveal').forEach((item) => {
+      window.gsap.fromTo(item, { opacity: 0, y: 24 }, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 85%',
+          once: true,
+          toggleClass: 'visible',
+        },
+      });
+    });
+  } else {
+    revealItems.forEach((item) => item.classList.add('visible'));
+  }
+
   faqItems.forEach((item) => {
     item.querySelector('.faq-question').addEventListener('click', () => {
       const isOpen = item.classList.contains('open');
@@ -88,17 +184,19 @@ document.addEventListener('DOMContentLoaded', () => {
       const image = card.querySelector('img').src;
       const title = card.querySelector('h3').textContent;
       const text = card.querySelector('p').textContent;
-      modalImage.src = image;
-      modalTitle.textContent = title;
-      modalText.textContent = text;
-      modal.classList.add('open');
+      if (modalImage) modalImage.src = image;
+      if (modalTitle) modalTitle.textContent = title;
+      if (modalText) modalText.textContent = text;
+      if (modal) modal.classList.add('open');
     });
   });
 
-  document.querySelector('.modal-close').addEventListener('click', () => modal.classList.remove('open'));
-  modal.addEventListener('click', (event) => {
-    if (event.target === modal) modal.classList.remove('open');
-  });
+  if (document.querySelector('.modal-close') && modal) {
+    document.querySelector('.modal-close').addEventListener('click', () => modal.classList.remove('open'));
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) modal.classList.remove('open');
+    });
+  }
 
   if (backToTop) {
     backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
