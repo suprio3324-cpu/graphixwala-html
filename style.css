@@ -790,21 +790,38 @@ footer { padding: 2rem 0 3rem; border-top: 1px solid var(--border); margin-top: 
   margin: 0;
   text-transform: uppercase;
 }
-.hero__word {
-  display: block;
-  margin: 0;
-  color: var(--text);
+.hero__word{
+    display:block;
+    margin:0;
+    font-size:72px;
+    line-height:.95;
+    font-weight:900;
+    letter-spacing:-2px;
+    text-transform:uppercase;
+}
+
+.hero__word .hero__white{
+    color:#ffffff;
+}
+
+.hero__word .hero__yellow{
+    color:#FFCB06;
 }
 .hero__word--accent {
   color: var(--primary);
 }
 
-.hero__underline {
-  display: block;
-  width: 240px;
-  height: auto;
-  margin-top: 12px;
-  margin-bottom: 10px;
+.hero__underline-wrap{
+    position:relative;
+    display:inline-block;
+}
+
+.hero__underline{
+    position:absolute;
+    left:0;
+    bottom:-18px;
+    width:100%;
+    height:auto;
 }
 
 .hero__description {
