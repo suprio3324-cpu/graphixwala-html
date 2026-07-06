@@ -85,12 +85,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!prefersReducedMotion && window.gsap) {
     window.gsap.set(heroWords, { y: 24, opacity: 0 });
     window.gsap.set([heroDescription, heroActions, heroRating, heroVisual], { y: 24, opacity: 0 });
-    window.gsap.set(heroImage, { y: 12, scale: 0.98, opacity: 0 });
 
     const heroTimeline = window.gsap.timeline({ defaults: { ease: 'power3.out' } });
     heroTimeline
       .from(header || [], { y: -60, opacity: 0, duration: 0.7 })
-      .to(heroWords, { y: 0, opacity: 1, duration: 0.75, stagger: 0.08 }, '-=0.45')
+      .to(heroWords, { y: 0, opacity: 1, duration: 0.75, stagger: 0.12 }, '-=0.45')
       .to(heroDescription, { y: 0, opacity: 1, duration: 0.65 }, '-=0.35')
       .to(heroActions, { y: 0, opacity: 1, duration: 0.6 }, '-=0.3')
       .to(heroRating, { y: 0, opacity: 1, duration: 0.55 }, '-=0.25')
@@ -157,14 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    if (marquee) {
-      window.gsap.to(marquee.querySelector('.trusted-brands__track'), {
-        x: '-50%',
-        duration: 20,
-        ease: 'none',
-        repeat: -1,
-      });
-    }
+    // No marquee: trusted brands are static in the reference layout
   } else {
     revealItems.forEach((item) => item.classList.add('visible'));
   }
@@ -211,4 +203,152 @@ document.addEventListener('DOMContentLoaded', () => {
   if (backToTop) {
     backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   }
+});
+/* ==========================================================
+   GRAPHIX WALA HERO PREMIUM ANIMATION
+========================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    if (!window.gsap) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from(".hero__badge",{
+        y:30,
+        opacity:0,
+        duration:.8,
+        ease:"power3.out"
+    });
+
+    gsap.from(".hero__title .hero__word",{
+        y:80,
+        opacity:0,
+        stagger:.12,
+        duration:1,
+        ease:"power4.out",
+        delay:.2
+    });
+
+    gsap.from(".hero__underline",{
+        width:0,
+        duration:.8,
+        delay:.8
+    });
+
+    gsap.from(".hero__description",{
+        y:30,
+        opacity:0,
+        duration:.8,
+        delay:1
+    });
+
+    gsap.from(".hero__actions",{
+        y:30,
+        opacity:0,
+        duration:.8,
+        delay:1.2
+    });
+
+    gsap.from(".hero__rating",{
+        y:30,
+        opacity:0,
+        duration:.8,
+        delay:1.4
+    });
+
+    gsap.from(".hero__visual-card",{
+        x:80,
+        opacity:0,
+        scale:.95,
+        duration:1.2,
+        ease:"power4.out",
+        delay:.3
+    });
+
+    gsap.to(".hero__image-shell img",{
+        y:-15,
+        repeat:-1,
+        yoyo:true,
+        duration:3,
+        ease:"sine.inOut"
+    });
+
+});
+
+const hero=document.querySelector(".hero");
+
+const visual=document.querySelector(".hero__visual-card");
+
+if(hero && visual){
+
+hero.addEventListener("mousemove",(e)=>{
+
+const rect=hero.getBoundingClientRect();
+
+const x=(e.clientX-rect.left)/rect.width-.5;
+
+const y=(e.clientY-rect.top)/rect.height-.5;
+
+gsap.to(visual,{
+
+rotationY:x*10,
+
+rotationX:-y*10,
+
+x:x*15,
+
+y:y*15,
+
+duration:.8,
+
+ease:"power3.out"
+
+});
+
+});
+
+hero.addEventListener("mouseleave",()=>{
+
+gsap.to(visual,{
+
+rotationY:0,
+
+rotationX:0,
+
+x:0,
+
+y:0,
+
+duration:.8
+
+});
+
+});
+
+}
+
+
+/* ==========================================
+Trusted Brands Animation
+========================================== */
+
+gsap.from(".trusted-brands__card",{
+
+opacity:0,
+
+y:40,
+
+stagger:.08,
+
+duration:.8,
+
+scrollTrigger:{
+
+trigger:".trusted-brands",
+
+start:"top 80%"
+
+}
+
 });
