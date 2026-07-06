@@ -151,7 +151,16 @@ body.loading { overflow: hidden; }
 }
 
 .hero__content{
-    max-width:620px;
+  max-width:620px;
+}
+
+/* If JS hasn't revealed elements yet, keep the left hero visible
+   so it never appears hidden on first paint. This targets only
+   the left hero container and preserves the global `.reveal` animation
+   behavior for other elements (right side remains controlled by JS). */
+.hero__content.reveal {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .hero__badge{
