@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .to(heroVisual, { y: 0, opacity: 1, duration: 0.8, scale: 1 }, '-=0.2');
 
     if (heroImage) {
-      window.gsap.to(heroImage, { y: -10, rotate: -1.5, duration: 2.8, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+      window.gsap.to(heroImage, { y: -10, duration: 2.8, repeat: -1, yoyo: true, ease: 'sine.inOut' });
     }
 
     if (parallelVisual && heroSection) {
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const bounds = heroSection.getBoundingClientRect();
         const x = (event.clientX - bounds.left) / bounds.width - 0.5;
         const y = (event.clientY - bounds.top) / bounds.height - 0.5;
-        window.gsap.to(parallelVisual, { x: x * 10, y: y * 10, rotateY: x * 8, rotateX: y * -8, duration: 0.8, ease: 'power2.out' });
+        window.gsap.to(parallelVisual, { x: x * 10, y: y * 10, duration: 0.8, ease: 'power2.out' });
       });
 
       heroSection.addEventListener('mouseleave', resetParallax);
@@ -292,17 +292,10 @@ const y=(e.clientY-rect.top)/rect.height-.5;
 
 gsap.to(visual,{
 
-rotationY:x*10,
-
-rotationX:-y*10,
-
-x:x*15,
-
-y:y*15,
-
-duration:.8,
-
-ease:"power3.out"
+  x: x*15,
+  y: y*15,
+  duration: .8,
+  ease: "power3.out"
 
 });
 
@@ -312,15 +305,9 @@ hero.addEventListener("mouseleave",()=>{
 
 gsap.to(visual,{
 
-rotationY:0,
-
-rotationX:0,
-
-x:0,
-
-y:0,
-
-duration:.8
+  x:0,
+  y:0,
+  duration:.8
 
 });
 

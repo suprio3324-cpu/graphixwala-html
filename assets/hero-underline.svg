@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 765 373.09">
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 444 95.09">
   <!-- Generator: Adobe Illustrator 30.2.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 1)  -->
   <defs>
     <style>
       .st0 {
-        fill: #fff;
-      }
-
-      .st1 {
-        font-family: Poppins-Black, Poppins;
-        font-size: 79.69px;
-        font-weight: 800;
-      }
-
-      .st2 {
         fill: #ffcb06;
       }
     </style>
   </defs>
-  <path class="st2" d="M745.8,341.65c-46.67-16.3-120.01-26.8-202.49-26.8s-155.79,10.5-202.47,26.79c42-19.48,116.97-32.44,202.47-32.44s160.48,12.97,202.49,32.45h0Z"/>
-  <text class="st1" transform="translate(30.08 99.7)"><tspan class="st0"><tspan x="0" y="0">WE BUILD</tspan></tspan><tspan class="st2"><tspan x="0" y="95.63">POWERFUL</tspan></tspan><tspan class="st2"><tspan x="0" y="191.26">DIGITAL BRANDS.</tspan></tspan></text>
+  <path class="st0" d="M424.8,63.65c-46.67-16.3-120.01-26.8-202.49-26.8S66.52,47.35,19.84,63.64c42-19.48,116.97-32.44,202.47-32.44s160.48,12.97,202.49,32.45h0Z"/>
 </svg>
