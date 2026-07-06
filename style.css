@@ -744,7 +744,7 @@ footer { padding: 2rem 0 3rem; border-top: 1px solid var(--border); margin-top: 
   min-height: 100vh;
   padding-top: var(--header-height);
   padding-bottom: 0;
-  margin-bottom: 80px;
+  margin-bottom: 0px;
   overflow: hidden;
   isolation: isolate;
   background:
@@ -760,7 +760,8 @@ footer { padding: 2rem 0 3rem; border-top: 1px solid var(--border); margin-top: 
   grid-template-columns: 50% 50%;
   gap: 60px;
   align-items: center;
-  height: 100%;
+     min-height: calc(100vh - var(--header-height));
+    height: auto;
 }
 
 .hero__content {

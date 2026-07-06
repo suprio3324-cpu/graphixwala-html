@@ -257,7 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
         delay:1.4
     });
 
-    gsap.from(".hero__visual-card",{
+    gsap.from(".hero__graphic",{
         x:80,
         opacity:0,
         scale:.95,
@@ -266,7 +266,7 @@ document.addEventListener("DOMContentLoaded", () => {
         delay:.3
     });
 
-    gsap.to(".hero__image-shell img",{
+    gsap.to(".hero__graphic img",{
         y:-15,
         repeat:-1,
         yoyo:true,
