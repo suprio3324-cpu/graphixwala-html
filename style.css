@@ -422,68 +422,101 @@ margin:auto;
 
 }
 .trusted-brands {
-  padding: clamp(1.6rem, 3vw, 2.4rem) 0 clamp(2.2rem, 4vw, 3rem);
+  padding: clamp(3rem, 4vw, 4.5rem) 0;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.02);
 }
 .trusted-brands__head {
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: end;
-  margin-bottom: 1.2rem;
-  transform: translateY(16px);
-  opacity: 0;
-}
-.trusted-brands__eyebrow {
-  color: var(--primary);
-  text-transform: uppercase;
-  letter-spacing: 0.24em;
-  font-size: 0.78rem;
-  font-weight: 600;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 1.6rem;
 }
 .trusted-brands__head h2 {
-  font-size: clamp(1.08rem, 1.8vw, 1.35rem);
-  color: var(--text);
-  max-width: 34rem;
+  font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+  color: #FFCB06;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  margin: 0;
 }
-.trusted-brands__row.static-row {
-  display: flex;
-  gap: clamp(0.9rem, 2vw, 1.4rem);
-  align-items: center;
-  padding: 0.6rem 0;
-  flex-wrap: nowrap;
+.trusted-brands__marquee {
   overflow: hidden;
+  position: relative;
+  padding: 1rem 0;
 }
-.trusted-brands__card {
-  width: clamp(7.5rem, 10vw, 9.2rem);
-  height: clamp(3rem, 4.2vw, 3.75rem);
+.trusted-brands__marquee + .trusted-brands__marquee {
+  margin-top: 20px;
+}
+.trusted-brands__track {
+  display: flex;
+  width: max-content;
+  gap: 24px;
+  align-items: center;
+}
+.logo-card {
+  min-width: 10rem;
+  min-height: 5rem;
   display: grid;
   place-items: center;
-  padding: 0.75rem 1rem;
-  border-radius: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(16, 16, 16, 0.72));
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  padding: 1rem 1.2rem;
+  border-radius: 1.4rem;
+  border: 1px solid rgba(255, 203, 6, 0.22);
+  background: rgba(15, 15, 15, 0.72);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
-.trusted-brands__card:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 0 0 1px rgba(255, 203, 6, 0.18), 0 16px 34px rgba(255, 203, 6, 0.16);
-  border-color: rgba(255, 203, 6, 0.3);
+.logo-card:hover {
+  transform: translateY(-6px) scale(1.05);
+  border-color: rgba(255, 203, 6, 0.45);
+  box-shadow: 0 22px 50px rgba(255, 203, 6, 0.18);
 }
-.trusted-brands__card {
-  width: clamp(8rem, 9.5vw, 10rem);
-  height: clamp(3rem, 4.2vw, 4rem);
-  display: grid;
-  place-items: center;
-  padding: 0.6rem 0.9rem;
-  border-radius: 0.9rem;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: rgba(16, 16, 16, 0.64);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.36);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+.logo-card img {
+  width: 100%;
+  max-width: 7rem;
+  max-height: 2.5rem;
+  object-fit: contain;
+}
+.marquee-row {
+  cursor: grab;
+}
+.marquee-row:active {
+  cursor: grabbing;
+}
+.row-1 .trusted-brands__track {
+  animation: marquee-right 28s linear infinite;
+}
+.row-2 .trusted-brands__track {
+  animation: marquee-right 36s linear infinite;
+}
+.marquee-row:hover .trusted-brands__track {
+  animation-play-state: paused;
+}
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+@media (max-width: 991px) {
+  .trusted-brands {
+    padding: clamp(2rem, 4vw, 3rem) 0;
+  }
+  .trusted-brands__marquee {
+    padding: 0.8rem 0;
+  }
+  .logo-card {
+    min-width: 8.5rem;
+    min-height: 4.6rem;
+  }
+}
+@media (max-width: 680px) {
+  .trusted-brands__track {
+    gap: 16px;
+  }
+  .logo-card {
+    min-width: 7.4rem;
+    min-height: 4.4rem;
+    padding: 0.9rem 1rem;
+  }
 }
 @keyframes orbFloat {
   from { transform: translate3d(0, 0, 0) scale(1); }
