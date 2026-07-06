@@ -819,7 +819,7 @@ footer { padding: 2rem 0 3rem; border-top: 1px solid var(--border); margin-top: 
 .hero__underline{
     position:absolute;
     left:0;
-    bottom:-18px;
+    bottom:-45px;
     width:100%;
     height:auto;
 }
