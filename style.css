@@ -768,8 +768,8 @@ footer { padding: 2rem 0 3rem; border-top: 1px solid var(--border); margin-top: 
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  max-width: 800px;
-  gap: 18px;
+  max-width: 760px;
+  gap: 22px;
   z-index: 2;
 }
 
@@ -791,13 +791,13 @@ footer { padding: 2rem 0 3rem; border-top: 1px solid var(--border); margin-top: 
   text-transform: uppercase;
 }
 .hero__word{
-    display:block;
     margin:0;
     font-size:72px;
     line-height:.95;
     font-weight:900;
     letter-spacing:-2px;
     text-transform:uppercase;
+    white-space:nowrap;
 }
 
 .hero__word .hero__white{
