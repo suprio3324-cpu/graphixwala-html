@@ -199,6 +199,7 @@ body.loading { overflow: hidden; }
     flex-wrap:wrap;
     gap:18px;
     margin-bottom:24px;
+    align-items:center;
 }
 
 .hero__actions .btn{
@@ -225,6 +226,7 @@ body.loading { overflow: hidden; }
     background:rgba(255,255,255,.08);
     color:#FFFFFF;
     border:1px solid rgba(255,255,255,.18);
+    backdrop-filter:blur(16px);
 }
 
 .hero__actions .btn--secondary:hover{
