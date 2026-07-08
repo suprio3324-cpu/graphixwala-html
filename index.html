@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8" />
-
   <meta name="msvalidate.01" content="C9480E69BB93C0AC17DC12603C824A4B" />
 
   <!-- Google tag (gtag.js) -->
@@ -39,13 +38,22 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 
 <body class="loading">
+  <!-- Noise texture overlay across the viewport -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Custom mouse follower system -->
+  <div class="custom-cursor-dot" aria-hidden="true"></div>
+  <div class="custom-cursor-ring" aria-hidden="true"></div>
+
   <div class="loader">
     <div class="ring"></div>
   </div>
   <div class="scroll-progress"></div>
+  
   <header class="site-header">
     <div class="container navbar">
       <a href="index.html" class="logo">
@@ -60,73 +68,56 @@
         <a href="pricing.html">Pricing</a>
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
-        <a class="btn" href="contact.html">Get Quote</a>
+        <a class="btn magnetic-element" href="contact.html">Get Quote</a>
       </nav>
     </div>
   </header>
 
   <main>
-   <section class="hero" id="hero">
-
-    <div class="hero__background">
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+      <div class="hero__background">
         <div class="hero__orb hero__orb--one"></div>
         <div class="hero__orb hero__orb--two"></div>
         <div class="hero__bg-grid"></div>
         <div class="hero__noise"></div>
-    </div>
+      </div>
 
-    <div class="container hero__grid">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <h1 class="hero__word text-reveal-trigger">
+            <span class="hero__white">WE BUILD</span><br>
+            <span class="hero__yellow">POWERFUL</span><br>
+            <span class="hero__yellow hero__underline-wrap">
+              DIGITAL BRANDS.
+              <img src="assets/hero-underline.svg" class="hero__underline" alt="">
+            </span>
+          </h1>
 
- <div class="hero__content">
+          <p class="hero__description">
+            GRAPHIX WALA is a premium branding, web design and digital
+            marketing agency helping ambitious businesses grow online.
+          </p>
 
-  <h1 class="hero__word">
+          <div class="hero__actions">
+            <a href="#contact" class="btn btn--primary magnetic-element">
+              Get Started →
+            </a>
+            <a href="#portfolio" class="btn btn--secondary magnetic-element">
+              View Portfolio
+            </a>
+          </div>
+        </div>
 
-    <span class="hero__white">WE BUILD</span><br>
+        <div class="hero__visual">
+          <div class="hero__graphic parallax-layer" data-speed="-1">
+            <img src="assets/hero-image.webp" alt="Hero Image" class="image-reveal">
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <span class="hero__yellow">POWERFUL</span><br>
-
-    <span class="hero__yellow hero__underline-wrap">
-        DIGITAL BRANDS.
-        <img src="assets/hero-underline.svg"
-             class="hero__underline"
-             alt="">
-    </span>
-
-</h1>
-
-    <p class="hero__description">
-        GRAPHIX WALA is a premium branding, web design and digital
-        marketing agency helping ambitious businesses grow online.
-    </p>
-
-<div class="hero__actions">
-
-    <a href="#contact" class="btn btn--primary">
-        Get Started →
-    </a>
-
-    <a href="#portfolio" class="btn btn--secondary">
-        View Portfolio
-    </a>
-
-</div> <!-- hero__actions -->
-
-</div> <!-- ✅ hero__content -->
-
-<!-- RIGHT -->
-<div class="hero__visual">
-
-    <div class="hero__graphic">
-
-        <img src="assets/hero-image.webp"
-             alt="Hero Image">
-
-    </div>
-
-</div>
-
-
-</section>
+    <!-- TRUSTED BRANDS SECTION -->
     <section class="trusted" aria-labelledby="trusted-title">
       <div class="container">
         <h2 id="trusted-title" class="trusted__title">TRUSTED BY <span>100+</span> BRANDS</h2>
@@ -173,105 +164,607 @@
       </div>
     </section>
 
- <section class="gw-whatwedo" id="what-we-do">
-  <div class="container">
-
-    <div class="gw-section-header">
-      <span class="gw-subtitle">WHAT WE DO</span>
-
-      <h2>
-        Design.
-        <span>Brand.</span>
-        Inspire.
-      </h2>
-
-      <p>
-        We build unforgettable brands through creative design,
-        website development, digital marketing and content
-        that helps businesses grow faster.
-      </p>
-    </div>
-
-    <div class="gw-services-preview">
-
-      <div class="gw-preview-card">
-        <i class="fa-solid fa-palette"></i>
-        <h3>Graphic Design</h3>
-      </div>
-
-      <div class="gw-preview-card">
-        <i class="fa-solid fa-globe"></i>
-        <h3>Website</h3>
-      </div>
-
-      <div class="gw-preview-card active">
-        <i class="fa-solid fa-bullhorn"></i>
-        <h3>Digital Marketing</h3>
-      </div>
-
-      <div class="gw-preview-card">
-        <i class="fa-solid fa-video"></i>
-        <h3>Video Editing</h3>
-      </div>
-
-      <div class="gw-preview-card">
-        <i class="fa-solid fa-pen-ruler"></i>
-        <h3>Brand Identity</h3>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-</main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <a href="index.html" class="brand">GRAPHIX WALA</a>
-          <p style="margin-top: .8rem; color: var(--muted);">Premium design, branding, and marketing solutions for
-            modern businesses.</p>
-        </div>
-        <div>
-          <h3>Quick Links</h3>
-          <div class="footer-links" style="margin-top: .7rem;">
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="contact.html">Contact</a>
-          </div>
-        </div>
-        <div>
-          <h3>Services</h3>
-          <div class="footer-links" style="margin-top: .7rem;">
-            <span>Branding</span>
-            <span>Web Development</span>
-            <span>Marketing</span>
-            <span>Motion Graphics</span>
-          </div>
-        </div>
-        <div>
-          <h3>Newsletter</h3>
-          <p style="margin-top: .7rem; color: var(--muted);">Stay inspired with our latest strategy and design insights.
+    <!-- WHAT WE DO & 1. PREMIUM SERVICES SLIDER SECTION -->
+    <section class="gw-whatwedo" id="what-we-do">
+      <div class="container">
+        <div class="gw-section-header">
+          <span class="gw-subtitle">WHAT WE DO</span>
+          <h2 class="text-reveal">
+            Design.
+            <span>Brand.</span>
+            Inspire.
+          </h2>
+          <p class="fade-up">
+            We build unforgettable brands through creative design,
+            website development, digital marketing and content
+            that helps businesses grow faster.
           </p>
         </div>
+
+        <!-- Services Swiper Grid Layout -->
+        <div class="swiper services-swiper">
+          <div class="swiper-wrapper">
+            <!-- Service Slide 1 -->
+            <div class="swiper-slide">
+              <div class="service-card-premium">
+                <div class="card-glow-element"></div>
+                <div class="card-icon-wrap">
+                  <i class="fa-solid fa-bezier-curve"></i>
+                </div>
+                <h3>Brand Identity</h3>
+                <p>Establishing corporate design manuals, luxury visual style rules, custom logos, and dynamic guidelines tailored to conversion.</p>
+                <a href="services.html" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <!-- Service Slide 2 -->
+            <div class="swiper-slide">
+              <div class="service-card-premium">
+                <div class="card-glow-element"></div>
+                <div class="card-icon-wrap">
+                  <i class="fa-solid fa-code"></i>
+                </div>
+                <h3>Web Engineering</h3>
+                <p>Deploying performance-optimized custom applications, lightning-fast static pages, and layouts that prioritize responsive accessibility.</p>
+                <a href="services.html" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <!-- Service Slide 3 -->
+            <div class="swiper-slide">
+              <div class="service-card-premium">
+                <div class="card-glow-element"></div>
+                <div class="card-icon-wrap">
+                  <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3>Growth Marketing</h3>
+                <p>Constructing multi-channel targeted ad pipelines, organic content calendars, analytics profiles, and search index strategies.</p>
+                <a href="services.html" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <!-- Service Slide 4 -->
+            <div class="swiper-slide">
+              <div class="service-card-premium">
+                <div class="card-glow-element"></div>
+                <div class="card-icon-wrap">
+                  <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <h3>Technical SEO</h3>
+                <p>Auditing structured semantic schema setups, executing server redirect procedures, and configuring page index files.</p>
+                <a href="services.html" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <!-- Service Slide 5 -->
+            <div class="swiper-slide">
+              <div class="service-card-premium">
+                <div class="card-glow-element"></div>
+                <div class="card-icon-wrap">
+                  <i class="fa-solid fa-film"></i>
+                </div>
+                <h3>Motion Design</h3>
+                <p>Developing high-definition conceptual 2D/3D visual sequences, web interface UI animations, and customized title cards.</p>
+                <a href="services.html" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Custom Swiper Controls (Magnetic Buttons Integration) -->
+          <div class="swiper-controls-wrapper">
+            <button class="swiper-button-prev-custom magnetic-element" aria-label="Slide Left">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <div class="swiper-pagination-custom"></div>
+            <button class="swiper-button-next-custom magnetic-element" aria-label="Slide Right">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="copyright">
+    </section>
+
+    <!-- 2. WHY CHOOSE US SECTION (Animated Counters & Glassmorphic features) -->
+    <section class="why-choose-us" id="why-choose-us">
+      <div class="bg-gradient-mesh" aria-hidden="true"></div>
+      <div class="container">
+        <div class="why-choose-grid">
+          <div class="why-content-col fade-up">
+            <span class="section-label">WHY CHOOSE US</span>
+            <h2>Converging creative artistry with <span>analytical code</span>.</h2>
+            <p>Our agency builds balanced structural digital campaigns. Every creative choice is backed by performance metrics, keeping high luxury presentation in alignment with real corporate conversion.</p>
+            
+            <div class="stats-container">
+              <div class="stat-box">
+                <div class="number-wrap"><span class="counter-num" data-val="150">0</span><span>+</span></div>
+                <p>Creative Launches</p>
+              </div>
+              <div class="stat-box">
+                <div class="number-wrap"><span class="counter-num" data-val="98">0</span><span>%</span></div>
+                <p>Retention Rate</p>
+              </div>
+              <div class="stat-box">
+                <div class="number-wrap"><span class="counter-num" data-val="5">0</span><span>+</span></div>
+                <p>Years of Operation</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="why-cards-col">
+            <!-- Glass card 1 -->
+            <div class="glass-card-premium hover-glow-card fade-up">
+              <div class="glass-icon-box"><i class="fa-solid fa-gem"></i></div>
+              <div class="glass-card-info">
+                <h3>Luxury Brand Systems</h3>
+                <p>Bespoke custom geometries, strict visual hierarchies, and curated color rules designed to establish industry leaders.</p>
+              </div>
+            </div>
+            <!-- Glass card 2 -->
+            <div class="glass-card-premium hover-glow-card fade-up">
+              <div class="glass-icon-box"><i class="fa-solid fa-bolt"></i></div>
+              <div class="glass-card-info">
+                <h3>Modern Web Speed</h3>
+                <p>Custom server structures, fast loading speeds, clean coding frameworks, and high search engine optimization performance.</p>
+              </div>
+            </div>
+            <!-- Glass card 3 -->
+            <div class="glass-card-premium hover-glow-card fade-up">
+              <div class="glass-icon-box"><i class="fa-solid fa-chart-pie"></i></div>
+              <div class="glass-card-info">
+                <h3>Transparent Campaigns</h3>
+                <p>Fully trackable ROI reporting panels, direct contact support channels, and recurring performance audit meetings.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PORTFOLIO SHOWCASE SECTION (Asymmetrical grid with filters) -->
+    <section class="portfolio-section" id="portfolio">
+      <div class="container">
+        <div class="portfolio-header">
+          <div class="fade-up">
+            <span class="section-label">SELECTED WORK</span>
+            <h2>Award-Winning <span>Creations</span></h2>
+          </div>
+          <div class="portfolio-filters fade-up">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="branding">Branding</button>
+            <button class="filter-btn" data-filter="web">Web Development</button>
+            <button class="filter-btn" data-filter="marketing">Marketing</button>
+          </div>
+        </div>
+
+        <div class="portfolio-asymmetrical-grid">
+          <!-- Item 1 -->
+          <div class="portfolio-show-card fade-up" data-category="branding" data-img="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1200&q=80">
+            <div class="portfolio-media-container">
+              <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80" alt="Cosmetic Packaging Redesign" class="portfolio-image">
+              <div class="portfolio-hover-overlay">
+                <div class="overlay-button-circle"><i class="fa-solid fa-expand"></i></div>
+              </div>
+            </div>
+            <div class="portfolio-meta-box">
+              <span class="meta-tag">Branding System</span>
+              <h3>Aethera Cosmetic Line</h3>
+              <p>Custom packaging, minimalist layout grids, and visual style manuals.</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="portfolio-show-card fade-up" data-category="web" data-img="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1200&q=80">
+            <div class="portfolio-media-container">
+              <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80" alt="Elysian SaaS Interface Design" class="portfolio-image">
+              <div class="portfolio-hover-overlay">
+                <div class="overlay-button-circle"><i class="fa-solid fa-expand"></i></div>
+              </div>
+            </div>
+            <div class="portfolio-meta-box">
+              <span class="meta-tag">Web Engineering</span>
+              <h3>Elysian SaaS Interface</h3>
+              <p>Performance web app design with complex API routing integrations.</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="portfolio-show-card fade-up" data-category="marketing" data-img="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80">
+            <div class="portfolio-media-container">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Campaign Dashboard Build" class="portfolio-image">
+              <div class="portfolio-hover-overlay">
+                <div class="overlay-button-circle"><i class="fa-solid fa-expand"></i></div>
+              </div>
+            </div>
+            <div class="portfolio-meta-box">
+              <span class="meta-tag">Growth Campaign</span>
+              <h3>Vertex Ad Infrastructure</h3>
+              <p>Automated conversion funnels, custom landing pages, and lead tracking.</p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="portfolio-show-card fade-up" data-category="branding" data-img="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80">
+            <div class="portfolio-media-container">
+              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="Nexus Brand Architecture" class="portfolio-image">
+              <div class="portfolio-hover-overlay">
+                <div class="overlay-button-circle"><i class="fa-solid fa-expand"></i></div>
+              </div>
+            </div>
+            <div class="portfolio-meta-box">
+              <span class="meta-tag">Corporate Identity</span>
+              <h3>Nexus Spatial Guidelines</h3>
+              <p>Geometric design frameworks, identity guidelines, and typography assets.</p>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="portfolio-show-card fade-up" data-category="web" data-img="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80">
+            <div class="portfolio-media-container">
+              <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" alt="Luxury E-Commerce Platform" class="portfolio-image">
+              <div class="portfolio-hover-overlay">
+                <div class="overlay-button-circle"><i class="fa-solid fa-expand"></i></div>
+              </div>
+            </div>
+            <div class="portfolio-meta-box">
+              <span class="meta-tag">Web Storefront</span>
+              <h3>Onyx Luxury Goods</h3>
+              <p>E-commerce checkout pipelines, custom asset loaders, and speed optimizations.</p>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="portfolio-show-card fade-up" data-category="marketing" data-img="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80">
+            <div class="portfolio-media-container">
+              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="Media Strategy Execution" class="portfolio-image">
+              <div class="portfolio-hover-overlay">
+                <div class="overlay-button-circle"><i class="fa-solid fa-expand"></i></div>
+              </div>
+            </div>
+            <div class="portfolio-meta-box">
+              <span class="meta-tag">Growth Strategy</span>
+              <h3>Zephyr SEO Scaling</h3>
+              <p>Semantic page structure enhancements, content hubs, and search performance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. WORK PROCESS TIMELINE SECTION -->
+    <section class="process-section" id="process">
+      <div class="container">
+        <div class="process-section-header fade-up">
+          <span class="section-label">OUR METHODOLOGY</span>
+          <h2>The Production <span>Blueprint</span></h2>
+          <p>We execute projects utilizing a rigorous workflow architecture, keeping you informed and aligned with results at every stage.</p>
+        </div>
+
+        <div class="timeline-interactive-container">
+          <!-- Active filling scroll line -->
+          <div class="timeline-scroll-track" aria-hidden="true">
+            <div class="timeline-scroll-fill"></div>
+          </div>
+
+          <!-- Process Step 1 -->
+          <div class="timeline-node-item fade-up">
+            <div class="timeline-indicator-dot"></div>
+            <div class="timeline-num-tag">01</div>
+            <div class="timeline-node-content">
+              <h3>Discovery & Market Audit</h3>
+              <p>Analyzing competitor layouts, auditing current digital profiles, identifying target keywords, and aligning development bounds.</p>
+            </div>
+          </div>
+
+          <!-- Process Step 2 -->
+          <div class="timeline-node-item fade-up">
+            <div class="timeline-indicator-dot"></div>
+            <div class="timeline-num-tag">02</div>
+            <div class="timeline-node-content">
+              <h3>Structural Blueprinting</h3>
+              <p>Building semantic interface layouts, creating typographic rules, structuring brand guides, and organizing UI templates.</p>
+            </div>
+          </div>
+
+          <!-- Process Step 3 -->
+          <div class="timeline-node-item fade-up">
+            <div class="timeline-indicator-dot"></div>
+            <div class="timeline-num-tag">03</div>
+            <div class="timeline-node-content">
+              <h3>Precision Engineering</h3>
+              <p>Developing responsive interface scripts, structuring backend APIs, optimization of vector media files, and coding layouts.</p>
+            </div>
+          </div>
+
+          <!-- Process Step 4 -->
+          <div class="timeline-node-item fade-up">
+            <div class="timeline-indicator-dot"></div>
+            <div class="timeline-num-tag">04</div>
+            <div class="timeline-node-content">
+              <h3>Rigorous Testing</h3>
+              <p>Validating performance metrics across devices, analyzing cross-browser stability, and optimizing speed performance index scores.</p>
+            </div>
+          </div>
+
+          <!-- Process Step 5 -->
+          <div class="timeline-node-item fade-up">
+            <div class="timeline-indicator-dot"></div>
+            <div class="timeline-num-tag">05</div>
+            <div class="timeline-node-content">
+              <h3>Deployment & SEO Rollout</h3>
+              <p>Configuring secure server transfers, domain name routing setups, search console registration, and technical analytics installations.</p>
+            </div>
+          </div>
+
+          <!-- Process Step 6 -->
+          <div class="timeline-node-item fade-up">
+            <div class="timeline-indicator-dot"></div>
+            <div class="timeline-num-tag">06</div>
+            <div class="timeline-node-content">
+              <h3>Continuous Sprints</h3>
+              <p>Auditing server visual performances, building target page variations, running ad asset optimizations, and scaling systems.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CLIENT TESTIMONIALS SECTION (Premium Swiper Carousel) -->
+    <section class="testimonials-section" id="testimonials">
+      <div class="container">
+        <div class="testimonials-header fade-up">
+          <span class="section-label">CLIENT REVIEWS</span>
+          <h2>Aura of <span>Appreciation</span></h2>
+          <p>Read opinions of marketing leaders and founders who collaborated with us to transform their digital interfaces.</p>
+        </div>
+
+        <div class="swiper testimonials-swiper fade-up">
+          <div class="swiper-wrapper">
+            <!-- Review card 1 -->
+            <div class="swiper-slide">
+              <div class="testimonial-premium-card hover-glow-card">
+                <div class="card-quote-accent"><i class="fa-solid fa-quote-left"></i></div>
+                <div class="star-rating-box">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="testimonial-body">"GRAPHIX WALA redesigned our visual systems and corporate portals with incredible design precision. Our inbound leads grew by 48% inside 90 days of deployment. Their design and development sprint speeds are impressive."</p>
+                <div class="client-profile-row">
+                  <div class="client-placeholder-avatar">DV</div>
+                  <div>
+                    <h4>David Vance</h4>
+                    <span>Managing Director, Vance Goods</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review card 2 -->
+            <div class="swiper-slide">
+              <div class="testimonial-premium-card hover-glow-card">
+                <div class="card-quote-accent"><i class="fa-solid fa-quote-left"></i></div>
+                <div class="star-rating-box">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="testimonial-body">"Working with their frontend architects was a highly collaborative process. They translated our technical workflow guidelines into a high-performance, responsive app design that our users love using."</p>
+                <div class="client-profile-row">
+                  <div class="client-placeholder-avatar">SJ</div>
+                  <div>
+                    <h4>Sarah Jenkins</h4>
+                    <span>VP UX Architecture, Cloudscale</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review card 3 -->
+            <div class="swiper-slide">
+              <div class="testimonial-premium-card hover-glow-card">
+                <div class="card-quote-accent"><i class="fa-solid fa-quote-left"></i></div>
+                <div class="star-rating-box">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="testimonial-body">"The SEO campaigns and structured marking schema implementations they organized have elevated our search result positions. Transparency across weekly performance reports is standard."</p>
+                <div class="client-profile-row">
+                  <div class="client-placeholder-avatar">MT</div>
+                  <div>
+                    <h4>Marcus Thorne</h4>
+                    <span>VP Growth, Nexis Group</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slider Pagination -->
+          <div class="swiper-pagination-testimonials"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FAQ SECTION (Accordion) -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="faq-grid-container">
+          <div class="faq-headline-col fade-up">
+            <span class="section-label">FAQ</span>
+            <h2>Common <span>Inquiries</span></h2>
+            <p>Here are answers to the questions we are asked most frequently regarding our strategic visual production pipelines.</p>
+          </div>
+
+          <div class="faq-accordion-col fade-up">
+            <!-- FAQ Accordion 1 -->
+            <div class="accordion-luxury-item">
+              <button class="accordion-trigger-button" aria-expanded="false">
+                <span>What services does GRAPHIX WALA specialize in?</span>
+                <span class="accordion-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+              </button>
+              <div class="accordion-collapsible-wrapper">
+                <div class="accordion-text-body">
+                  <p>We specialize in full-service digital agency capabilities, specifically high-end Brand Identity Design, Custom Responsive Web Engineering, Targeted Growth Marketing, technical SEO setup, and specialized interactive 2D/3D Motion Design.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Accordion 2 -->
+            <div class="accordion-luxury-item">
+              <button class="accordion-trigger-button" aria-expanded="false">
+                <span>How long does a branding and website build project take?</span>
+                <span class="accordion-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+              </button>
+              <div class="accordion-collapsible-wrapper">
+                <div class="accordion-text-body">
+                  <p>An average brand identity design system takes 2 to 4 weeks. High-performance custom responsive web platform developments require 4 to 8 weeks, depending on structural layout requirements, integration elements, and asset sizes.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Accordion 3 -->
+            <div class="accordion-luxury-item">
+              <button class="accordion-trigger-button" aria-expanded="false">
+                <span>Will my website be search-engine optimized from launch?</span>
+                <span class="accordion-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+              </button>
+              <div class="accordion-collapsible-wrapper">
+                <div class="accordion-text-body">
+                  <p>Yes. Technical search engine optimization configurations (such as visual schema structures, fast loading scripts, page indexing files, and semantic coding hierarchies) are standard components of our development workflow.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Accordion 4 -->
+            <div class="accordion-luxury-item">
+              <button class="accordion-trigger-button" aria-expanded="false">
+                <span>Do you offer post-launch maintenance and optimization?</span>
+                <span class="accordion-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+              </button>
+              <div class="accordion-collapsible-wrapper">
+                <div class="accordion-text-body">
+                  <p>Absolutely. We coordinate customized recurring SLA service support plans covering hosting operations, regular security configurations, interface modifications, visual optimizations, and marketing campaigns.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CTA SECTION (Interactive Glowing Backdrop) -->
+    <section class="cta-section" id="cta">
+      <div class="cta-dynamic-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="cta-banner-card fade-up">
+          <h2 class="giant-headline">ACCELERATE YOUR DIGITAL BRAND</h2>
+          <p>Are you ready to transcend ordinary interface layouts? Partner with us to scale brand positioning with premium aesthetics, customized code configurations, and conversion strategies.</p>
+          <div class="cta-buttons-row">
+            <a href="contact.html" class="btn btn--primary magnetic-element">Get A Free Quote</a>
+            <a href="portfolio.html" class="btn btn--secondary magnetic-element">Explore Portfolio</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 8. PREMIUM FOOTER SECTION -->
+  <footer class="premium-footer">
+    <div class="container">
+      <div class="footer-layout-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="logo">
+            <img src="assets/logo.svg" alt="Graphix Wala Logo">
+          </a>
+          <p>Bespoke digital design architectures, responsive visual systems, and campaign configurations designed for ambitious corporate expansion.</p>
+          <div class="footer-social-row">
+            <a href="https://wa.me/919064089364" target="_blank" rel="noreferrer" aria-label="WhatsApp" class="magnetic-element"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" aria-label="Instagram" class="magnetic-element"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn" class="magnetic-element"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter" class="magnetic-element"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-navigation-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Our Studio</a></li>
+            <li><a href="services.html">Services & Solutions</a></li>
+            <li><a href="portfolio.html">Creative Portfolio</a></li>
+            <li><a href="pricing.html">Service Pricing</a></li>
+            <li><a href="contact.html">Contact Details</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-services-col">
+          <h3>Core Expertise</h3>
+          <ul class="footer-links-list">
+            <li><a href="services.html">Brand Identity Systems</a></li>
+            <li><a href="services.html">Custom Interface Dev</a></li>
+            <li><a href="services.html">SEO Optimization Sprints</a></li>
+            <li><a href="services.html">Digital Ad Management</a></li>
+            <li><a href="services.html">Motion Advertisement</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter-col">
+          <h3>Design Dispatch</h3>
+          <p>Subscribe to our newsletter containing contemporary design rules, optimization tips, and tools.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault();">
+            <input type="email" placeholder="Corporate email address" required aria-label="Email address for newsletter subscription">
+            <button type="submit" class="newsletter-submit-btn magnetic-element" aria-label="Submit Newsletter form">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom-copyright">
         <span>© 2026 GRAPHIX WALA. All rights reserved.</span>
-        <span>Design • Brand • Inspire</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">SLA Guidelines</a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <div class="floating-actions">
-    <a class="whatsapp-btn" href="https://wa.me/919064089364" target="_blank" rel="noreferrer" aria-label="WhatsApp"><i
-        class="fa-brands fa-whatsapp"></i></a>
-    <a class="call-btn" href="tel:+919064089364" aria-label="Call Us"><i class="fa-solid fa-phone"></i></a>
+  <!-- PORTFOLIO LIGHTBOX MODAL -->
+  <div class="portfolio-lightbox-modal" id="portfolioLightbox" aria-hidden="true" role="dialog">
+    <div class="lightbox-overlay-bg"></div>
+    <div class="lightbox-dialog-box">
+      <button class="lightbox-close-button" id="closeLightbox" aria-label="Close Lightbox">✕</button>
+      <div class="lightbox-media-box">
+        <img src="" alt="" id="lightboxMainImage">
+      </div>
+      <div class="lightbox-info-box">
+        <span class="meta-tag" id="lightboxMetaTag">Branding</span>
+        <h3 id="lightboxTitle">Project Title</h3>
+        <p id="lightboxDescription">Detailed project descriptions and visual parameters.</p>
+      </div>
+    </div>
   </div>
-  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- FLOATING CALL TO ACTIONS -->
+  <div class="floating-actions">
+    <a class="whatsapp-btn magnetic-element" href="https://wa.me/919064089364" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a class="call-btn magnetic-element" href="tel:+919064089364" aria-label="Call Us">
+      <i class="fa-solid fa-phone"></i>
+    </a>
+  </div>
+
+  <button id="backToTop" class="back-to-top magnetic-element" aria-label="Back to top">↑</button>
+
+  <!-- SCRIPTS -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 

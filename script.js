@@ -1,341 +1,399 @@
-const loader = document.querySelector('.loader');
-const progressBar = document.querySelector('.scroll-progress');
-const backToTop = document.getElementById('backToTop');
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('.nav-links');
-const revealItems = document.querySelectorAll('.reveal');
-const counters = document.querySelectorAll('[data-count]');
-const faqItems = document.querySelectorAll('.faq-item');
-const filterButtons = document.querySelectorAll('.filter-btn');
-const portfolioCards = document.querySelectorAll('.portfolio-card');
-const modal = document.getElementById('portfolioModal');
-const modalImage = document.getElementById('modalImage');
-const modalTitle = document.getElementById('modalTitle');
-const modalText = document.getElementById('modalText');
-const header = document.querySelector('.site-header');
-const heroSection = document.getElementById('hero');
-const heroWords = document.querySelectorAll('.hero__word');
-const heroDescription = document.querySelector('.hero__description');
-const heroActions = document.querySelector('.hero__actions');
-const heroRating = document.querySelector('.hero__rating');
-const heroVisual = document.querySelector('.hero__visual-card');
-const heroImage = heroVisual ? heroVisual.querySelector('img') : null;
-const parallelVisual = document.querySelector('[data-parallax]');
-const marquee = document.querySelector('[data-marquee]');
-
-if (loader) {
-  window.addEventListener('load', () => {
-    setTimeout(() => loader.classList.add('hidden'), 650);
-    document.body.classList.remove('loading');
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. PAGE LOADER INITIALIZATION
+  window.addEventListener("load", () => {
+    const loader = document.querySelector(".loader");
+    if (loader) {
+      loader.classList.add("hidden");
+    }
+    document.body.classList.remove("loading");
+    
+    // Fire initial entry animations on page load complete
+    initializePageRevealAnimations();
   });
-}
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.body.classList.remove('loading');
+  // Fallback to clear page load blocks
+  setTimeout(() => {
+    const loader = document.querySelector(".loader");
+    if (loader && !loader.classList.contains("hidden")) {
+      loader.classList.add("hidden");
+      document.body.classList.remove("loading");
+      initializePageRevealAnimations();
+    }
+  }, 2000);
 
-  if (progressBar) {
-    const updateProgress = () => {
-      const scrollTop = window.scrollY;
-      const height = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = height > 0 ? (scrollTop / height) * 100 : 0;
-      progressBar.style.width = `${progress}%`;
-      if (backToTop) {
-        backToTop.style.display = scrollTop > 480 ? 'grid' : 'none';
+  // 2. ACTIVE SCROLL PROGRESS TRACKER
+  window.addEventListener("scroll", () => {
+    const progressBar = document.querySelector(".scroll-progress");
+    if (progressBar) {
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolledRatio = (window.scrollY / scrollHeight) * 100;
+      progressBar.style.width = `${scrolledRatio}%`;
+    }
+
+    // Header scrolled transition setup
+    const siteHeader = document.querySelector(".site-header");
+    if (siteHeader) {
+      if (window.scrollY > 40) {
+        siteHeader.classList.add("scrolled");
+      } else {
+        siteHeader.classList.remove("scrolled");
       }
-    };
-    updateProgress();
-    window.addEventListener('scroll', updateProgress, { passive: true });
+    }
+  });
+
+  // 3. RESPONSIVE MOBILE MENU
+  const navMenuToggle = document.querySelector(".nav-toggle");
+  const navLinksMenu = document.querySelector(".nav-links");
+  if (navMenuToggle && navLinksMenu) {
+    navMenuToggle.addEventListener("click", () => {
+      navLinksMenu.classList.toggle("open");
+      navMenuToggle.textContent = navLinksMenu.classList.contains("open") ? "✕" : "☰";
+    });
+
+    // Close options on link clicks
+    navLinksMenu.querySelectorAll("a").forEach(option => {
+      option.addEventListener("click", () => {
+        navLinksMenu.classList.remove("open");
+        navMenuToggle.textContent = "☰";
+      });
+    });
   }
 
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-    navLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => navLinks.classList.remove('open')));
+  // 4. CUSTOM MOUSE FOLLOWER
+  const cursorDot = document.querySelector(".custom-cursor-dot");
+  const cursorRing = document.querySelector(".custom-cursor-ring");
+
+  if (cursorDot && cursorRing && window.innerWidth > 768) {
+    document.addEventListener("mousemove", (event) => {
+      gsap.to(cursorDot, {
+        x: event.clientX,
+        y: event.clientY,
+        duration: 0.05,
+        ease: "power2.out"
+      });
+      
+      gsap.to(cursorRing, {
+        x: event.clientX,
+        y: event.clientY,
+        duration: 0.25,
+        ease: "power2.out"
+      });
+    });
+
+    // Cursor scaling states
+    const interactiveSelectors = "a, button, .filter-btn, .accordion-trigger-button, .swiper-button-prev-custom, .swiper-button-next-custom";
+    document.querySelectorAll(interactiveSelectors).forEach((element) => {
+      element.addEventListener("mouseenter", () => {
+        cursorRing.classList.add("hovered");
+      });
+      element.addEventListener("mouseleave", () => {
+        cursorRing.classList.remove("hovered");
+      });
+    });
   }
 
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // 5. MAGNETIC BUTTON SYSTEM
+  const magneticElements = document.querySelectorAll(".magnetic-element");
+  if (magneticElements.length > 0 && window.innerWidth > 768) {
+    magneticElements.forEach(elem => {
+      elem.addEventListener("mousemove", (event) => {
+        const boundary = elem.getBoundingClientRect();
+        const offsetX = event.clientX - boundary.left - (boundary.width / 2);
+        const offsetY = event.clientY - boundary.top - (boundary.height / 2);
 
-  if (window.gsap && window.ScrollTrigger) {
-    window.gsap.registerPlugin(window.ScrollTrigger);
+        gsap.to(elem, {
+          x: offsetX * 0.35,
+          y: offsetY * 0.35,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+
+      elem.addEventListener("mouseleave", () => {
+        gsap.to(elem, {
+          x: 0,
+          y: 0,
+          duration: 0.6,
+          ease: "elastic.out(1.1, 0.4)"
+        });
+      });
+    });
   }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        if (entry.target.classList.contains('counter')) {
-          const target = Number(entry.target.dataset.count || 0);
-          let current = 0;
-          const duration = 1200;
-          const startTime = performance.now();
-          const step = (timestamp) => {
-            const progress = Math.min((timestamp - startTime) / duration, 1);
-            current = Math.floor(progress * target);
-            entry.target.textContent = `${current}${entry.target.dataset.suffix || ''}`;
-            if (progress < 1) requestAnimationFrame(step);
-          };
-          requestAnimationFrame(step);
+  // 6. SWIPER.JS IMPLEMENTATIONS
+  if (typeof Swiper !== "undefined") {
+    // 1. Services Swiper Slider
+    const servicesSwiper = new Swiper(".services-swiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      slidesPerGroup: 1,
+      grabCursor: true,
+      pagination: {
+        el: ".swiper-pagination-custom",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next-custom",
+        prevEl: ".swiper-button-prev-custom",
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          slidesPerGroup: 1,
+        },
+        1024: {
+          slidesPerView: 3,
+          slidesPerGroup: 1,
         }
       }
     });
-  }, { threshold: 0.2 });
 
-  revealItems.forEach((item) => observer.observe(item));
-  counters.forEach((counter) => observer.observe(counter));
-
-  if (!prefersReducedMotion && window.gsap) {
-    window.gsap.set(heroWords, { y: 24, opacity: 0 });
-    window.gsap.set([heroDescription, heroActions, heroRating, heroVisual], { y: 24, opacity: 0 });
-
-    const heroTimeline = window.gsap.timeline({ defaults: { ease: 'power3.out' } });
-    heroTimeline
-      .from(header || [], { y: -60, opacity: 0, duration: 0.7 })
-      .to(heroWords, { y: 0, opacity: 1, duration: 0.75, stagger: 0.12 }, '-=0.45')
-      .to(heroDescription, { y: 0, opacity: 1, duration: 0.65 }, '-=0.35')
-      .to(heroActions, { y: 0, opacity: 1, duration: 0.6 }, '-=0.3')
-      .to(heroRating, { y: 0, opacity: 1, duration: 0.55 }, '-=0.25')
-      .to(heroVisual, { y: 0, opacity: 1, duration: 0.8, scale: 1 }, '-=0.2');
-
-    if (heroImage) {
-      window.gsap.to(heroImage, { y: -10, duration: 2.8, repeat: -1, yoyo: true, ease: 'sine.inOut' });
-    }
-
-    if (parallelVisual && heroSection) {
-      const resetParallax = () => {
-        window.gsap.to(parallelVisual, { x: 0, y: 0, rotateY: 0, rotateX: 0, duration: 0.75, ease: 'power2.out' });
-      };
-
-      heroSection.addEventListener('mousemove', (event) => {
-        const bounds = heroSection.getBoundingClientRect();
-        const x = (event.clientX - bounds.left) / bounds.width - 0.5;
-        const y = (event.clientY - bounds.top) / bounds.height - 0.5;
-        window.gsap.to(parallelVisual, { x: x * 10, y: y * 10, duration: 0.8, ease: 'power2.out' });
-      });
-
-      heroSection.addEventListener('mouseleave', resetParallax);
-    }
-
-    let lastScrollY = window.scrollY;
-    let ticking = false;
-
-    const updateHeaderVisibility = () => {
-      if (!header) {
-        ticking = false;
-        return;
-      }
-      if (window.scrollY > 90 && window.scrollY > lastScrollY) {
-        header.classList.add('is-hidden');
-      } else {
-        header.classList.remove('is-hidden');
-      }
-      lastScrollY = window.scrollY;
-      ticking = false;
-    };
-
-    const onScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(updateHeaderVisibility);
-        ticking = true;
-      }
-    };
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-    updateHeaderVisibility();
-
-    window.gsap.utils.toArray('.reveal').forEach((item) => {
-      window.gsap.fromTo(item, { opacity: 0, y: 24 }, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: item,
-          start: 'top 85%',
-          once: true,
-          toggleClass: 'visible',
+    // 2. Testimonials Swiper Carousel
+    const testimonialsSwiper = new Swiper(".testimonials-swiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      grabCursor: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination-testimonials",
+        clickable: true,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
         },
+        1024: {
+          slidesPerView: 3,
+        }
+      }
+    });
+  }
+
+  // 7. COUNTER NUMBERS PROGRESSION SPRINT
+  const initiateCounterAnimations = () => {
+    const counterElements = document.querySelectorAll(".counter-num");
+    counterElements.forEach(counter => {
+      const targetVal = parseInt(counter.getAttribute("data-val"), 10);
+      const animationObj = { value: 0 };
+
+      gsap.to(animationObj, {
+        value: targetVal,
+        duration: 2.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: counter,
+          start: "top 85%"
+        },
+        onUpdate: () => {
+          counter.textContent = Math.floor(animationObj.value);
+        }
+      });
+    });
+  };
+
+  // 8. ASYMMETRICAL PORTFOLIO FILTER SYSTEM
+  const portfolioGridCards = document.querySelectorAll(".portfolio-show-card");
+  const portfolioFilterButtons = document.querySelectorAll(".filter-btn");
+
+  portfolioFilterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      portfolioFilterButtons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      const selectedValue = button.getAttribute("data-filter");
+
+      portfolioGridCards.forEach(card => {
+        const itemCategory = card.getAttribute("data-category");
+
+        if (selectedValue === "all" || itemCategory === selectedValue) {
+          card.style.display = "block";
+          gsap.fromTo(card, 
+            { opacity: 0, scale: 0.94, y: 15 },
+            { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "power2.out" }
+          );
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+
+  // 9. PORTFOLIO LIGHTBOX MODAL
+  const lightboxModal = document.getElementById("portfolioLightbox");
+  const closeLightboxBtn = document.getElementById("closeLightbox");
+  const lightboxImage = document.getElementById("lightboxMainImage");
+  const lightboxMeta = document.getElementById("lightboxMetaTag");
+  const lightboxTitle = document.getElementById("lightboxTitle");
+  const lightboxDesc = document.getElementById("lightboxDescription");
+
+  if (lightboxModal && closeLightboxBtn) {
+    portfolioGridCards.forEach(card => {
+      card.addEventListener("click", () => {
+        const imageSrc = card.getAttribute("data-img");
+        const categoryText = card.querySelector(".meta-tag").textContent;
+        const titleText = card.querySelector("h3").textContent;
+        const descriptionText = card.querySelector("p").textContent;
+
+        lightboxImage.setAttribute("src", imageSrc);
+        lightboxImage.setAttribute("alt", titleText);
+        lightboxMeta.textContent = categoryText;
+        lightboxTitle.textContent = titleText;
+        lightboxDesc.textContent = descriptionText;
+
+        lightboxModal.classList.add("active");
+        lightboxModal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden"; // Block page scroll when modal is active
       });
     });
 
-    // No marquee: trusted brands are static in the reference layout
-  } else {
-    revealItems.forEach((item) => item.classList.add('visible'));
+    const closeLightboxSequence = () => {
+      lightboxModal.classList.remove("active");
+      lightboxModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = ""; // Restore scrolling behavior
+    };
+
+    closeLightboxBtn.addEventListener("click", closeLightboxSequence);
+    lightboxModal.querySelector(".lightbox-overlay-bg").addEventListener("click", closeLightboxSequence);
+
+    // Escape Key bind closes modal
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && lightboxModal.classList.contains("active")) {
+        closeLightboxSequence();
+      }
+    });
   }
 
-  faqItems.forEach((item) => {
-    item.querySelector('.faq-question').addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
-      faqItems.forEach((faq) => faq.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
-    });
+  // 10. TIMELINE ACTIVE PATH PROGRESSION
+  const updateTimelineScrollFill = () => {
+    const timelineContainer = document.querySelector(".timeline-interactive-container");
+    const timelineFillLine = document.querySelector(".timeline-scroll-fill");
+    const timelineSteps = document.querySelectorAll(".timeline-node-item");
+
+    if (timelineContainer && timelineFillLine) {
+      const containerRect = timelineContainer.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+
+      // Calculate path height parameters based on trigger elements
+      const progressTriggerPoint = viewportHeight / 2;
+      const scrollInContainer = progressTriggerPoint - containerRect.top;
+      const maxScrollHeight = containerRect.height;
+
+      let progressPercentage = (scrollInContainer / maxScrollHeight) * 100;
+      progressPercentage = Math.max(0, Math.min(100, progressPercentage));
+
+      timelineFillLine.style.height = `${progressPercentage}%`;
+
+      // Illuminate step metrics as trigger limits clear
+      timelineSteps.forEach(step => {
+        const stepBound = step.getBoundingClientRect();
+        if (stepBound.top < progressTriggerPoint) {
+          step.classList.add("active-step");
+        } else {
+          step.classList.remove("active-step");
+        }
+      });
+    }
+  };
+
+  window.addEventListener("scroll", updateTimelineScrollFill);
+
+  // 11. ACCORDION DETAILED TOGGLE SPRINT
+  const faqAccordionItems = document.querySelectorAll(".accordion-luxury-item");
+  faqAccordionItems.forEach(item => {
+    const trigger = item.querySelector(".accordion-trigger-button");
+    const collapsible = item.querySelector(".accordion-collapsible-wrapper");
+
+    if (trigger && collapsible) {
+      trigger.addEventListener("click", () => {
+        const activeState = item.classList.contains("active");
+
+        // Collapse open elements
+        faqAccordionItems.forEach(faqItem => {
+          faqItem.classList.remove("active");
+          faqItem.querySelector(".accordion-trigger-button").setAttribute("aria-expanded", "false");
+          faqItem.querySelector(".accordion-collapsible-wrapper").style.maxHeight = null;
+        });
+
+        if (!activeState) {
+          item.classList.add("active");
+          trigger.setAttribute("aria-expanded", "true");
+          collapsible.style.maxHeight = collapsible.scrollHeight + "px";
+        }
+      });
+    }
   });
 
-  filterButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      filterButtons.forEach((btn) => btn.classList.remove('active'));
-      button.classList.add('active');
-      const filter = button.dataset.filter || 'all';
-      portfolioCards.forEach((card) => {
-        const match = filter === 'all' || card.dataset.category === filter;
-        card.style.display = match ? 'block' : 'none';
+  // 12. BACK TO TOP BUTTON
+  const backToTopBtn = document.getElementById("backToTop");
+  if (backToTopBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    });
+
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
       });
     });
-  });
-
-  portfolioCards.forEach((card) => {
-    card.addEventListener('click', () => {
-      const image = card.querySelector('img').src;
-      const title = card.querySelector('h3').textContent;
-      const text = card.querySelector('p').textContent;
-      if (modalImage) modalImage.src = image;
-      if (modalTitle) modalTitle.textContent = title;
-      if (modalText) modalText.textContent = text;
-      if (modal) modal.classList.add('open');
-    });
-  });
-
-  if (document.querySelector('.modal-close') && modal) {
-    document.querySelector('.modal-close').addEventListener('click', () => modal.classList.remove('open'));
-    modal.addEventListener('click', (event) => {
-      if (event.target === modal) modal.classList.remove('open');
-    });
   }
 
-  if (backToTop) {
-    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-  }
-});
-/* ==========================================================
-   GRAPHIX WALA HERO PREMIUM ANIMATION
-========================================================== */
+  // 13. GSAP TRIGGER INTERSECTION REVEALS
+  const initializePageRevealAnimations = () => {
+    if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+      gsap.registerPlugin(ScrollTrigger);
 
-document.addEventListener("DOMContentLoaded", () => {
+      // Hero content reveals
+      gsap.from(".hero__content .hero__word", {
+        opacity: 0,
+        y: 40,
+        duration: 1.2,
+        ease: "power4.out"
+      });
 
-    if (!window.gsap) return;
+      gsap.from(".hero__description", {
+        opacity: 0,
+        y: 20,
+        duration: 1.2,
+        delay: 0.2,
+        ease: "power4.out"
+      });
 
-    gsap.registerPlugin(ScrollTrigger);
+      gsap.from(".hero__actions", {
+        opacity: 0,
+        y: 20,
+        duration: 1.2,
+        delay: 0.4,
+        ease: "power4.out"
+      });
 
-    gsap.from(".hero__badge",{
-        y:30,
-        opacity:0,
-        duration:.8,
-        ease:"power3.out"
-    });
+      // Lazy scroll fade up reveals
+      const fadeElements = document.querySelectorAll(".fade-up");
+      fadeElements.forEach(elem => {
+        gsap.from(elem, {
+          scrollTrigger: {
+            trigger: elem,
+            start: "top 85%",
+            toggleActions: "play none none none"
+          },
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          ease: "power3.out"
+        });
+      });
 
-    gsap.from(".hero__title .hero__word",{
-        y:80,
-        opacity:0,
-        stagger:.12,
-        duration:1,
-        ease:"power4.out",
-        delay:.2
-    });
-
-    gsap.from(".hero__underline",{
-        width:0,
-        duration:.8,
-        delay:.8
-    });
-
-    gsap.from(".hero__description",{
-        y:30,
-        opacity:0,
-        duration:.8,
-        delay:1
-    });
-
-    gsap.from(".hero__actions",{
-        y:30,
-        opacity:0,
-        duration:.8,
-        delay:1.2
-    });
-
-    gsap.from(".hero__rating",{
-        y:30,
-        opacity:0,
-        duration:.8,
-        delay:1.4
-    });
-
-    gsap.from(".hero__graphic",{
-        x:80,
-        opacity:0,
-        scale:.95,
-        duration:1.2,
-        ease:"power4.out",
-        delay:.3
-    });
-
-    gsap.to(".hero__graphic img",{
-        y:-15,
-        repeat:-1,
-        yoyo:true,
-        duration:3,
-        ease:"sine.inOut"
-    });
-
-});
-
-const hero=document.querySelector(".hero");
-
-const visual=document.querySelector(".hero__visual-card");
-
-if(hero && visual){
-
-hero.addEventListener("mousemove",(e)=>{
-
-const rect=hero.getBoundingClientRect();
-
-const x=(e.clientX-rect.left)/rect.width-.5;
-
-const y=(e.clientY-rect.top)/rect.height-.5;
-
-gsap.to(visual,{
-
-  x: x*15,
-  y: y*15,
-  duration: .8,
-  ease: "power3.out"
-
-});
-
-});
-
-hero.addEventListener("mouseleave",()=>{
-
-gsap.to(visual,{
-
-  x:0,
-  y:0,
-  duration:.8
-
-});
-
-});
-
-}
-
-
-/* ==========================================
-Trusted Brands Animation
-========================================== */
-
-gsap.from(".trusted-brands__card",{
-
-opacity:0,
-
-y:40,
-
-stagger:.08,
-
-duration:.8,
-
-scrollTrigger:{
-
-trigger:".trusted-brands",
-
-start:"top 80%"
-
-}
-
+      // Counters initializations trigger
+      initiateCounterAnimations();
+    }
+  };
 });
