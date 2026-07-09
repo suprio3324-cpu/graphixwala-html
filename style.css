@@ -583,12 +583,12 @@ body.loading {
   display: block;
   border-radius: 0;
   box-shadow: none;
-  animation: none;
+  animation: gw-float 6s ease-in-out infinite;
 }
 
 @keyframes gw-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
 }
 
 /* PRESERVED TRUSTED BRANDS */
