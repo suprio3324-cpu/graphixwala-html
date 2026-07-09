@@ -3,49 +3,63 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="msvalidate.01" content="C9480E69BB93C0AC17DC12603C824A4B" />
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YKYEVLR7DL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-YKYEVLR7DL');
-  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GRAPHIX WALA</title>
-  <meta name="description"
-    content="GRAPHIX WALA is a premium creative design and digital marketing agency crafting bold brands, websites, and campaigns for modern businesses." />
-  <meta name="keywords"
-    content="graphic design agency, branding agency, web development, digital marketing, seo, ui ux design" />
+  
+  <!-- SEO মেটা ট্যাগ এবং কিওয়ার্ড অপ্টিমাইজেশন (Kolkata & West Bengal Base) -->
+  <title>GRAPHIX WALA | Kolkata's No. 1 Design-Based Marketing Agency</title>
+  <meta name="description" content="GRAPHIX WALA is Kolkata's No. 1 design-based marketing and branding agency. We offer a complete one-step solution for custom graphic systems, high-speed website development, and organic digital scaling campaigns across West Bengal." />
+  <meta name="keywords" content="best design based marketing agency kolkata, graphic design branding west bengal, digital marketing agency kolkata, custom web engineering bengal" />
   <meta name="theme-color" content="#ffcb06" />
-  <meta property="og:title" content="GRAPHIX WALA" />
-  <meta property="og:description"
-    content="Modern branding, website design, SEO, and digital marketing for ambitious brands." />
+  <link rel="canonical" href="https://graphixwala.in/" />
+  
+  <!-- ওপেন গ্রাফ মেটা ট্যাগ (Facebook & Social SEO) -->
+  <meta property="og:title" content="GRAPHIX WALA | Kolkata's No. 1 Design-Based Marketing Agency" />
+  <meta property="og:description" content="West Bengal's best design-led digital agency. Explore our creative brand systems, fast custom websites, and ROI-driven marketing campaigns." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://graphixwala.in/" />
-  <meta property="og:image" content="https://graphixwala.in/assets/hero-illustration.svg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="GRAPHIX WALA" />
-  <meta name="twitter:description" content="Premium design and marketing agency for high-growth brands." />
-  <link rel="canonical" href="https://graphixwala.in/" />
+  <meta property="og:image" content="https://graphixwala.in/assets/hero-image.webp" />
+  
+  <!-- গুগল লোকাল এসইও স্কিমা মার্কআপ (JSON-LD Schema) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "GRAPHIX WALA",
+    "image": "https://graphixwala.in/assets/logo.svg",
+    "description": "Kolkata's No. 1 design-based branding and marketing agency, providing a complete one-step creative growth system in West Bengal.",
+    "url": "https://graphixwala.in/",
+    "telephone": "+919064089364",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kolkata",
+      "addressRegion": "West Bengal",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "22.5726",
+      "longitude": "88.3639"
+    }
+  }
+  </script>
+
   <link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 
 <body class="loading">
-  <!-- Noise texture overlay across the viewport -->
+  <!-- ব্যাকগ্রাউন্ড থ্রিডি ফিল টেক্সচার এবং ওর্বস -->
   <div class="noise-overlay" aria-hidden="true"></div>
+  <div class="deep-glow-orb deep-glow-orb--top" aria-hidden="true"></div>
+  <div class="deep-glow-orb deep-glow-orb--bottom" aria-hidden="true"></div>
 
-  <!-- Custom mouse follower system -->
+  <!-- কাস্টম মাউস কার্সার -->
   <div class="custom-cursor-dot" aria-hidden="true"></div>
   <div class="custom-cursor-ring" aria-hidden="true"></div>
 
@@ -54,6 +68,7 @@
   </div>
   <div class="scroll-progress"></div>
   
+  <!-- হেডার এবং ন্যাভিগেশন -->
   <header class="site-header">
     <div class="container navbar">
       <a href="index.html" class="logo">
@@ -63,10 +78,11 @@
       <nav class="nav-links">
         <a class="active" href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="blog.html">Blog</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#team">Our Team</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#pricing">Pricing</a>
         <a href="contact.html">Contact</a>
         <a class="btn magnetic-element" href="contact.html">Get Quote</a>
       </nav>
@@ -74,7 +90,7 @@
   </header>
 
   <main>
-    <!-- HERO SECTION -->
+    <!-- হিরো সেকশন -->
     <section class="hero" id="hero">
       <div class="hero__background">
         <div class="hero__orb hero__orb--one"></div>
@@ -95,8 +111,7 @@
           </h1>
 
           <p class="hero__description">
-            GRAPHIX WALA is a premium branding, web design and digital
-            marketing agency helping ambitious businesses grow online.
+            GRAPHIX WALA is Kolkata's No. 1 design-based marketing and branding agency. We build powerful visual systems, custom high-speed websites, and targeted marketing campaigns that help local businesses grow online.
           </p>
 
           <div class="hero__actions">
@@ -111,26 +126,18 @@
 
         <div class="hero__visual">
           <div class="hero__graphic parallax-layer" data-speed="-1">
-            <img src="assets/hero-image.webp" alt="Hero Image" class="image-reveal">
+            <img src="assets/hero-image.webp" alt="GRAPHIX WALA - Best Design-Based Marketing Agency in Kolkata" class="image-reveal">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TRUSTED BRANDS SECTION -->
+    <!-- ট্রাস্টেড ব্র্যান্ডস মার্কি -->
     <section class="trusted" aria-labelledby="trusted-title">
       <div class="container">
         <h2 id="trusted-title" class="trusted__title">TRUSTED BY <span>100+</span> BRANDS</h2>
         <div class="trusted__marquee" aria-hidden="true">
           <div class="trusted__track trusted__track--left">
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-1.svg" alt="Brand placeholder 1" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-2.svg" alt="Brand placeholder 2" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-3.svg" alt="Brand placeholder 3" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-4.svg" alt="Brand placeholder 4" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-5.svg" alt="Brand placeholder 5" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-6.svg" alt="Brand placeholder 6" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-7.svg" alt="Brand placeholder 7" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-8.svg" alt="Brand placeholder 8" /></div>
             <div class="trusted__card"><img class="trusted__logo" src="assets/logo-1.svg" alt="Brand placeholder 1" /></div>
             <div class="trusted__card"><img class="trusted__logo" src="assets/logo-2.svg" alt="Brand placeholder 2" /></div>
             <div class="trusted__card"><img class="trusted__logo" src="assets/logo-3.svg" alt="Brand placeholder 3" /></div>
@@ -151,189 +158,236 @@
             <div class="trusted__card"><img class="trusted__logo" src="assets/logo-01.svg" alt="Brand placeholder 1" /></div>
             <div class="trusted__card"><img class="trusted__logo" src="assets/logo-06.svg" alt="Brand placeholder 6" /></div>
             <div class="trusted__card"><img class="trusted__logo" src="assets/logo-05.svg" alt="Brand placeholder 5" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-04.svg" alt="Brand placeholder 4" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-03.svg" alt="Brand placeholder 3" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-08.svg" alt="Brand placeholder 8" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-02.svg" alt="Brand placeholder 2" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-07.svg" alt="Brand placeholder 7" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-01.svg" alt="Brand placeholder 1" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-06.svg" alt="Brand placeholder 6" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-05.svg" alt="Brand placeholder 5" /></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- WHAT WE DO & 1. PREMIUM SERVICES SLIDER SECTION -->
+    <!-- ক্রিয়েটিভ জার্নি এবং পরিচিতি সেকশন -->
     <section class="gw-whatwedo" id="what-we-do">
       <div class="container">
         <div class="gw-section-header">
-          <span class="gw-subtitle">WHAT WE DO</span>
+          <span class="gw-subtitle">KOLKATA'S NO. 1 DESIGN-BASED MARKETING AGENCY</span>
           <h2 class="text-reveal">
             Design.
             <span>Brand.</span>
-            Inspire.
+            Scale.
           </h2>
           <p class="fade-up">
-            We build unforgettable brands through creative design,
-            website development, digital marketing and content
-            that helps businesses grow faster.
+            We build unforgettable brands across West Bengal through creative design,
+            high-speed website development, and targeted digital marketing campaigns
+            that help businesses grow faster.
           </p>
         </div>
 
-        <!-- Services Swiper Grid Layout -->
-        <div class="swiper services-swiper">
-          <div class="swiper-wrapper">
-            <!-- Service Slide 1 -->
-            <div class="swiper-slide">
-              <div class="service-card-premium">
-                <div class="card-glow-element"></div>
-                <div class="card-icon-wrap">
-                  <i class="fa-solid fa-bezier-curve"></i>
+        <!-- টাইমলাইন (১ম ইমেজের অনুরূপ নিখুঁত স্ট্রাকচার) -->
+        <div class="creative-journey-container fade-up" id="process">
+          <div class="timeline-header-block text-center">
+            <span class="section-label">OUR PROCESS</span>
+            <h3>THE <span class="text-primary">CREATIVE JOURNEY</span></h3>
+          </div>
+          
+          <div class="journey-vertical-timeline">
+            <!-- সেন্ট্রাল স্ক্রল-ফিল লাইন ট্র্যাকার -->
+            <div class="timeline-center-track">
+              <div class="timeline-center-fill"></div>
+            </div>
+
+            <!-- রো ১: ব্র্যান্ড ডিসকভারি -->
+            <div class="journey-row">
+              <div class="journey-col journey-col--card">
+                <div class="journey-glass-card border-glow-blue">
+                  <div class="card-icon-header">
+                    <i class="fa-solid fa-magnifying-glass font-icon-primary"></i>
+                  </div>
+                  <span class="journey-badge blue-badge">DISCOVERY</span>
+                  <h4>Brand Discovery</h4>
+                  <p>We research your audience, analyze competitors in Kolkata, and construct a robust brand foundation that holds ground.</p>
                 </div>
-                <h3>Brand Identity</h3>
-                <p>Establishing corporate design manuals, luxury visual style rules, custom logos, and dynamic guidelines tailored to conversion.</p>
-                <a href="services.html" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+              <div class="journey-col journey-col--node">
+                <div class="timeline-node-circle active-node">01</div>
+              </div>
+              <div class="journey-col journey-col--visual">
+                <div class="timeline-visual-holder">
+                  <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Brand Discovery Process" class="timeline-3d-visual">
+                </div>
               </div>
             </div>
-            <!-- Service Slide 2 -->
-            <div class="swiper-slide">
-              <div class="service-card-premium">
-                <div class="card-glow-element"></div>
-                <div class="card-icon-wrap">
-                  <i class="fa-solid fa-code"></i>
+
+            <!-- রো ২: কনসেপ্ট ডেভেলপমেন্ট -->
+            <div class="journey-row">
+              <div class="journey-col journey-col--card">
+                <div class="journey-glass-card border-glow-blue">
+                  <div class="card-icon-header">
+                    <i class="fa-regular fa-lightbulb font-icon-primary"></i>
+                  </div>
+                  <span class="journey-badge blue-badge">CONCEPT</span>
+                  <h4>Concept Development</h4>
+                  <p>Our graphic designers sketch custom visual strategies, translating core insights into bold brand geometries.</p>
                 </div>
-                <h3>Web Engineering</h3>
-                <p>Deploying performance-optimized custom applications, lightning-fast static pages, and layouts that prioritize responsive accessibility.</p>
-                <a href="services.html" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+              <div class="journey-col journey-col--node">
+                <div class="timeline-node-circle">02</div>
+              </div>
+              <div class="journey-col journey-col--visual">
+                <div class="timeline-visual-holder">
+                  <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=600&q=80" alt="Concept Design Layout" class="timeline-3d-visual">
+                </div>
               </div>
             </div>
-            <!-- Service Slide 3 -->
-            <div class="swiper-slide">
-              <div class="service-card-premium">
-                <div class="card-glow-element"></div>
-                <div class="card-icon-wrap">
-                  <i class="fa-solid fa-chart-line"></i>
+
+            <!-- রো ৩: ভিজ্যুয়াল সিস্টেম -->
+            <div class="journey-row">
+              <div class="journey-col journey-col--card">
+                <div class="journey-glass-card border-glow-blue">
+                  <div class="card-icon-header">
+                    <i class="fa-solid fa-crosshairs font-icon-primary"></i>
+                  </div>
+                  <span class="journey-badge blue-badge">SYSTEM</span>
+                  <h4>Visual Identity System</h4>
+                  <p>We expand the chosen concept into a complete visual manual, containing color rules and assets tailored for marketing.</p>
                 </div>
-                <h3>Growth Marketing</h3>
-                <p>Constructing multi-channel targeted ad pipelines, organic content calendars, analytics profiles, and search index strategies.</p>
-                <a href="services.html" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+              <div class="journey-col journey-col--node">
+                <div class="timeline-node-circle">03</div>
+              </div>
+              <div class="journey-col journey-col--visual">
+                <div class="timeline-visual-holder">
+                  <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="Branding System Elements" class="timeline-3d-visual">
+                </div>
               </div>
             </div>
-            <!-- Service Slide 4 -->
-            <div class="swiper-slide">
-              <div class="service-card-premium">
-                <div class="card-glow-element"></div>
-                <div class="card-icon-wrap">
-                  <i class="fa-solid fa-bullseye"></i>
+
+            <!-- রো ৪: ডেলিভারি ও রিলিজ -->
+            <div class="journey-row">
+              <div class="journey-col journey-col--card">
+                <div class="journey-glass-card border-glow-blue">
+                  <div class="card-icon-header">
+                    <i class="fa-solid fa-box font-icon-primary"></i>
+                  </div>
+                  <span class="journey-badge blue-badge">DELIVERY</span>
+                  <h4>Delivery & Brand Assets</h4>
+                  <p>You receive production-ready assets and custom layouts, ready to scale seamlessly across both print and digital campaigns.</p>
                 </div>
-                <h3>Technical SEO</h3>
-                <p>Auditing structured semantic schema setups, executing server redirect procedures, and configuring page index files.</p>
-                <a href="services.html" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
               </div>
-            </div>
-            <!-- Service Slide 5 -->
-            <div class="swiper-slide">
-              <div class="service-card-premium">
-                <div class="card-glow-element"></div>
-                <div class="card-icon-wrap">
-                  <i class="fa-solid fa-film"></i>
+              <div class="journey-col journey-col--node">
+                <div class="timeline-node-circle">04</div>
+              </div>
+              <div class="journey-col journey-col--visual">
+                <div class="timeline-visual-holder">
+                  <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80" alt="Marketing Assets Delivery" class="timeline-3d-visual">
                 </div>
-                <h3>Motion Design</h3>
-                <p>Developing high-definition conceptual 2D/3D visual sequences, web interface UI animations, and customized title cards.</p>
-                <a href="services.html" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
           </div>
 
-          <!-- Custom Swiper Controls (Magnetic Buttons Integration) -->
-          <div class="swiper-controls-wrapper">
-            <button class="swiper-button-prev-custom magnetic-element" aria-label="Slide Left">
-              <i class="fa-solid fa-arrow-left"></i>
-            </button>
-            <div class="swiper-pagination-custom"></div>
-            <button class="swiper-button-next-custom magnetic-element" aria-label="Slide Right">
-              <i class="fa-solid fa-arrow-right"></i>
-            </button>
+          <!-- টাইমলাইন স্ট্যাটস কাউন্টার (গুগল এসইও এবং মোবাইল ফ্রেন্ডলি) -->
+          <div class="timeline-stats-row container">
+            <div class="timeline-stat-glass-card">
+              <h3><span class="counter-num">1200</span>+</h3>
+              <p>Projects Completed</p>
+            </div>
+            <div class="timeline-stat-glass-card">
+              <h3><span class="counter-num">500</span>+</h3>
+              <p>Happy Clients</p>
+            </div>
+            <div class="timeline-stat-glass-card">
+              <h3><span class="counter-num">3</span>+ Years</h3>
+              <p>Design Experience</p>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- 2. WHY CHOOSE US SECTION (Animated Counters & Glassmorphic features) -->
-    <section class="why-choose-us" id="why-choose-us">
-      <div class="bg-gradient-mesh" aria-hidden="true"></div>
+    <!-- সার্ভিস সেকশন (ডুপ্লিকেট fade-up ক্লাস দূর করা হয়েছে) -->
+    <section class="services-showcase-section" id="services">
       <div class="container">
-        <div class="why-choose-grid">
-          <div class="why-content-col fade-up">
-            <span class="section-label">WHY CHOOSE US</span>
-            <h2>Converging creative artistry with <span>analytical code</span>.</h2>
-            <p>Our agency builds balanced structural digital campaigns. Every creative choice is backed by performance metrics, keeping high luxury presentation in alignment with real corporate conversion.</p>
-            
-            <div class="stats-container">
-              <div class="stat-box">
-                <div class="number-wrap"><span class="counter-num" data-val="150">0</span><span>+</span></div>
-                <p>Creative Launches</p>
-              </div>
-              <div class="stat-box">
-                <div class="number-wrap"><span class="counter-num" data-val="98">0</span><span>%</span></div>
-                <p>Retention Rate</p>
-              </div>
-              <div class="stat-box">
-                <div class="number-wrap"><span class="counter-num" data-val="5">0</span><span>+</span></div>
-                <p>Years of Operation</p>
-              </div>
-            </div>
+        <div class="section-heading-wrapper text-center">
+          <span class="section-label">OUR SERVICES</span>
+          <h2>The Ultimate Creative & <span class="text-primary">Marketing Engine</span></h2>
+          <p class="section-subtitle">We are the absolute one-step solution for all your branding and digital marketing needs in Kolkata. From conceptual graphics to high-speed engineering, we deliver real growth.</p>
+        </div>
+
+        <div class="services-asymmetrical-grid">
+          <!-- কার্ড ১: ব্র্যান্ড সিস্টেমস -->
+          <div class="premium-service-card">
+            <div class="service-glow-aura"></div>
+            <div class="srv-icon-wrap"><i class="fa-solid fa-bezier-curve"></i></div>
+            <h3>Brand Systems</h3>
+            <p>Formulating curated visual guidelines, geometric corporate logomarks, typography rules, and luxury manuals designed to convert.</p>
+            <span class="service-number">01</span>
           </div>
 
-          <div class="why-cards-col">
-            <!-- Glass card 1 -->
-            <div class="glass-card-premium hover-glow-card fade-up">
-              <div class="glass-icon-box"><i class="fa-solid fa-gem"></i></div>
-              <div class="glass-card-info">
-                <h3>Luxury Brand Systems</h3>
-                <p>Bespoke custom geometries, strict visual hierarchies, and curated color rules designed to establish industry leaders.</p>
-              </div>
-            </div>
-            <!-- Glass card 2 -->
-            <div class="glass-card-premium hover-glow-card fade-up">
-              <div class="glass-icon-box"><i class="fa-solid fa-bolt"></i></div>
-              <div class="glass-card-info">
-                <h3>Modern Web Speed</h3>
-                <p>Custom server structures, fast loading speeds, clean coding frameworks, and high search engine optimization performance.</p>
-              </div>
-            </div>
-            <!-- Glass card 3 -->
-            <div class="glass-card-premium hover-glow-card fade-up">
-              <div class="glass-icon-box"><i class="fa-solid fa-chart-pie"></i></div>
-              <div class="glass-card-info">
-                <h3>Transparent Campaigns</h3>
-                <p>Fully trackable ROI reporting panels, direct contact support channels, and recurring performance audit meetings.</p>
-              </div>
-            </div>
+          <!-- কার্ড ২: কাস্টম ইঞ্জিনিয়ারিং -->
+          <div class="premium-service-card">
+            <div class="service-glow-aura"></div>
+            <div class="srv-icon-wrap"><i class="fa-solid fa-code"></i></div>
+            <h3>Custom Engineering</h3>
+            <p>Building high-speed web interfaces, responsive platforms, scalable architectures, and accessible interactive layouts.</p>
+            <span class="service-number">02</span>
+          </div>
+
+          <!-- কার্ড ৩: পারফরম্যান্স মার্কেটিং -->
+          <div class="premium-service-card">
+            <div class="service-glow-aura"></div>
+            <div class="srv-icon-wrap"><i class="fa-solid fa-chart-line"></i></div>
+            <h3>Growth Marketing</h3>
+            <p>Deploying conversions optimization, targeted ad frameworks, high ROI analytics scaling, and cross-channel funnel audits.</p>
+            <span class="service-number">03</span>
+          </div>
+
+          <!-- কার্ড ৪: টেকনিক্যাল এসইও -->
+          <div class="premium-service-card">
+            <div class="service-glow-aura"></div>
+            <div class="srv-icon-wrap"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+            <h3>SEO Rolling Sprints</h3>
+            <p>Configuring micro-structured semantic schema layers, index configurations, fast loading index files, and link integrations.</p>
+            <span class="service-number">04</span>
+          </div>
+
+          <!-- কার্ড ৫: কনটেন্ট ইকোসিস্টেম -->
+          <div class="premium-service-card">
+            <div class="service-glow-aura"></div>
+            <div class="srv-icon-wrap"><i class="fa-solid fa-bullhorn"></i></div>
+            <h3>Content Ecosystems</h3>
+            <p>Designing digital organic content funnels, SMM target calendars, interactive layouts, and high-impact social assets.</p>
+            <span class="service-number">05</span>
+          </div>
+
+          <!-- কার্ড ৬: থ্রিডি মোশন এবং ভিডিও -->
+          <div class="premium-service-card">
+            <div class="service-glow-aura"></div>
+            <div class="srv-icon-wrap"><i class="fa-solid fa-video"></i></div>
+            <h3>3D Motion & Video</h3>
+            <p>Rendering dynamic conceptual visual motion ads, UI transitions, animated elements, and premium custom assets.</p>
+            <span class="service-number">06</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. PORTFOLIO SHOWCASE SECTION (Asymmetrical grid with filters) -->
+    <!-- পোর্টফোলিও শোকেস সেকশন -->
     <section class="portfolio-section" id="portfolio">
       <div class="container">
-        <div class="portfolio-header">
-          <div class="fade-up">
-            <span class="section-label">SELECTED WORK</span>
-            <h2>Award-Winning <span>Creations</span></h2>
+        <div class="portfolio-header-container fade-up">
+          <div class="portfolio-headline">
+            <span class="section-label">SELECTED WORKS</span>
+            <h2>Exclusive <span class="text-primary">Masterpieces</span> <img src="assets/star-badge.png" class="title-decor-png" alt="Star Badge"></h2>
+            <p>A look at premium creations that defined industry benchmarks and delivered exceptional ROI for West Bengal's leading businesses.</p>
           </div>
-          <div class="portfolio-filters fade-up">
+          <div class="portfolio-filters-row">
             <button class="filter-btn active" data-filter="all">All Projects</button>
             <button class="filter-btn" data-filter="branding">Branding</button>
-            <button class="filter-btn" data-filter="web">Web Development</button>
+            <button class="filter-btn" data-filter="web">Web Dev</button>
             <button class="filter-btn" data-filter="marketing">Marketing</button>
           </div>
         </div>
 
         <div class="portfolio-asymmetrical-grid">
-          <!-- Item 1 -->
+          <!-- আইটেম ১ -->
           <div class="portfolio-show-card fade-up" data-category="branding" data-img="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1200&q=80">
             <div class="portfolio-media-container">
               <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80" alt="Cosmetic Packaging Redesign" class="portfolio-image">
@@ -348,7 +402,7 @@
             </div>
           </div>
 
-          <!-- Item 2 -->
+          <!-- আইটেম ২ -->
           <div class="portfolio-show-card fade-up" data-category="web" data-img="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1200&q=80">
             <div class="portfolio-media-container">
               <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80" alt="Elysian SaaS Interface Design" class="portfolio-image">
@@ -363,7 +417,7 @@
             </div>
           </div>
 
-          <!-- Item 3 -->
+          <!-- আইটেম ৩ -->
           <div class="portfolio-show-card fade-up" data-category="marketing" data-img="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80">
             <div class="portfolio-media-container">
               <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Campaign Dashboard Build" class="portfolio-image">
@@ -378,7 +432,7 @@
             </div>
           </div>
 
-          <!-- Item 4 -->
+          <!-- আইটেম ৪ -->
           <div class="portfolio-show-card fade-up" data-category="branding" data-img="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80">
             <div class="portfolio-media-container">
               <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="Nexus Brand Architecture" class="portfolio-image">
@@ -392,203 +446,207 @@
               <p>Geometric design frameworks, identity guidelines, and typography assets.</p>
             </div>
           </div>
-
-          <!-- Item 5 -->
-          <div class="portfolio-show-card fade-up" data-category="web" data-img="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80">
-            <div class="portfolio-media-container">
-              <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" alt="Luxury E-Commerce Platform" class="portfolio-image">
-              <div class="portfolio-hover-overlay">
-                <div class="overlay-button-circle"><i class="fa-solid fa-expand"></i></div>
-              </div>
-            </div>
-            <div class="portfolio-meta-box">
-              <span class="meta-tag">Web Storefront</span>
-              <h3>Onyx Luxury Goods</h3>
-              <p>E-commerce checkout pipelines, custom asset loaders, and speed optimizations.</p>
-            </div>
-          </div>
-
-          <!-- Item 6 -->
-          <div class="portfolio-show-card fade-up" data-category="marketing" data-img="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80">
-            <div class="portfolio-media-container">
-              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="Media Strategy Execution" class="portfolio-image">
-              <div class="portfolio-hover-overlay">
-                <div class="overlay-button-circle"><i class="fa-solid fa-expand"></i></div>
-              </div>
-            </div>
-            <div class="portfolio-meta-box">
-              <span class="meta-tag">Growth Strategy</span>
-              <h3>Zephyr SEO Scaling</h3>
-              <p>Semantic page structure enhancements, content hubs, and search performance.</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- 4. WORK PROCESS TIMELINE SECTION -->
-    <section class="process-section" id="process">
+    <!-- প্রাইসিং সেকশন (ডুপ্লিকেট fade-up ক্লাস দূর করা হয়েছে) -->
+    <section class="pricing-section" id="pricing">
       <div class="container">
-        <div class="process-section-header fade-up">
-          <span class="section-label">OUR METHODOLOGY</span>
-          <h2>The Production <span>Blueprint</span></h2>
-          <p>We execute projects utilizing a rigorous workflow architecture, keeping you informed and aligned with results at every stage.</p>
+        <div class="pricing-header-wrapper text-center fade-up">
+          <span class="section-label">TRANSPARENT PRICING</span>
+          <h2>Tailored Investment <span class="text-primary">Packages</span></h2>
+          <p>Strictly premium visual architectures engineered for high scaling conversion. Choose your roadmap.</p>
         </div>
 
-        <div class="timeline-interactive-container">
-          <!-- Active filling scroll line -->
-          <div class="timeline-scroll-track" aria-hidden="true">
-            <div class="timeline-scroll-fill"></div>
+        <div class="pricing-layouts-grid">
+          <!-- প্যাকেজ ১ -->
+          <div class="pricing-package-card">
+            <span class="package-tag">LAUNCH</span>
+            <div class="price-val"><span>$</span>1,200</div>
+            <p class="price-brief">Strategic digital startup foundations</p>
+            <ul class="package-perks">
+              <li><i class="fa-solid fa-check text-primary"></i> Standard Visual Brand Identity</li>
+              <li><i class="fa-solid fa-check text-primary"></i> High-Speed Responsive Landing Page</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Core Technical SEO Setup</li>
+              <li><i class="fa-solid fa-check text-primary"></i> 1 Month Delivery SLA</li>
+            </ul>
+            <a href="contact.html" class="btn btn-pkg-action">Get Started</a>
           </div>
 
-          <!-- Process Step 1 -->
-          <div class="timeline-node-item fade-up">
-            <div class="timeline-indicator-dot"></div>
-            <div class="timeline-num-tag">01</div>
-            <div class="timeline-node-content">
-              <h3>Discovery & Market Audit</h3>
-              <p>Analyzing competitor layouts, auditing current digital profiles, identifying target keywords, and aligning development bounds.</p>
-            </div>
+          <!-- প্যাকেজ ২ -->
+          <div class="pricing-package-card premium-pkg-active">
+            <div class="best-value-ribbon">BEST VALUED</div>
+            <span class="package-tag">SCALE PLATINUM</span>
+            <div class="price-val"><span>$</span>2,800</div>
+            <p class="price-brief">Comprehensive market-scaling system</p>
+            <ul class="package-perks">
+              <li><i class="fa-solid fa-check text-primary"></i> Full High-End Corporate Branding</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Multi-Page custom Web Application</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Stretched SEO Rolling Integration</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Conversion-Optimized Ad Creatives</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Dynamic Motion Transitions</li>
+            </ul>
+            <a href="contact.html" class="btn btn-pkg-action btn-pkg-active">Accelerate Scale</a>
           </div>
 
-          <!-- Process Step 2 -->
-          <div class="timeline-node-item fade-up">
-            <div class="timeline-indicator-dot"></div>
-            <div class="timeline-num-tag">02</div>
-            <div class="timeline-node-content">
-              <h3>Structural Blueprinting</h3>
-              <p>Building semantic interface layouts, creating typographic rules, structuring brand guides, and organizing UI templates.</p>
-            </div>
-          </div>
-
-          <!-- Process Step 3 -->
-          <div class="timeline-node-item fade-up">
-            <div class="timeline-indicator-dot"></div>
-            <div class="timeline-num-tag">03</div>
-            <div class="timeline-node-content">
-              <h3>Precision Engineering</h3>
-              <p>Developing responsive interface scripts, structuring backend APIs, optimization of vector media files, and coding layouts.</p>
-            </div>
-          </div>
-
-          <!-- Process Step 4 -->
-          <div class="timeline-node-item fade-up">
-            <div class="timeline-indicator-dot"></div>
-            <div class="timeline-num-tag">04</div>
-            <div class="timeline-node-content">
-              <h3>Rigorous Testing</h3>
-              <p>Validating performance metrics across devices, analyzing cross-browser stability, and optimizing speed performance index scores.</p>
-            </div>
-          </div>
-
-          <!-- Process Step 5 -->
-          <div class="timeline-node-item fade-up">
-            <div class="timeline-indicator-dot"></div>
-            <div class="timeline-num-tag">05</div>
-            <div class="timeline-node-content">
-              <h3>Deployment & SEO Rollout</h3>
-              <p>Configuring secure server transfers, domain name routing setups, search console registration, and technical analytics installations.</p>
-            </div>
-          </div>
-
-          <!-- Process Step 6 -->
-          <div class="timeline-node-item fade-up">
-            <div class="timeline-indicator-dot"></div>
-            <div class="timeline-num-tag">06</div>
-            <div class="timeline-node-content">
-              <h3>Continuous Sprints</h3>
-              <p>Auditing server visual performances, building target page variations, running ad asset optimizations, and scaling systems.</p>
-            </div>
+          <!-- প্যাকেজ ৩ -->
+          <div class="pricing-package-card">
+            <span class="package-tag">ENTERPRISE</span>
+            <div class="price-val"><span>$</span>5,500</div>
+            <p class="price-brief">Custom corporate market domination</p>
+            <ul class="package-perks">
+              <li><i class="fa-solid fa-check text-primary"></i> Bespoke Brand Guidelines & Licensing</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Complex Web Engine / Portal Development</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Continuous Growth Campaigns SLA</li>
+              <li><i class="fa-solid fa-check text-primary"></i> High-Def 2D/3D Motion Visual assets</li>
+              <li><i class="fa-solid fa-check text-primary"></i> 24/7 Technical Operations Support</li>
+            </ul>
+            <a href="contact.html" class="btn btn-pkg-action">Connect Experts</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 5. CLIENT TESTIMONIALS SECTION (Premium Swiper Carousel) -->
+    <!-- ৯ জন নতুন মেম্বার সহ ইন্টারেক্টিভ টিম সেকশন -->
+    <section class="team-section" id="team">
+      <div class="container">
+        <div class="team-header fade-up">
+          <span class="section-label">OUR TEAM</span>
+          <h2>Meet the People <span class="text-primary">Behind the Moves</span></h2>
+          <p class="team-intro-text">
+            We’re <strong>SAVEN SOLUTION</strong>, a team with big energy, creative minds, and kind people who move with you from Strategy to Scale.
+          </p>
+        </div>
+        
+        <!-- সলিড গোল্ডেন অ্যান্ড ব্ল্যাক থ্রিডি ইন্টারেক্টিভ উইজেট -->
+        <div class="interactive-team-widget fade-up">
+          <div class="widget-viewport">
+            
+            <!-- পেছনের বড় আউটলাইন টেক্সট -->
+            <div class="back-outline-text" id="activeOutlineText">SUPRIO</div>
+            
+            <!-- সাইড স্ট্যাটিক রোল ইন্ডিকেটর -->
+            <div class="side-role-label" id="sideRoleLabel">Founder & Strategist</div>
+
+            <!-- বড় কাটআউট পোর্ট্রেট ফ্রেম (ডিফল্ট: সুপ্রিয় কর্মকার) -->
+            <div class="large-cutout-frame">
+              <img src="assets/team/Suprio-full.png" alt="Suprio Karmakar" id="activeLargeCutout" class="active-cutout-image">
+            </div>
+
+            <!-- গ্লাস-মোরফিক কার্ড বিবরণী (ডিফল্ট: সুপ্রিয় কর্মকার) -->
+            <div class="floating-glass-card">
+              <div class="glass-card-inner">
+                <div class="glass-avatar-wrap">
+                  <img src="assets/team/Suprio-avatar.png" alt="Suprio Karmakar" id="activeCardAvatar" class="glass-avatar-image">
+                </div>
+                <div class="glass-desc-content">
+                  <h3 id="activeMemberName">SUPRIO KARMAKAR</h3>
+                  <span class="active-member-role" id="activeMemberRole">Founder & Strategist</span>
+                  <p id="activeMemberDesc">Founder & Strategist leads the vision of Graphix Wala by combining creative innovation, business strategy, and digital marketing expertise to build impactful brands and drive sustainable growth.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ৯ জন মেম্বারের বৃত্তাকার নেভিগেশন থাম্বনেইল বাটন গ্রিড -->
+          <div class="avatar-navigation-row">
+            <button class="nav-avatar-btn active" data-index="0" aria-label="Select Suprio Karmakar">
+              <img src="assets/team/Suprio-avatar.png" alt="Suprio Karmakar">
+            </button>
+            <button class="nav-avatar-btn" data-index="1" aria-label="Select Tanmoy Saha">
+              <img src="assets/team/Tanmoy_Saha-avatar.png" alt="Tanmoy Saha">
+            </button>
+            <button class="nav-avatar-btn" data-index="2" aria-label="Select Koushik">
+              <img src="assets/team/Koushik-avatar.png" alt="Koushik">
+            </button>
+            <button class="nav-avatar-btn" data-index="3" aria-label="Select Tanmoy UI/UX">
+              <img src="assets/team/Tanmoy-avatar.png" alt="Tanmoy UI/UX">
+            </button>
+            <button class="nav-avatar-btn" data-index="4" aria-label="Select Shuvo Debnath">
+              <img src="assets/team/Shuvo-avatar.png" alt="Shuvo Debnath">
+            </button>
+            <button class="nav-avatar-btn" data-index="5" aria-label="Select Dipti">
+              <img src="assets/team/Dipti-avatar.png" alt="Dipti">
+            </button>
+            <button class="nav-avatar-btn" data-index="6" aria-label="Select Urmila Sarkar">
+              <img src="assets/team/Urmila-avatar.png" alt="Urmila Sarkar">
+            </button>
+            <button class="nav-avatar-btn" data-index="7" aria-label="Select Dibindu">
+              <img src="assets/team/Dibindu-avatar.png" alt="Dibindu">
+            </button>
+            <button class="nav-avatar-btn" data-index="8" aria-label="Select Sudipta Saha">
+              <img src="assets/team/Sudipta-avatar.png" alt="Sudipta Saha">
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- নতুন কাস্টমার রিভিউ / টেস্টমোনিয়াল সেকশন -->
     <section class="testimonials-section" id="testimonials">
       <div class="container">
-        <div class="testimonials-header fade-up">
-          <span class="section-label">CLIENT REVIEWS</span>
-          <h2>Aura of <span>Appreciation</span></h2>
-          <p>Read opinions of marketing leaders and founders who collaborated with us to transform their digital interfaces.</p>
+        <div class="testimonials-header text-center fade-up">
+          <span class="section-label">CLIENT APPRECIATION</span>
+          <h2>Aura of <span class="text-primary">Real Experience</span></h2>
+          <p class="section-subtitle">Read how we transformed brand visibility and delivered absolute ROI for local businesses across West Bengal.</p>
         </div>
 
-        <div class="swiper testimonials-swiper fade-up">
-          <div class="swiper-wrapper">
-            <!-- Review card 1 -->
-            <div class="swiper-slide">
-              <div class="testimonial-premium-card hover-glow-card">
-                <div class="card-quote-accent"><i class="fa-solid fa-quote-left"></i></div>
-                <div class="star-rating-box">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-                <p class="testimonial-body">"GRAPHIX WALA redesigned our visual systems and corporate portals with incredible design precision. Our inbound leads grew by 48% inside 90 days of deployment. Their design and development sprint speeds are impressive."</p>
-                <div class="client-profile-row">
-                  <div class="client-placeholder-avatar">DV</div>
-                  <div>
-                    <h4>David Vance</h4>
-                    <span>Managing Director, Vance Goods</span>
-                  </div>
-                </div>
-              </div>
+        <div class="testimonials-layouts-grid">
+          <!-- রিভিউ ১ -->
+          <div class="testimonial-card-luxury fade-up">
+            <div class="quote-icon"><i class="fa-solid fa-quote-left text-primary"></i></div>
+            <div class="star-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
             </div>
-
-            <!-- Review card 2 -->
-            <div class="swiper-slide">
-              <div class="testimonial-premium-card hover-glow-card">
-                <div class="card-quote-accent"><i class="fa-solid fa-quote-left"></i></div>
-                <div class="star-rating-box">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-                <p class="testimonial-body">"Working with their frontend architects was a highly collaborative process. They translated our technical workflow guidelines into a high-performance, responsive app design that our users love using."</p>
-                <div class="client-profile-row">
-                  <div class="client-placeholder-avatar">SJ</div>
-                  <div>
-                    <h4>Sarah Jenkins</h4>
-                    <span>VP UX Architecture, Cloudscale</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Review card 3 -->
-            <div class="swiper-slide">
-              <div class="testimonial-premium-card hover-glow-card">
-                <div class="card-quote-accent"><i class="fa-solid fa-quote-left"></i></div>
-                <div class="star-rating-box">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-                <p class="testimonial-body">"The SEO campaigns and structured marking schema implementations they organized have elevated our search result positions. Transparency across weekly performance reports is standard."</p>
-                <div class="client-profile-row">
-                  <div class="client-placeholder-avatar">MT</div>
-                  <div>
-                    <h4>Marcus Thorne</h4>
-                    <span>VP Growth, Nexis Group</span>
-                  </div>
-                </div>
+            <p class="review-text">"GRAPHIX WALA is the ultimate one-step solution for branding. They completely overhauled our local visual presence and ranking strategy. Within 3 months, our organic client inquiries in Kolkata doubled!"</p>
+            <div class="reviewer-profile">
+              <div class="reviewer-avatar">AN</div>
+              <div>
+                <h4>Anirban Roy</h4>
+                <span>Founder, Bengal Spices Co.</span>
               </div>
             </div>
           </div>
 
-          <!-- Slider Pagination -->
-          <div class="swiper-pagination-testimonials"></div>
+          <!-- রিভিউ ২ -->
+          <div class="testimonial-card-luxury fade-up">
+            <div class="quote-icon"><i class="fa-solid fa-quote-left text-primary"></i></div>
+            <div class="star-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"Their website designer is a absolute master of code. They designed an ultra-fast catalogs portal that drives huge direct sales on our ecommerce platform. Highly recommended crew for scaling."</p>
+            <div class="reviewer-profile">
+              <div class="reviewer-avatar">PS</div>
+              <div>
+                <h4>Priyanka Sen</h4>
+                <span>Creative Director, Calcutta Crafts</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- রিভিউ ৩ -->
+          <div class="testimonial-card-luxury fade-up">
+            <div class="quote-icon"><i class="fa-solid fa-quote-left text-primary"></i></div>
+            <div class="star-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"The SEO scaling they executed pushed us to the very top positions for highly competitive local search keywords on Google. Excellent communication and weekly fully transparent reports."</p>
+            <div class="reviewer-profile">
+              <div class="reviewer-avatar">SD</div>
+              <div>
+                <h4>Siddharth Dutta</h4>
+                <span>Co-Founder, Dutta Retail Group</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 6. FAQ SECTION (Accordion) -->
+    <!-- এফএকিউ সেকশন -->
     <section class="faq-section" id="faq">
       <div class="container">
         <div class="faq-grid-container">
@@ -599,33 +657,30 @@
           </div>
 
           <div class="faq-accordion-col fade-up">
-            <!-- FAQ Accordion 1 -->
             <div class="accordion-luxury-item">
               <button class="accordion-trigger-button" aria-expanded="false">
-                <span>What services does GRAPHIX WALA specialize in?</span>
+                <span>What makes GRAPHIX WALA West Bengal's best graphic design-based marketing agency?</span>
                 <span class="accordion-toggle-icon"><i class="fa-solid fa-plus"></i></span>
               </button>
               <div class="accordion-collapsible-wrapper">
                 <div class="accordion-text-body">
-                  <p>We specialize in full-service digital agency capabilities, specifically high-end Brand Identity Design, Custom Responsive Web Engineering, Targeted Growth Marketing, technical SEO setup, and specialized interactive 2D/3D Motion Design.</p>
+                  <p>Unlike traditional agencies, GRAPHIX WALA blends custom artistic design with heavy analytical web and marketing systems. By aligning luxury aesthetic manuals with performance conversion tracking, we deliver exceptional business growth throughout West Bengal.</p>
                 </div>
               </div>
             </div>
 
-            <!-- FAQ Accordion 2 -->
             <div class="accordion-luxury-item">
               <button class="accordion-trigger-button" aria-expanded="false">
-                <span>How long does a branding and website build project take?</span>
+                <span>Why is GRAPHIX WALA ranked as Kolkata's No. 1 design-based marketing agency?</span>
                 <span class="accordion-toggle-icon"><i class="fa-solid fa-plus"></i></span>
               </button>
               <div class="accordion-collapsible-wrapper">
                 <div class="accordion-text-body">
-                  <p>An average brand identity design system takes 2 to 4 weeks. High-performance custom responsive web platform developments require 4 to 8 weeks, depending on structural layout requirements, integration elements, and asset sizes.</p>
+                  <p>Our title as the No. 1 agency in Kolkata comes from our rigorous creative journey (Discovery, Concept, System, Delivery) that guarantees no steps are skipped. Every design framework we publish is mathematically and strategically built to expand digital reach and scale customer acquisition.</p>
                 </div>
               </div>
             </div>
 
-            <!-- FAQ Accordion 3 -->
             <div class="accordion-luxury-item">
               <button class="accordion-trigger-button" aria-expanded="false">
                 <span>Will my website be search-engine optimized from launch?</span>
@@ -638,7 +693,6 @@
               </div>
             </div>
 
-            <!-- FAQ Accordion 4 -->
             <div class="accordion-luxury-item">
               <button class="accordion-trigger-button" aria-expanded="false">
                 <span>Do you offer post-launch maintenance and optimization?</span>
@@ -655,7 +709,7 @@
       </div>
     </section>
 
-    <!-- 7. CTA SECTION (Interactive Glowing Backdrop) -->
+    <!-- কন্টাক্ট এবং কল টু অ্যাকশন -->
     <section class="cta-section" id="cta">
       <div class="cta-dynamic-glow" aria-hidden="true"></div>
       <div class="container">
@@ -671,7 +725,7 @@
     </section>
   </main>
 
-  <!-- 8. PREMIUM FOOTER SECTION -->
+  <!-- প্রিমিয়াম ফুটার সেকশন -->
   <footer class="premium-footer">
     <div class="container">
       <div class="footer-layout-grid">
@@ -733,7 +787,7 @@
     </div>
   </footer>
 
-  <!-- PORTFOLIO LIGHTBOX MODAL -->
+  <!-- পোর্টফোলিও লাইটবক্স মডাল -->
   <div class="portfolio-lightbox-modal" id="portfolioLightbox" aria-hidden="true" role="dialog">
     <div class="lightbox-overlay-bg"></div>
     <div class="lightbox-dialog-box">
@@ -749,7 +803,7 @@
     </div>
   </div>
 
-  <!-- FLOATING CALL TO ACTIONS -->
+  <!-- ফ্লোটিং বাটন এবং ব্যাক টু টপ -->
   <div class="floating-actions">
     <a class="whatsapp-btn magnetic-element" href="https://wa.me/919064089364" target="_blank" rel="noreferrer" aria-label="WhatsApp">
       <i class="fa-brands fa-whatsapp"></i>
@@ -761,7 +815,7 @@
 
   <button id="backToTop" class="back-to-top magnetic-element" aria-label="Back to top">↑</button>
 
-  <!-- SCRIPTS -->
+  <!-- স্ক্রিপ্টস এবং সিডিএন লাইব্রেরি লিঙ্ক -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
