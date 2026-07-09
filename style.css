@@ -326,12 +326,12 @@ body.loading {
 /* PRESERVED HERO */
 .hero {
   position: relative;
-  min-height: auto; /* গ্যাপ কমাতে মিনিমাম হাইট অটো করা হলো */
+  min-height: auto;
   height: auto;
-  padding-top: calc(var(--header-height) + 40px); /* হেডার থেকে কনটেন্টের গ্যাপ কিছুটা কমানো হলো */
-  padding-bottom: 60px; /* নিচের গ্যাপ ১৪০ পিক্সেল থেকে কমিয়ে ৬০ পিক্সেল করা হলো */
+  padding-top: calc(var(--header-height) + 20px); /* প্যাডিং কমিয়ে পুরো কন্টেন্ট উপরে তোলা হলো */
+  padding-bottom: 40px; /* নিচের অতিরিক্ত ফাঁকা জায়গা কমানো হলো */
   margin-bottom: 0px;
-  overflow: hidden; /* ব্যাকগ্রাউন্ড লাইট ক্লিপ করে এক্সট্রা ডানপাশের বারটি চিরতরে বন্ধ করা হলো */
+  overflow: hidden; 
   isolation: isolate;
   background:
     radial-gradient(circle at top right, rgba(255, 203, 6, 0.12), transparent 30%),
@@ -426,7 +426,7 @@ body.loading {
   grid-template-columns: 50% 50%;
   gap: 60px;
   align-items: center;
-  min-height: calc(80vh - var(--header-height)); /* ডেস্কটপ ভিউপোর্টের উচ্চতা ১০০vh থেকে কমিয়ে ৮০vh করা হলো */
+  min-height: calc(68vh - var(--header-height)); /* হাইট কমিয়ে স্পেসিং অ্যাডজাস্ট করা হলো */
   height: auto;
 }
 
