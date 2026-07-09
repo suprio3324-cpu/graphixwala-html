@@ -119,10 +119,37 @@ const runWebsiteEngine = () => {
     document.querySelectorAll(interactiveSelectors).forEach((element) => {
       element.addEventListener("mouseenter", () => {
         cursorRing.classList.add("hovered");
+        gsap.to(cursorDot, {
+          scale: 0.55,
+          opacity: 0.65,
+          duration: 0.2,
+          ease: "power2.out"
+        });
       });
       element.addEventListener("mouseleave", () => {
         cursorRing.classList.remove("hovered");
+        gsap.to(cursorDot, {
+          scale: 1,
+          opacity: 1,
+          duration: 0.2,
+          ease: "power2.out"
+        });
       });
+    });
+
+    document.addEventListener("mousedown", (event) => {
+      cursorRing.classList.add("pressed");
+
+      const ripple = document.createElement("span");
+      ripple.className = "cursor-ripple";
+      ripple.style.left = `${event.clientX}px`;
+      ripple.style.top = `${event.clientY}px`;
+      document.body.appendChild(ripple);
+      ripple.addEventListener("animationend", () => ripple.remove(), { once: true });
+    });
+
+    document.addEventListener("mouseup", () => {
+      cursorRing.classList.remove("pressed");
     });
   }
 
