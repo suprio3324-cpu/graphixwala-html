@@ -323,6 +323,19 @@ body.loading {
   color: #fff;
 }
 
+.hero {
+  position: relative;
+  min-height: auto;
+  height: auto;
+  padding-top: calc(var(--header-height) + 20px);
+  padding-bottom: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at top right, rgba(255, 203, 6, 0.12), transparent 30%),
+    linear-gradient(135deg, rgba(255, 203, 6, 0.05), transparent 34%, rgba(255, 255, 255, 0.02));
+}
 .hero__visual {
   display: flex;
   align-items: flex-end; /* ছবিটিকে কন্টেইনারের নিচে সেট করার জন্য */
@@ -548,7 +561,7 @@ body.loading {
   transform-style: preserve-3d;
   pointer-events: none; 
   align-self: end; /* গ্রিডের একদম নিচে ছবিটিকে লক করার জন্য */
-  margin-bottom: 250px; /* ছবির ভেতরের ট্রান্সপারেন্ট ফাঁকা অংশ টেনে নিচের বর্ডারের সাথে জিরো গ্যাপ করার জন্য */
+  margin-bottom: 0;
 }
 
 .hero__graphic {
