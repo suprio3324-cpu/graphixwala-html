@@ -426,7 +426,7 @@ body.loading {
   grid-template-columns: 50% 50%;
   gap: 60px;
   align-items: center;
-  min-height: calc(68vh - var(--header-height)); /* হাইট কমিয়ে স্পেসিং অ্যাডজাস্ট করা হলো */
+  min-height: calc(0vh - var(--header-height)); /* হাইট কমিয়ে স্পেসিং অ্যাডজাস্ট করা হলো */
   height: auto;
 }
 
