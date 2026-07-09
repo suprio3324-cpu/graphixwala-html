@@ -1,113 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YKYEVLR7DL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<head>
+  <meta charset="UTF-8" />
+  
+  <!-- Google Analytics Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YKYEVLR7DL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-YKYEVLR7DL');
+  </script>
 
-  gtag('config', 'G-YKYEVLR7DL');
-</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About GRAPHIX WALA | Premium Creative Agency</title>
-    <meta name="description" content="Learn about GRAPHIX WALA, our mission, our values, and the premium creative process behind every brand experience." />
-    <meta name="keywords" content="about graphix wala, digital agency, branding studio, creative agency" />
-    <meta property="og:title" content="About GRAPHIX WALA" />
-    <meta property="og:description" content="A premium creative agency blending strategy, design, and growth for ambitious brands." />
-    <meta property="og:url" content="https://graphixwala.com/about.html" />
-    <link rel="canonical" href="https://graphixwala.com/about.html" />
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body class="loading">
-    <div class="loader"><div class="ring"></div></div>
-    <div class="scroll-progress"></div>
-    <header class="site-header">
-      <div class="container navbar">
-        <a href="index.html" class="logo">
-          <img src="assets/logo.svg" alt="Graphix Wala Logo">
-        </a>
-        <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-        <nav class="nav-links">
-          <a href="index.html">Home</a>
-          <a class="active" href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="portfolio.html">Portfolio</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="blog.html">Blog</a>
-          <a href="contact.html">Contact</a>
-          <a class="btn" href="contact.html">Get Quote</a>
-        </nav>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO মেটা ট্যাগ এবং কিওয়ার্ড অপ্টিমাইজেশন (Kolkata & West Bengal Base) -->
+  <title>About GRAPHIX WALA | Kolkata's No. 1 Design-Based Marketing Agency</title>
+  <meta name="description" content="Discover GRAPHIX WALA, West Bengal's best design-based marketing and branding agency. We are Kolkata's premier creative partner, shaping brand perception with custom graphics and high-performance campaigns." />
+  <meta name="keywords" content="about graphix wala, creative agency kolkata, design based marketing company bengal, branding studio kolkata" />
+  
+  <!-- ওপেন গ্রাফ মেটা ট্যাগ (Social SEO) -->
+  <meta property="og:title" content="About GRAPHIX WALA | Kolkata's No. 1 Design-Based Marketing Agency" />
+  <meta property="og:description" content="West Bengal's leading choice for premium brand architecture, high-speed custom code, and conversion-focused visual experiences in Kolkata." />
+  <meta property="og:url" content="https://graphixwala.in/about.html" />
+  <link rel="canonical" href="https://graphixwala.in/about.html" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+
+<body class="loading">
+  <!-- ব্যাকগ্রাউন্ড থ্রিডি ফিল টেক্সচার এবং ওর্বস -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+  <div class="deep-glow-orb deep-glow-orb--top" aria-hidden="true"></div>
+  <div class="deep-glow-orb deep-glow-orb--bottom" aria-hidden="true"></div>
+
+  <!-- কাস্টম মাউস কার্সার -->
+  <div class="custom-cursor-dot" aria-hidden="true"></div>
+  <div class="custom-cursor-ring" aria-hidden="true"></div>
+
+  <div class="loader">
+    <div class="ring"></div>
+  </div>
+  <div class="scroll-progress"></div>
+  
+  <!-- হেডার এবং ন্যাভিগেশন -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.svg" alt="Graphix Wala Logo">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="index.html#team">Our Team</a> <!-- হোমপেজের ডাইনামিক টিমে স্ক্রল করবে -->
+        <a href="pricing.html">Pricing</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a class="btn magnetic-element" href="contact.html">Get Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- হিরো সেকশন (সম্পূর্ণ হিউম্যান ও কলকাতা-ভিত্তিক কপিরাইটিং) -->
+    <section class="hero" id="hero">
+      <div class="hero__background">
+        <div class="hero__orb hero__orb--one"></div>
+        <div class="hero__orb hero__orb--two"></div>
+        <div class="hero__bg-grid"></div>
+        <div class="hero__noise"></div>
       </div>
-    </header>
 
-    <main>
-      <section class="hero">
-        <div class="container hero-grid">
-          <div class="reveal">
-            <div class="eyebrow">About Us</div>
-            <h1>We craft refined brand experiences with purpose and precision.</h1>
-            <p>GRAPHIX WALA is built on one idea: strong brands deserve design that feels premium, deliberate, and memorable. We work with founders, startups, and established companies to bring their vision to life.</p>
-            <div class="hero-action"><a class="btn" href="contact.html">Book a Consultation</a><a class="btn-outline" href="services.html">Explore Services</a></div>
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <div class="timeline-header-block">
+            <span class="section-label">WHO WE ARE</span>
+            <h3>We Are Kolkata's <span class="text-primary">No. 1 Design-Led Agency</span></h3>
           </div>
-          <div class="hero-card reveal"><img src="assets/about-illustration.svg" alt="About illustration" loading="lazy" /></div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <div class="about-grid">
-            <div class="about-copy reveal">
-              <div class="eyebrow">Our Mission</div>
-              <h2>Turn bold ideas into premium brand realities.</h2>
-              <p>We help businesses build deeper trust through strategic positioning, modern design, and well-executed marketing systems.</p>
-              <ul class="check-list">
-                <li>Meaningful storytelling</li>
-                <li>Luxury-focused brand execution</li>
-                <li>Conversion-minded digital experiences</li>
-              </ul>
-            </div>
-            <div class="glass-card card reveal">
-              <div class="eyebrow">Our Vision</div>
-              <h3>To become the creative partner of choice for brands that want to feel both iconic and relevant.</h3>
-              <p style="margin-top: .7rem; color: var(--muted);">We believe design should not only be beautiful; it should shape perception, build loyalty, and accelerate growth.</p>
-            </div>
+          <p class="hero__description" style="margin-top: -30px;">
+            At GRAPHIX WALA, we believe that design isn't just about making things look pretty—it is the core engine that drives sales, builds trust, and establishes market authority. Based in the heart of Kolkata, we work as a dedicated, one-step branding and performance marketing partner for ambitious businesses across West Bengal.
+          </p>
+          <div class="hero__actions">
+            <a href="contact.html" class="btn btn--primary magnetic-element">
+              Book a Consultation →
+            </a>
+            <a href="services.html" class="btn btn--secondary magnetic-element">
+              Explore Services
+            </a>
           </div>
         </div>
-      </section>
 
-      <section class="section">
-        <div class="container">
-          <div class="grid-3">
-            <article class="glass-card card reveal"><h3>Why Choose Us</h3><p>Thoughtful work, clear direction, and premium execution at every stage.</p></article>
-            <article class="glass-card card reveal"><h3>Creative Approach</h3><p>We blend branding, strategy, web design, and performance marketing into one seamless experience.</p></article>
-            <article class="glass-card card reveal"><h3>Result Focus</h3><p>Every project is tailored to strengthen your presence and support your growth goals.</p></article>
+        <div class="hero__visual">
+          <div class="hero__graphic parallax-layer" data-speed="-1">
+            <img src="assets/about-illustration.svg" alt="About GRAPHIX WALA Studio" class="image-reveal">
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <footer>
+    <!-- মিশন ও ভিশন সেকশন (নিখুঁত এবং হাই-কনট্রাস্ট কন্টেন্ট) -->
+    <section class="gw-whatwedo" style="border-top: 1px solid var(--glass-border);">
       <div class="container">
-        <div class="footer-grid">
-          <div><a href="index.html" class="brand">GRAPHIX WALA</a><p style="margin-top: .8rem; color: var(--muted);">Premium design, branding, and marketing solutions for modern businesses.</p></div>
-          <div><h3>Quick Links</h3><div class="footer-links" style="margin-top: .7rem;"><a href="about.html">About</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a></div></div>
-          <div><h3>Services</h3><div class="footer-links" style="margin-top: .7rem;"><span>Branding</span><span>Web Development</span><span>Marketing</span><span>Motion Graphics</span></div></div>
-          <div><h3>Newsletter</h3><p style="margin-top: .7rem; color: var(--muted);">Stay inspired with our latest strategy and design insights.</p></div>
+        <div class="journey-vertical-timeline" style="gap: 50px;">
+          
+          <div class="journey-row">
+            <!-- মিশন গ্লাস কার্ড -->
+            <div class="journey-col" style="width: 50%;">
+              <div class="journey-glass-card border-glow-blue">
+                <div class="card-icon-header">
+                  <i class="fa-solid fa-bullseye font-icon-primary"></i>
+                </div>
+                <span class="journey-badge blue-badge">OUR MISSION</span>
+                <h4>Turn local businesses into dominant market leaders.</h4>
+                <p>We combine high-converting visual design with performance marketing strategies to help Kolkata's businesses build trust, scale client acquisition, and achieve long-term growth.</p>
+                <ul style="margin-top: 20px; list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px;">
+                  <li style="font-size: 14px; color: var(--text); display: flex; align-items: center; gap: 10px;"><i class="fa-solid fa-check text-primary"></i> Human-written persuasive storytelling</li>
+                  <li style="font-size: 14px; color: var(--text); display: flex; align-items: center; gap: 10px;"><i class="fa-solid fa-check text-primary"></i> High-end, conversion-focused design</li>
+                  <li style="font-size: 14px; color: var(--text); display: flex; align-items: center; gap: 10px;"><i class="fa-solid fa-check text-primary"></i> Blazing fast custom-coded digital engines</li>
+                </ul>
+              </div>
+            </div>
+            
+            <!-- ভিশন গ্লাস কার্ড -->
+            <div class="journey-col" style="width: 50%; padding-left: 50px;">
+              <div class="journey-glass-card border-glow-blue" style="height: 100%;">
+                <div class="card-icon-header">
+                  <i class="fa-solid fa-eye font-icon-primary"></i>
+                </div>
+                <span class="journey-badge blue-badge">OUR VISION</span>
+                <h4>To be the ultimate creative growth partner in Bengal.</h4>
+                <p>We are building a creative space in Kolkata where businesses don't just survive, but lead. Our focus is to eliminate automated, low-quality templates and provide custom, results-driven layouts that shape true brand perception.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="copyright"><span>© 2026 GRAPHIX WALA. All rights reserved.</span><span>Design • Brand • Inspire</span></div>
       </div>
-    </footer>
-    <div class="floating-actions"><a class="whatsapp-btn" href="https://wa.me/919064089364" target="_blank" rel="noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a><a class="call-btn" href="tel:+919064089364" aria-label="Call Us"><i class="fa-solid fa-phone"></i></a></div>
-    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
-    <script src="script.js"></script>
-  </body>
+    </section>
+
+    <!-- ৩টি প্রধান লাক্সারি পিলার সেকশন (প্রিমিয়াম গ্লাস কার্ডস) -->
+    <section class="services-showcase-section" style="background: #090909;">
+      <div class="container">
+        <div class="section-heading-wrapper text-center">
+          <span class="section-label">OUR CORE PILLARS</span>
+          <h2>The Foundations of <span class="text-primary">Our Studio</span></h2>
+          <p class="section-subtitle">Thoughtful work, clear direction, and premium execution at every single stage of your brand journey.</p>
+        </div>
+
+        <div class="services-asymmetrical-grid">
+          <!-- পিলার ১ -->
+          <div class="premium-service-card">
+            <div class="service-glow-aura"></div>
+            <div class="srv-icon-wrap"><i class="fa-solid fa-compass"></i></div>
+            <h3>Bespoke Strategy First</h3>
+            <p>We define where your brand stands before deciding how it looks. Every design asset we publish is grounded in real research, target demographics, and local Kolkata market metrics.</p>
+            <span class="service-number">01</span>
+          </div>
+
+          <!-- পিলার ২ -->
+          <div class="premium-service-card">
+            <div class="service-glow-aura"></div>
+            <div class="srv-icon-wrap"><i class="fa-solid fa-cubes"></i></div>
+            <h3>One-Step Creative Sync</h3>
+            <p>No clashing freelancers or broken workflows. We merge custom corporate brand guidelines, high-speed frontend engineering, technical SEO, and cinematic video editing under one unified roof.</p>
+            <span class="service-number">02</span>
+          </div>
+
+          <!-- পিলার ৩ -->
+          <div class="premium-service-card">
+            <div class="service-glow-aura"></div>
+            <div class="srv-icon-wrap"><i class="fa-solid fa-arrow-up-right-dots"></i></div>
+            <h3>Human & ROI Driven</h3>
+            <p>We don't sell temporary hacks or automated AI copy templates. Our focus is to produce high-contrast, deeply converting visual materials that attract real clients, drive inquiries, and scale business revenue.</p>
+            <span class="service-number">03</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- প্রিমিয়াম ফুটার সেকশন (হোমপেজের সাথে হুবহু সিঙ্ক করা) -->
+  <footer class="premium-footer">
+    <div class="container">
+      <div class="footer-layout-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="logo">
+            <img src="assets/logo.svg" alt="Graphix Wala Logo">
+          </a>
+          <p>Bespoke digital design architectures, responsive visual systems, and campaign configurations designed for ambitious corporate expansion in Bengal.</p>
+          <div class="footer-social-row">
+            <a href="https://wa.me/919064089364" target="_blank" rel="noreferrer" aria-label="WhatsApp" class="magnetic-element"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" aria-label="Instagram" class="magnetic-element"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn" class="magnetic-element"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter" class="magnetic-element"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-navigation-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Our Studio</a></li>
+            <li><a href="services.html">Services & Solutions</a></li>
+            <li><a href="portfolio.html">Creative Portfolio</a></li>
+            <li><a href="pricing.html">Service Pricing</a></li>
+            <li><a href="contact.html">Contact Details</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-services-col">
+          <h3>Core Expertise</h3>
+          <ul class="footer-links-list">
+            <li><a href="services.html">Brand Identity Systems</a></li>
+            <li><a href="services.html">Custom Interface Dev</a></li>
+            <li><a href="services.html">SEO Optimization Sprints</a></li>
+            <li><a href="services.html">Digital Ad Management</a></li>
+            <li><a href="services.html">Motion Advertisement</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter-col">
+          <h3>Design Dispatch</h3>
+          <p>Subscribe to our newsletter containing contemporary design rules, optimization tips, and tools.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault();">
+            <input type="email" placeholder="Corporate email address" required aria-label="Email address for newsletter subscription">
+            <button type="submit" class="newsletter-submit-btn magnetic-element" aria-label="Submit Newsletter form">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom-copyright">
+        <span>© 2026 GRAPHIX WALA. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">SLA Guidelines</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ফ্লোটিং বাটন এবং ব্যাক টু টপ -->
+  <div class="floating-actions">
+    <a class="whatsapp-btn magnetic-element" href="https://wa.me/919064089364" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a class="call-btn magnetic-element" href="tel:+919064089364" aria-label="Call Us">
+      <i class="fa-solid fa-phone"></i>
+    </a>
+  </div>
+
+  <button id="backToTop" class="back-to-top magnetic-element" aria-label="Back to top">↑</button>
+
+  <!-- স্ক্রিপ্টস এবং সিডিএন লাইব্রেরি লিঙ্ক -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>

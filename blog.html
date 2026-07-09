@@ -1,99 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YKYEVLR7DL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<head>
+  <meta charset="UTF-8" />
+  
+  <!-- Google Analytics Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YKYEVLR7DL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-YKYEVLR7DL');
+  </script>
 
-  gtag('config', 'G-YKYEVLR7DL');
-</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog | GRAPHIX WALA</title>
-    <meta name="description" content="Read insights from GRAPHIX WALA on branding, web design, marketing strategy, and creative growth." />
-    <meta property="og:title" content="GRAPHIX WALA Blog" />
-    <meta property="og:description" content="Strategy, design, and growth ideas for modern businesses." />
-    <meta property="og:url" content="https://graphixwala.com/blog.html" />
-    <link rel="canonical" href="https://graphixwala.com/blog.html" />
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body class="loading">
-    <div class="loader"><div class="ring"></div></div>
-    <div class="scroll-progress"></div>
-    <header class="site-header">
-      <div class="container navbar">
-        <a href="index.html" class="logo">
-          <img src="assets/logo.svg" alt="Graphix Wala Logo">
-        </a>
-        <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-        <nav class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="portfolio.html">Portfolio</a>
-          <a href="pricing.html">Pricing</a>
-          <a class="active" href="blog.html">Blog</a>
-          <a href="contact.html">Contact</a>
-          <a class="btn" href="contact.html">Get Quote</a>
-        </nav>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO মেটা ট্যাগ এবং কিওয়ার্ড অপ্টিমাইজেশন (Local Bengal Base) -->
+  <title>Blog | GRAPHIX WALA – Branding & Digital Marketing Insights</title>
+  <meta name="description" content="Read expert branding, custom web design, and digital marketing insights from GRAPHIX WALA. Empowering businesses in Habra, Gobardanga, Maslandapur, Bongaon, and Kolkata." />
+  <meta name="keywords" content="digital marketing blog habra, branding agency gobadanga, web design maslandapur, graphic designer bongaon, marketing studio kolkata" />
+  
+  <!-- ওপেন গ্রাফ মেটা ট্যাগ (Social SEO) -->
+  <meta property="og:title" content="Blog | GRAPHIX WALA – Branding & Marketing Insights" />
+  <meta property="og:description" content="Practical strategy, design guidelines, and organic digital growth ideas tailored for businesses in West Bengal." />
+  <meta property="og:url" content="https://graphixwala.in/blog.html" />
+  <link rel="canonical" href="https://graphixwala.in/blog.html" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+
+<body class="loading">
+  <!-- ব্যাকগ্রাউন্ড থ্রিডি ফিল টেক্সচার এবং ওর্বস -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+  <div class="deep-glow-orb deep-glow-orb--top" aria-hidden="true"></div>
+  <div class="deep-glow-orb deep-glow-orb--bottom" aria-hidden="true"></div>
+
+  <!-- কাস্টম মাউস কার্সার -->
+  <div class="custom-cursor-dot" aria-hidden="true"></div>
+  <div class="custom-cursor-ring" aria-hidden="true"></div>
+
+  <div class="loader">
+    <div class="ring"></div>
+  </div>
+  <div class="scroll-progress"></div>
+  
+  <!-- হেডার এবং ন্যাভিগেশন -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.svg" alt="Graphix Wala Logo">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="index.html#team">Our Team</a> <!-- হোমপেজের ডাইনামিক টিমে স্ক্রল করবে -->
+        <a href="#pricing">Pricing</a>
+        <a class="active" href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a class="btn magnetic-element" href="contact.html">Get Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- হিরো সেকশন (সম্পূর্ণ হিউম্যান ও লোকাল-ভিত্তিক কপিরাইটিং) -->
+    <section class="hero" id="hero">
+      <div class="hero__background">
+        <div class="hero__orb hero__orb--one"></div>
+        <div class="hero__orb hero__orb--two"></div>
+        <div class="hero__bg-grid"></div>
+        <div class="hero__noise"></div>
       </div>
-    </header>
 
-    <main>
-      <section class="hero">
-        <div class="container reveal">
-          <div class="eyebrow">Latest Blog</div>
-          <h1>Insights to help your brand grow with sharper strategy and stronger storytelling.</h1>
-          <p>Thoughtful articles on branding, design direction, digital growth, and conversion-focused content.</p>
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <div class="timeline-header-block">
+            <span class="section-label">CREATIVE DISPATCH</span>
+            <h3>Strategies to Scale <span class="text-primary">Your Local Business</span></h3>
+          </div>
+          <p class="hero__description" style="margin-top: -30px;">
+            We share practical, human-written branding guides, web design secrets, and marketing insights tailored for business growth. Learn how to dominate your market from Kolkata, Habra, Gobardanga, Maslandapur, and Bongaon with real, actionable steps.
+          </p>
+          <div class="hero__actions">
+            <a href="contact.html" class="btn btn--primary magnetic-element">
+              Subscribe to Insights →
+            </a>
+            <a href="about.html" class="btn btn--secondary magnetic-element">
+              Learn About Us
+            </a>
+          </div>
         </div>
-      </section>
 
-      <section class="section">
-        <div class="container blog-grid">
-          <article class="glass-card blog-card reveal">
-            <div class="meta">Branding</div>
-            <h3>Why premium branding matters in a crowded market</h3>
-            <p>Learn how a compelling identity creates trust, recognition, and emotional resonance from the first impression.</p>
-            <a class="btn-outline" href="contact.html">Read More</a>
-          </article>
-          <article class="glass-card blog-card reveal">
-            <div class="meta">Web Design</div>
-            <h3>The anatomy of a high-converting landing page</h3>
-            <p>Discover the design principles that turn attention into action with cleaner digital experiences.</p>
-            <a class="btn-outline" href="contact.html">Read More</a>
-          </article>
-          <article class="glass-card blog-card reveal">
-            <div class="meta">Marketing</div>
-            <h3>Performance creative that scales without losing quality</h3>
-            <p>See how modern marketing creatives balance speed, consistency, and clear messaging across channels.</p>
-            <a class="btn-outline" href="contact.html">Read More</a>
-          </article>
+        <div class="hero__visual">
+          <div class="hero__graphic parallax-layer" data-speed="-1">
+            <img src="assets/about-illustration.svg" alt="GRAPHIX WALA Blog Hub" class="image-reveal">
+          </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <footer>
+    <!-- ব্লগ গ্রিড সেকশন (লোকাল লোকেশন এসইও অপ্টিমাইজড কন্টেন্ট) -->
+    <section class="services-showcase-section" style="background: #090909; border-top: 1px solid var(--glass-border);">
       <div class="container">
-        <div class="footer-grid">
-          <div><a href="index.html" class="brand">GRAPHIX WALA</a><p style="margin-top: .8rem; color: var(--muted);">Premium design, branding, and marketing solutions for modern businesses.</p></div>
-          <div><h3>Quick Links</h3><div class="footer-links" style="margin-top: .7rem;"><a href="about.html">About</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a></div></div>
-          <div><h3>Services</h3><div class="footer-links" style="margin-top: .7rem;"><span>Branding</span><span>Web Development</span><span>Marketing</span><span>Motion Graphics</span></div></div>
-          <div><h3>Newsletter</h3><p style="margin-top: .7rem; color: var(--muted);">Stay inspired with our latest strategy and design insights.</p></div>
+        <div class="section-heading-wrapper text-center">
+          <span class="section-label">RECENT ARTICLES</span>
+          <h2>Insights for Modern <span class="text-primary">Entrepreneurs</span></h2>
+          <p class="section-subtitle">Real strategies written by humans to help local businesses establish deep trust and authority.</p>
         </div>
-        <div class="copyright"><span>© 2026 GRAPHIX WALA. All rights reserved.</span><span>Design • Brand • Inspire</span></div>
+
+        <div class="services-asymmetrical-grid">
+          <!-- ব্লগ পোস্ট ১: হাবড়া ও বনগাঁ ব্র্যান্ডিং -->
+          <article class="premium-service-card" style="justify-content: flex-start; gap: 15px;">
+            <div class="service-glow-aura"></div>
+            <div class="srv-icon-wrap" style="margin-bottom: 10px;"><i class="fa-solid fa-gem"></i></div>
+            <span class="journey-badge blue-badge" style="width: max-content;">BRANDING</span>
+            <h3 style="font-size: 20px; line-height: 1.3; color: var(--white); margin: 5px 0;">Why Local Branding Matters for Businesses in Habra & Bongaon</h3>
+            <p style="font-size: 14px; line-height: 1.6; color: var(--muted); margin-bottom: 20px;">Whether you run a retail shop in Habra or a manufacturing unit in Bongaon, a professional brand identity is what sets you apart. Discover how custom graphic design can help you build trust and stand out in the local market.</p>
+            <a href="contact.html" class="learn-more" style="margin-top: auto;">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+
+          <!-- ব্লগ পোস্ট ২: গোবরডাঙা ও মসলন্দপুর ওয়েবসাইট -->
+          <article class="premium-service-card" style="justify-content: flex-start; gap: 15px;">
+            <div class="service-glow-aura"></div>
+            <div class="srv-icon-wrap" style="margin-bottom: 10px;"><i class="fa-solid fa-laptop-code"></i></div>
+            <span class="journey-badge blue-badge" style="width: max-content;">WEB DESIGN</span>
+            <h3 style="font-size: 20px; line-height: 1.3; color: var(--white); margin: 5px 0;">How to Build a High-Converting Website for Gobardanga & Maslandapur Brands</h3>
+            <p style="font-size: 14px; line-height: 1.6; color: var(--muted); margin-bottom: 20px;">Your business website shouldn't just be an online business card; it must be a sales engine. Learn how local businesses in Gobardanga and Maslandapur are leveraging custom web design to drive direct customer inquiries.</p>
+            <a href="contact.html" class="learn-more" style="margin-top: auto;">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+
+          <!-- ব্লগ পোস্ট ৩: অর্গানিক বেঙ্গল মার্কেটিং -->
+          <article class="premium-service-card" style="justify-content: flex-start; gap: 15px;">
+            <div class="service-glow-aura"></div>
+            <div class="srv-icon-wrap" style="margin-bottom: 10px;"><i class="fa-solid fa-chart-line"></i></div>
+            <span class="journey-badge blue-badge" style="width: max-content;">MARKETING</span>
+            <h3 style="font-size: 20px; line-height: 1.3; color: var(--white); margin: 5px 0;">Organic Marketing & SEO Strategies that Actually Work in West Bengal</h3>
+            <p style="font-size: 14px; line-height: 1.6; color: var(--muted); margin-bottom: 20px;">Tired of robotic automated marketing campaigns that yield zero leads? We explore practical, human-centered digital marketing and local SEO tactics tailored for high-growth businesses in West Bengal.</p>
+            <a href="contact.html" class="learn-more" style="margin-top: auto;">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+        </div>
       </div>
-    </footer>
-    <div class="floating-actions"><a class="whatsapp-btn" href="https://wa.me/919064089364" target="_blank" rel="noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a><a class="call-btn" href="tel:+919064089364" aria-label="Call Us"><i class="fa-solid fa-phone"></i></a></div>
-    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
-    <script src="script.js"></script>
-  </body>
+    </section>
+  </main>
+
+  <!-- প্রিমিয়াম ফুটার সেকশন (হোমপেজের সাথে হুবху সিঙ্ক করা) -->
+  <footer class="premium-footer">
+    <div class="container">
+      <div class="footer-layout-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="logo">
+            <img src="assets/logo.svg" alt="Graphix Wala Logo">
+          </a>
+          <p>Bespoke digital design architectures, responsive visual systems, and campaign configurations designed for ambitious corporate expansion in Bengal.</p>
+          <div class="footer-social-row">
+            <a href="https://wa.me/919064089364" target="_blank" rel="noreferrer" aria-label="WhatsApp" class="magnetic-element"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" aria-label="Instagram" class="magnetic-element"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn" class="magnetic-element"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter" class="magnetic-element"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-navigation-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Our Studio</a></li>
+            <li><a href="services.html">Services & Solutions</a></li>
+            <li><a href="portfolio.html">Creative Portfolio</a></li>
+            <li><a href="pricing.html">Service Pricing</a></li>
+            <li><a href="contact.html">Contact Details</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-services-col">
+          <h3>Core Expertise</h3>
+          <ul class="footer-links-list">
+            <li><a href="services.html">Brand Identity Systems</a></li>
+            <li><a href="services.html">Custom Interface Dev</a></li>
+            <li><a href="services.html">SEO Optimization Sprints</a></li>
+            <li><a href="services.html">Digital Ad Management</a></li>
+            <li><a href="services.html">Motion Advertisement</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter-col">
+          <h3>Design Dispatch</h3>
+          <p>Subscribe to our newsletter containing contemporary design rules, optimization tips, and tools.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault();">
+            <input type="email" placeholder="Corporate email address" required aria-label="Email address for newsletter subscription">
+            <button type="submit" class="newsletter-submit-btn magnetic-element" aria-label="Submit Newsletter form">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom-copyright">
+        <span>© 2026 GRAPHIX WALA. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">SLA Guidelines</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ফ্লোটিং বাটন এবং ব্যাক টু টপ -->
+  <div class="floating-actions">
+    <a class="whatsapp-btn magnetic-element" href="https://wa.me/919064089364" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a class="call-btn magnetic-element" href="tel:+919064089364" aria-label="Call Us">
+      <i class="fa-solid fa-phone"></i>
+    </a>
+  </div>
+
+  <button id="backToTop" class="back-to-top magnetic-element" aria-label="Back to top">↑</button>
+
+  <!-- স্ক্রিপ্টস এবং সিডিএন লাইব্রেরি লিঙ্ক -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>

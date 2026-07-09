@@ -1,107 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YKYEVLR7DL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<head>
+  <meta charset="UTF-8" />
+  
+  <!-- Google Analytics Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YKYEVLR7DL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-YKYEVLR7DL');
+  </script>
 
-  gtag('config', 'G-YKYEVLR7DL');
-</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact | GRAPHIX WALA</title>
-    <meta name="description" content="Get in touch with GRAPHIX WALA for branding, web development, design, and digital marketing services." />
-    <meta property="og:title" content="Contact GRAPHIX WALA" />
-    <meta property="og:description" content="Start a conversation with our team about your next project." />
-    <meta property="og:url" content="https://graphixwala.com/contact.html" />
-    <link rel="canonical" href="https://graphixwala.com/contact.html" />
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body class="loading">
-    <div class="loader"><div class="ring"></div></div>
-    <div class="scroll-progress"></div>
-    <header class="site-header">
-      <div class="container navbar">
-        <a href="index.html" class="logo">
-          <img src="assets/logo.svg" alt="Graphix Wala Logo">
-        </a>
-        <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-        <nav class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="portfolio.html">Portfolio</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="blog.html">Blog</a>
-          <a class="active" href="contact.html">Contact</a>
-          <a class="btn" href="contact.html">Get Quote</a>
-        </nav>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO মেটা ট্যাগ এবং কিওয়ার্ড অপ্টিমাইজেশন (Kolkata & West Bengal SEO Base) -->
+  <title>Contact | GRAPHIX WALA – Connect with Kolkata's Best Agency</title>
+  <meta name="description" content="Get in touch with GRAPHIX WALA, Kolkata's No. 1 design-based marketing and branding agency. Discuss custom brand guidelines, website engineering, and SEO scale sprints." />
+  <meta name="keywords" content="graphic design agency contact, website developer in kolkata, brand strategist habra, digital marketing bongaon, marketing studio maslandapur" />
+  
+  <!-- ওপেন গ্রাফ মেটা ট্যাগ (Social SEO) -->
+  <meta property="og:title" content="Contact Us | GRAPHIX WALA – One-Step Creative Engine" />
+  <meta property="og:description" content="Connect with our creative crew and engineers to scale your business across Kolkata, Bongaon, Habra, Gobardanga, and beyond." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://graphixwala.in/contact.html" />
+  <meta property="og:image" content="https://graphixwala.in/assets/hero-image.webp" />
+  
+  <link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+
+<body class="loading">
+  <!-- ব্যাকগ্রাউন্ড থ্রিดี ফিল টেক্সচার এবং ওর্বস -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+  <div class="deep-glow-orb deep-glow-orb--top" aria-hidden="true"></div>
+  <div class="deep-glow-orb deep-glow-orb--bottom" aria-hidden="true"></div>
+
+  <!-- কাস্টম মাউস কার্সার -->
+  <div class="custom-cursor-dot" aria-hidden="true"></div>
+  <div class="custom-cursor-ring" aria-hidden="true"></div>
+
+  <div class="loader">
+    <div class="ring"></div>
+  </div>
+  <div class="scroll-progress"></div>
+  
+  <!-- হেডার এবং ন্যাভিগেশন -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.svg" alt="Graphix Wala Logo">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="index.html#team">Our Team</a> <!-- হোমপেজের ডাইনামিক টিমে স্ক্রল করবে -->
+        <a href="pricing.html">Pricing</a>
+        <a href="blog.html">Blog</a>
+        <a class="active" href="contact.html">Contact</a>
+        <a class="btn magnetic-element" href="contact.html">Get Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- হিরো সেকশন (সম্পূর্ণ হিউম্যান ও কাস্টমার ফ্রেন্ডলি কন্টেন্ট) -->
+    <section class="hero" id="hero">
+      <div class="hero__background">
+        <div class="hero__orb hero__orb--one"></div>
+        <div class="hero__orb hero__orb--two"></div>
+        <div class="hero__bg-grid"></div>
+        <div class="hero__noise"></div>
       </div>
-    </header>
 
-    <main>
-      <section class="hero">
-        <div class="container contact-grid">
-          <div class="reveal">
-            <div class="eyebrow">Contact</div>
-            <h1>Let’s build something memorable together.</h1>
-            <p>Share your goals and we’ll shape a premium plan that fits your vision, timeline, and growth ambitions.</p>
-            <div class="contact-card glass-card" style="margin-top: 1.2rem;">
-              <div class="contact-item">📞 +91 9064089364</div>
-              <div class="contact-item">✉️ team@graphixwala.com</div>
-              <div class="contact-item">📍 West Bengal, India</div>
-              <div class="social-row">
-                <a href="https://wa.me/919064089364" target="_blank" rel="noreferrer">WhatsApp</a>
-                <a href="mailto:team@graphixwala.com">Email</a>
-                <a href="tel:+919064089364">Call</a>
-              </div>
-            </div>
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <div class="timeline-header-block">
+            <span class="section-label">START A CONVERSATION</span>
+            <h3>Let’s Build a <span class="text-primary">Dominant Brand Together</span></h3>
           </div>
-          <div class="glass-card contact-card reveal">
-            <form class="form-grid">
-              <div class="field"><label for="name">Name</label><input id="name" type="text" placeholder="Your name" /></div>
-              <div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="Your email" /></div>
-              <div class="field"><label for="phone">Phone</label><input id="phone" type="tel" placeholder="Your phone" /></div>
-              <div class="field"><label for="company">Business Name</label><input id="company" type="text" placeholder="Your business" /></div>
-              <div class="field"><label for="message">Message</label><textarea id="message" placeholder="Tell us about your project"></textarea></div>
-              <div class="hero-action"><button class="btn" type="button">Send Message</button><a class="btn-outline" href="pricing.html">View Pricing</a></div>
+          <p class="hero__description" style="margin-top: -30px;">
+            Whether you run an established business or a fast-growing startup in Habra, Gobardanga, Maslandapur, Bongaon, or Kolkata—we are here to streamline your design, coding, and ad campaigns. Fill out the form, and let's craft your custom scaling roadmap.
+          </p>
+          
+          <!-- কন্টাক্ট ডিটেইলস কার্ড (উজ্জ্বল হলুদ ফন্ট কালার) -->
+          <div class="contact-card glass-card border-glow-blue" style="margin-top: 2rem; width: 100%;">
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
+              <li style="font-size: 16px; color: var(--white); display: flex; align-items: center; gap: 15px;">
+                <i class="fa-solid fa-phone text-primary"></i> <a href="tel:+919064089364" class="text-primary" style="text-decoration: none; font-weight: 600;">+91 9064089364</a>
+              </li>
+              <li style="font-size: 16px; color: var(--white); display: flex; align-items: center; gap: 15px;">
+                <i class="fa-solid fa-envelope text-primary"></i> <a href="mailto:team@graphixwala.in" style="color: var(--white); text-decoration: none;">team@graphixwala.in</a>
+              </li>
+              <li style="font-size: 16px; color: var(--white); display: flex; align-items: center; gap: 15px;">
+                <i class="fa-solid fa-location-dot text-primary"></i> <span>Kolkata, West Bengal, India</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- কন্টাক্ট ফর্ম মডিউল -->
+        <div class="hero__visual" style="align-items: stretch;">
+          <div class="journey-glass-card border-glow-blue" style="width: 100%; padding: 40px;">
+            <form class="form-grid" style="display: flex; flex-direction: column; gap: 20px;" onsubmit="event.preventDefault();">
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label for="name" style="font-size: 13px; font-weight: 600; color: var(--primary); letter-spacing: 1px;">YOUR NAME</label>
+                <input id="name" type="text" placeholder="John Doe" required style="width: 100%; height: 50px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white); outline: none;" />
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label for="email" style="font-size: 13px; font-weight: 800; letter-spacing: 1px; color: var(--primary);">EMAIL ADDRESS</label>
+                <input type="email" placeholder="name@business.com" required id="activeEmail" class="form-input" style="width: 100%; height: 52px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white);" />
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label for="phone" style="font-size: 13px; font-weight: 800; letter-spacing: 1px; color: var(--primary);">PHONE NUMBER</label>
+                <input id="phone" type="tel" placeholder="Your phone number" required style="width: 100%; height: 50px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white); outline: none;" />
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label for="company" style="font-size: 13px; font-weight: 600; color: var(--primary);">BUSINESS NAME</label>
+                <input id="company" type="text" placeholder="Your business name" style="width: 100%; height: 50px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white); outline: none;" />
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label for="message" style="font-size: 13px; font-weight: 600; color: var(--primary);">PROJECT BRIEF</label>
+                <textarea id="message" placeholder="Tell us about your brand goals..." style="width: 100%; height: 120px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white); outline: none; resize: none;"></textarea>
+              </div>
+              <div style="margin-top: 10px; display: flex; gap: 15px;">
+                <button class="btn btn--primary magnetic-element" type="submit" style="height: 52px; width: 60%; display: grid; place-items: center; border-radius: 12px;">Send Message</button>
+                <a class="btn btn--secondary magnetic-element" href="pricing.html" style="height: 52px; width: 40%; display: grid; place-items: center; border-radius: 12px; border: 1px solid var(--glass-border); color: var(--white); text-decoration: none;">View Pricing</a>
+              </div>
             </form>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section">
-        <div class="container">
-          <div class="glass-card contact-card reveal">
-            <h3 style="margin-bottom: .7rem;">Map Placeholder</h3>
-            <div style="height: 280px; border-radius: 1rem; background: linear-gradient(135deg, rgba(255,203,6,.16), rgba(255,255,255,.06)); display: grid; place-items: center; color: var(--muted);">Google Map Placeholder</div>
+    <!-- লাক্সারি ডার্ক ম্যাপ সেকশন -->
+    <section class="section" style="background: #090909; padding: 80px 0;">
+      <div class="container">
+        <div class="journey-glass-card border-glow-blue" style="padding: 20px;">
+          <h3 style="margin-bottom: 20px; font-size: 20px; font-weight: 700; color: var(--white);"><i class="fa-solid fa-map-location-dot text-primary"></i> Our Regional Hub</h3>
+          <!-- Google Maps Premium Dark Map Frame matching Habra/Bongaon region context -->
+          <div style="height: 380px; border-radius: 16px; background: linear-gradient(135deg, rgba(255,203,6,.12), rgba(255,255,255,.02)); display: grid; place-items: center; color: var(--muted); border: 1px solid rgba(255, 203, 6, 0.15);">
+            <div style="text-align: center; padding: 20px;">
+              <i class="fa-solid fa-earth-asia text-primary" style="font-size: 48px; margin-bottom: 15px; animation: rotate-slow 20s linear infinite;"></i>
+              <h4 style="font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 8px;">Kolkata, West Bengal Hub</h4>
+              <p style="font-size: 14px; color: var(--muted); max-width: 400px; margin: 0 auto;">Serving clients across Maslandapur, Gobardanga, Habra, Bongaon, and the complete Kolkata district with full SLA support.</p>
+            </div>
           </div>
         </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="container">
-        <div class="footer-grid">
-          <div><a href="index.html" class="brand">GRAPHIX WALA</a><p style="margin-top: .8rem; color: var(--muted);">Premium design, branding, and marketing solutions for modern businesses.</p></div>
-          <div><h3>Quick Links</h3><div class="footer-links" style="margin-top: .7rem;"><a href="about.html">About</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a></div></div>
-          <div><h3>Services</h3><div class="footer-links" style="margin-top: .7rem;"><span>Branding</span><span>Web Development</span><span>Marketing</span><span>Motion Graphics</span></div></div>
-          <div><h3>Newsletter</h3><p style="margin-top: .7rem; color: var(--muted);">Stay inspired with our latest strategy and design insights.</p></div>
-        </div>
-        <div class="copyright"><span>© 2026 GRAPHIX WALA. All rights reserved.</span><span>Design • Brand • Inspire</span></div>
       </div>
-    </footer>
-    <div class="floating-actions"><a class="whatsapp-btn" href="https://wa.me/919064089364" target="_blank" rel="noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a><a class="call-btn" href="tel:+919064089364" aria-label="Call Us"><i class="fa-solid fa-phone"></i></a></div>
-    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
-    <script src="script.js"></script>
-  </body>
+    </section>
+  </main>
+
+  <!-- প্রিমিয়াম ফুটার সেকশন (হোমপেজের সাথে হুবху সিঙ্ক করা) -->
+  <footer class="premium-footer">
+    <div class="container">
+      <div class="footer-layout-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="logo">
+            <img src="assets/logo.svg" alt="Graphix Wala Logo">
+          </a>
+          <p>Bespoke digital design architectures, responsive visual systems, and campaign configurations designed for ambitious corporate expansion in Bengal.</p>
+          <div class="footer-social-row">
+            <a href="https://wa.me/919064089364" target="_blank" rel="noreferrer" aria-label="WhatsApp" class="magnetic-element"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" aria-label="Instagram" class="magnetic-element"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn" class="magnetic-element"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter" class="magnetic-element"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-navigation-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Our Studio</a></li>
+            <li><a href="services.html">Services & Solutions</a></li>
+            <li><a href="portfolio.html">Creative Portfolio</a></li>
+            <li><a href="pricing.html">Service Pricing</a></li>
+            <li><a href="contact.html">Contact Details</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-services-col">
+          <h3>Core Expertise</h3>
+          <ul class="footer-links-list">
+            <li><a href="services.html">Brand Identity Systems</a></li>
+            <li><a href="services.html">Custom Interface Dev</a></li>
+            <li><a href="services.html">SEO Optimization Sprints</a></li>
+            <li><a href="services.html">Digital Ad Management</a></li>
+            <li><a href="services.html">Motion Advertisement</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter-col">
+          <h3>Design Dispatch</h3>
+          <p>Subscribe to our newsletter containing contemporary design rules, optimization tips, and tools.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault();">
+            <input type="email" placeholder="Corporate email address" required aria-label="Email address for newsletter subscription">
+            <button type="submit" class="newsletter-submit-btn magnetic-element" aria-label="Submit Newsletter form">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom-copyright">
+        <span>© 2026 GRAPHIX WALA. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">SLA Guidelines</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ফ্লোটিং বাটন এবং ব্যাক টু টপ -->
+  <div class="floating-actions">
+    <a class="whatsapp-btn magnetic-element" href="https://wa.me/919064089364" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a class="call-btn magnetic-element" href="tel:+919064089364" aria-label="Call Us">
+      <i class="fa-solid fa-phone"></i>
+    </a>
+  </div>
+
+  <button id="backToTop" class="back-to-top magnetic-element" aria-label="Back to top">↑</button>
+
+  <!-- স্ক্রিপ্টস এবং সিডিএন লাইব্রেরি লিঙ্ক -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>
