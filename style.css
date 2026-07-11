@@ -371,12 +371,13 @@ body.loading {
   min-height: 100vh;
   height: auto;
   padding-top: calc(var(--header-height) + 20px);
-  padding-bottom: 0;
+  padding-bottom: 40px; /* বাটন শ্যাডোর জন্য প্যাডিং বাড়ানো হয়েছে */
   margin-bottom: 0;
-  overflow: hidden;
+  overflow: visible;    /* বাটন শ্যাডো যাতে কাটা না পড়ে */
   isolation: isolate;
   background: transparent;
 }
+
 .hero__visual {
   display: flex;
   align-items: flex-end; /* ছবিটিকে কন্টেইনারের নিচে সেট করার জন্য */
@@ -522,8 +523,13 @@ body.loading {
   color: #ffffff;
 }
 
+/* হলুদ লেখাটিতে চমৎকার গ্রেডিয়েন্ট কালার যুক্ত করা হয়েছে */
 .hero__word .hero__yellow {
-  color: #FFCB06;
+  background: linear-gradient(135deg, #FFCB06 0%, #FF7B00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 .hero__word--accent {
@@ -664,11 +670,14 @@ body.loading {
   color: #FFCB06;
 }
 
+/* দুই পাশে যাতে সোজা লাইনে লোগো না কাটে, তাই ফেড ইফেক্ট যুক্ত করা হয়েছে */
 .trusted__marquee {
   overflow: hidden;
   position: relative;
   width: 100%;
   margin-bottom: 28px;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 .trusted__marquee:last-of-type {
@@ -1357,9 +1366,10 @@ body.loading {
   box-shadow: 0 10px 25px rgba(255, 203, 6, 0.25);
 }
 
+/* ৩ কলাম উপযোগী পোর্টফোলিও গ্রিড (Desktop কলাম সংখ্যা ৩ করা হয়েছে) */
 .portfolio-asymmetrical-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* ২ থেকে বাড়িয়ে ৩টি কলাম সেটআপ */
   gap: 30px;
 }
 
@@ -2451,7 +2461,7 @@ body.loading {
 .floating-actions .call-btn { color: #FFC107; }
 
 /* ==========================================================================
-   MEDIA QUERY BREAKPOINTS
+   MEDIA QUERY BREAKPOINTS (রেসপন্সিভ ব্রেকপয়েন্ট অ্যাডজাস্টমেন্ট)
    ========================================================================== */
 @media (max-width: 1024px) {
   .faq-grid-container {
@@ -2468,8 +2478,9 @@ body.loading {
     gap: 20px;
   }
 
+  /* ট্যাবলেট স্ক্রিনে ৩টির বদলে ২টি পোর্টফোলিও কলাম গ্রিড সেট করা হয়েছে */
   .portfolio-asymmetrical-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .pricing-layouts-grid {
@@ -2915,6 +2926,7 @@ body.loading {
     gap: 24px;
   }
 
+  /* লোগো ফিল্টার বাটন মোবাইলে ডানে-বামে সুন্দরভাবে স্ক্রল হবে */
   .portfolio-filters-row {
     justify-content: flex-start;
     flex-wrap: nowrap;
@@ -2927,10 +2939,12 @@ body.loading {
     display: none;
   }
 
+  /* মোবাইলে যাতে ফিল্টার বাটন টেক্সট ভেঙে ডাবল লাইন না হয়ে যায় */
   .portfolio-filters-row .filter-btn {
     flex: 0 0 auto;
     min-height: 44px;
     padding-inline: 18px;
+    white-space: nowrap;
   }
 
   .portfolio-meta-box {
@@ -3124,4 +3138,14 @@ body.loading {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* ==========================================================================
+   HERO SECTION FADE MASK (হিরো সেকশনের ব্যাকগ্রাউন্ড দাগ পুরোপুরি মেলাতে সাহায্য করবে)
+   ========================================================================== */
+.hero::before,
+.hero::after,
+.hero__background {
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
 }

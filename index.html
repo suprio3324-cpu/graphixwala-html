@@ -46,6 +46,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  
+  <!-- Lenis CSS (স্মুথ স্ক্রলিং এর জন্য) -->
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
+  
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
@@ -127,47 +131,50 @@
     </section>
 
     <section class="trusted" aria-labelledby="trusted-title">
+      <!-- শুধুমাত্র শিরোনামটি কন্টেইনারের ভেতর থাকবে -->
       <div class="container">
         <h2 id="trusted-title" class="trusted__title">TRUSTED BY <span>100+</span> BRANDS</h2>
-        <div class="trusted__marquee" aria-hidden="true">
-          <div class="trusted__track trusted__track--left">
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-1.svg" alt="Brand placeholder 1" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-2.svg" alt="Brand placeholder 2" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-3.svg" alt="Brand placeholder 3" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-4.svg" alt="Brand placeholder 4" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-5.svg" alt="Brand placeholder 5" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-6.svg" alt="Brand placeholder 6" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-7.svg" alt="Brand placeholder 7" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-8.svg" alt="Brand placeholder 8" /></div>
-            <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-1.svg" alt="" /></div>
-            <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-2.svg" alt="" /></div>
-            <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-3.svg" alt="" /></div>
-            <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-4.svg" alt="" /></div>
-            <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-5.svg" alt="" /></div>
-            <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-6.svg" alt="" /></div>
-            <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-7.svg" alt="" /></div>
-            <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-8.svg" alt="" /></div>
-          </div>
+      </div>
+
+      <!-- লোগোর মার্কি দুটি কন্টেইনারের বাইরে চলে এসেছে, যাতে পুরো স্ক্রিন জুড়ে স্ক্রল হয় -->
+      <div class="trusted__marquee" aria-hidden="true">
+        <div class="trusted__track trusted__track--left">
+          <div class="trusted__card"><img class="trusted__logo" src="assets/logo-1.svg" alt="Brand placeholder 1" /></div>
+          <div class="trusted__card"><img class="trusted__logo" src="assets/logo-2.svg" alt="Brand placeholder 2" /></div>
+          <div class="trusted__card"><img class="trusted__logo" src="assets/logo-3.svg" alt="Brand placeholder 3" /></div>
+          <div class="trusted__card"><img class="trusted__logo" src="assets/logo-4.svg" alt="Brand placeholder 4" /></div>
+          <div class="trusted__card"><img class="trusted__logo" src="assets/logo-5.svg" alt="Brand placeholder 5" /></div>
+          <div class="trusted__card"><img class="trusted__logo" src="assets/logo-6.svg" alt="Brand placeholder 6" /></div>
+          <div class="trusted__card"><img class="trusted__logo" src="assets/logo-7.svg" alt="Brand placeholder 7" /></div>
+          <div class="trusted__card"><img class="trusted__logo" src="assets/logo-8.svg" alt="Brand placeholder 8" /></div>
+          <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-1.svg" alt="" /></div>
+          <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-2.svg" alt="" /></div>
+          <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-3.svg" alt="" /></div>
+          <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-4.svg" alt="" /></div>
+          <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-5.svg" alt="" /></div>
+          <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-6.svg" alt="" /></div>
+          <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-7.svg" alt="" /></div>
+          <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-8.svg" alt="" /></div>
         </div>
-        <div class="trusted__marquee trusted__marquee--reverse" aria-hidden="true">
-          <div class="trusted__track trusted__track--right">
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-04.svg" alt="Brand placeholder 4" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-03.svg" alt="Brand placeholder 3" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-08.svg" alt="Brand placeholder 8" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-02.svg" alt="Brand placeholder 2" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-07.svg" alt="Brand placeholder 7" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-01.svg" alt="Brand placeholder 1" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-06.svg" alt="Brand placeholder 6" /></div>
-            <div class="trusted__card"><img class="trusted__logo" src="assets/logo-05.svg" alt="Brand placeholder 5" /></div>
-            <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-04.svg" alt="" /></div>
-            <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-03.svg" alt="" /></div>
-            <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-08.svg" alt="" /></div>
-            <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-02.svg" alt="" /></div>
-            <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-07.svg" alt="" /></div>
-            <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-01.svg" alt="" /></div>
-            <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-06.svg" alt="" /></div>
-            <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-05.svg" alt="" /></div>
-          </div>
+      </div>
+      <div class="trusted__marquee trusted__marquee--reverse" aria-hidden="true">
+        <div class="trusted__track trusted__track--right">
+          <div class="trusted__card"><img class="trusted__logo" src="assets/logo-04.svg" alt="Brand placeholder 4" /></div>
+          <div class="trusted__card"><img class="trusted__logo" src="assets/logo-03.svg" alt="Brand placeholder 3" /></div>
+          <div class="trusted__card"><img class="trusted__logo" src="assets/logo-08.svg" alt="Brand placeholder 8" /></div>
+          <div class="trusted__card"><img class="trusted__logo" src="assets/logo-02.svg" alt="Brand placeholder 2" /></div>
+          <div class="trusted__card"><img class="trusted__logo" src="assets/logo-07.svg" alt="Brand placeholder 7" /></div>
+          <div class="trusted__card"><img class="trusted__logo" src="assets/logo-01.svg" alt="Brand placeholder 1" /></div>
+          <div class="trusted__card"><img class="trusted__logo" src="assets/logo-06.svg" alt="Brand placeholder 6" /></div>
+          <div class="trusted__card"><img class="trusted__logo" src="assets/logo-05.svg" alt="Brand placeholder 5" /></div>
+          <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-04.svg" alt="" /></div>
+          <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-03.svg" alt="" /></div>
+          <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-08.svg" alt="" /></div>
+          <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-02.svg" alt="" /></div>
+          <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-07.svg" alt="" /></div>
+          <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-01.svg" alt="" /></div>
+          <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-06.svg" alt="" /></div>
+          <div class="trusted__card" aria-hidden="true"><img class="trusted__logo" src="assets/logo-05.svg" alt="" /></div>
         </div>
       </div>
     </section>
@@ -191,7 +198,7 @@
         <div class="creative-journey-container fade-up" id="process">
           <div class="timeline-header-block text-center">
             <span class="section-label">OUR PROCESS</span>
-            <h3>THE <span class="text-primary">CREATIVE JOURNEY</span></h3>
+            <h3>HOW <span class="text-primary">WE WORK</span></h3>
           </div>
           
           <div class="journey-vertical-timeline">
@@ -206,8 +213,8 @@
                     <i class="fa-solid fa-magnifying-glass font-icon-primary"></i>
                   </div>
                   <span class="journey-badge blue-badge">DISCOVERY</span>
-                  <h4>Brand Discovery</h4>
-                  <p>We research your audience, analyze competitors in Kolkata, and construct a robust brand foundation that holds ground.</p>
+                  <h4>Business Discovery</h4>
+                  <p>Every successful project begins with understanding your business. We research your target audience, analyze competitors, identify growth opportunities, and create a clear digital strategy to build a strong foundation for your brand.</p>
                 </div>
               </div>
               <div class="journey-col journey-col--node">
@@ -227,8 +234,8 @@
                     <i class="fa-regular fa-lightbulb font-icon-primary"></i>
                   </div>
                   <span class="journey-badge blue-badge">CONCEPT</span>
-                  <h4>Concept Development</h4>
-                  <p>Our graphic designers sketch custom visual strategies, translating core insights into bold brand geometries.</p>
+                  <h4>Creative Strategy</h4>
+                  <p>Based on our research, we develop creative concepts that align with your brand. From branding and website planning to social media campaigns and marketing creatives, every idea is designed to achieve your business goals.</p>
                 </div>
               </div>
               <div class="journey-col journey-col--node">
@@ -248,8 +255,8 @@
                     <i class="fa-solid fa-crosshairs font-icon-primary"></i>
                   </div>
                   <span class="journey-badge blue-badge">SYSTEM</span>
-                  <h4>Visual Identity System</h4>
-                  <p>We expand the chosen concept into a complete visual manual, containing color rules and assets tailored for marketing.</p>
+                  <h4>Design & Development</h4>
+                  <p>We transform approved concepts into high-quality designs, responsive websites, social media creatives, marketing materials, and digital assets that maintain a consistent brand identity across every platform.</p>
                 </div>
               </div>
               <div class="journey-col journey-col--node">
@@ -269,8 +276,8 @@
                     <i class="fa-solid fa-box font-icon-primary"></i>
                   </div>
                   <span class="journey-badge blue-badge">DELIVERY</span>
-                  <h4>Delivery & Brand Assets</h4>
-                  <p>You receive production-ready assets and custom layouts, ready to scale seamlessly across both print and digital campaigns.</p>
+                  <h4>Launch & Growth</h4>
+                  <p>After final approval, we deliver all project files, launch your website if included, and provide ongoing support to help your brand grow through digital marketing, SEO, and social media management.</p>
                 </div>
               </div>
               <div class="journey-col journey-col--node">
@@ -287,15 +294,15 @@
           <div class="timeline-stats-row container">
             <div class="timeline-stat-glass-card">
               <h3><span class="counter-num">1200</span>+</h3>
-              <p>Projects Completed</p>
+              <p>Creative Designs Delivered</p>
             </div>
             <div class="timeline-stat-glass-card">
               <h3><span class="counter-num">500</span>+</h3>
-              <p>Happy Clients</p>
+              <p>Satisfied Clients</p>
             </div>
             <div class="timeline-stat-glass-card">
               <h3><span class="counter-num">3</span>+ Years</h3>
-              <p>Design Experience</p>
+              <p>Years of Industry Experience</p>
             </div>
           </div>
 
@@ -308,24 +315,24 @@
       <div class="container">
         <div class="section-heading-wrapper text-center">
           <span class="section-label">OUR SERVICES</span>
-          <h2>The Ultimate Creative & <span class="text-primary">Marketing Engine</span></h2>
-          <p class="section-subtitle">We are the absolute one-step solution for all your branding and digital marketing needs in Kolkata. From conceptual graphics to high-speed engineering, we deliver real growth.</p>
+          <h2>Complete Branding,<span class="text-primary">Design & Digital Marketing Solutions</span></h2>
+          <p class="section-subtitle">Whether you're launching a new business or growing an established brand, GRAPHIX WALA provides complete creative and digital solutions under one roof. From professional branding and graphic design to website development, SEO, social media management, video editing, and Meta Ads strategy, we help businesses build a stronger online presence and achieve long-term growth.</p>
         </div>
 
         <div class="services-asymmetrical-grid">
           <div class="premium-service-card">
             <div class="service-glow-aura"></div>
             <div class="srv-icon-wrap"><i class="fa-solid fa-bezier-curve"></i></div>
-            <h3>Brand Systems</h3>
-            <p>Formulating curated visual guidelines, geometric corporate logomarks, typography rules, and luxury manuals designed to convert.</p>
+            <h3>Brand Identity</h3>
+            <p>Build a professional brand identity with custom logo design, brand colors, typography, and visual assets that create a strong and memorable impression across every platform.</p>
             <span class="service-number">01</span>
           </div>
 
           <div class="premium-service-card">
             <div class="service-glow-aura"></div>
             <div class="srv-icon-wrap"><i class="fa-solid fa-code"></i></div>
-            <h3>Custom Engineering</h3>
-            <p>Building high-speed web interfaces, responsive platforms, scalable architectures, and accessible interactive layouts.</p>
+            <h3>Website Design & Development</h3>
+            <p>We design and develop fast, responsive, and user-friendly websites that help businesses build trust, improve user experience, and generate more leads online.</p>
             <span class="service-number">02</span>
           </div>
 
@@ -333,31 +340,31 @@
             <div class="service-glow-aura"></div>
             <div class="srv-icon-wrap"><i class="fa-solid fa-chart-line"></i></div>
             <h3>Growth Marketing</h3>
-            <p>Deploying conversions optimization, targeted ad frameworks, high ROI analytics scaling, and cross-channel funnel audits.</p>
+            <p>Grow your business with strategic digital marketing, Meta Ads planning, campaign management, audience targeting, and performance-driven marketing solutions.</p>
             <span class="service-number">03</span>
           </div>
 
           <div class="premium-service-card">
             <div class="service-glow-aura"></div>
             <div class="srv-icon-wrap"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-            <h3>SEO Rolling Sprints</h3>
-            <p>Configuring micro-structured semantic schema layers, index configurations, fast loading index files, and link integrations.</p>
+            <h3>Search Engine Optimization (SEO)</h3>
+            <p>Improve your website's visibility on Google with technical SEO, on-page optimization, keyword strategy, website performance improvements, and search engine best practices.</p>
             <span class="service-number">04</span>
           </div>
 
           <div class="premium-service-card">
             <div class="service-glow-aura"></div>
             <div class="srv-icon-wrap"><i class="fa-solid fa-bullhorn"></i></div>
-            <h3>Content Ecosystems</h3>
-            <p>Designing digital organic content funnels, SMM target calendars, interactive layouts, and high-impact social assets.</p>
+            <h3>Social Media Management</h3>
+            <p>Strengthen your online presence with content planning, social media management, creative post designs, content calendars, and audience engagement strategies.</p>
             <span class="service-number">05</span>
           </div>
 
           <div class="premium-service-card">
             <div class="service-glow-aura"></div>
             <div class="srv-icon-wrap"><i class="fa-solid fa-video"></i></div>
-            <h3>3D Motion & Video</h3>
-            <p>Rendering dynamic conceptual visual motion ads, UI transitions, animated elements, and premium custom assets.</p>
+            <h3>Video Editing & Motion Graphics</h3>
+            <p>Create engaging promotional videos, social media reels, business presentations, and motion graphics that capture attention and communicate your message effectively.</p>
             <span class="service-number">06</span>
           </div>
         </div>
@@ -369,18 +376,24 @@
         <div class="portfolio-header-container fade-up">
           <div class="portfolio-headline">
             <span class="section-label">SELECTED WORKS</span>
-            <h2>Exclusive <span class="text-primary">Masterpieces</span> <img src="assets/star-badge.png" class="title-decor-png" alt="Star Badge"></h2>
-            <p>A look at premium creations that defined industry benchmarks and delivered exceptional ROI for West Bengal's leading businesses.</p>
+            <h2>Featured <span class="text-primary">Projects</span> <img src="assets/star-badge.png" class="title-decor-png" alt="Star Badge"></h2>
+            <p>Take a look at some of our recent branding, graphic design, website development, social media, and digital marketing projects. Every project reflects our commitment to creativity, quality, and delivering solutions that help businesses grow.</p>
           </div>
+          
+          <!-- Social Media বাটন যুক্ত করে সম্পূর্ণ করা ৭টি ফিল্টার বাটন সম্বলিত রো -->
           <div class="portfolio-filters-row">
             <button class="filter-btn active" data-filter="all">All Projects</button>
-            <button class="filter-btn" data-filter="branding">Branding</button>
-            <button class="filter-btn" data-filter="web">Web Dev</button>
-            <button class="filter-btn" data-filter="marketing">Marketing</button>
+            <button class="filter-btn" data-filter="branding">Brand Identity</button>
+            <button class="filter-btn" data-filter="web">Website Design</button>
+            <button class="filter-btn" data-filter="creative">Creative Design</button>
+            <button class="filter-btn" data-filter="social">Social Media</button>
+            <button class="filter-btn" data-filter="marketing">Digital Marketing</button>
+            <button class="filter-btn" data-filter="video">Video Production</button>
           </div>
         </div>
 
         <div class="portfolio-asymmetrical-grid">
+          <!-- Card 1: Brand Identity -->
           <div class="portfolio-show-card fade-up" data-category="branding" data-img="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1200&q=80">
             <div class="portfolio-media-container">
               <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80" alt="Cosmetic Packaging Redesign" class="portfolio-image">
@@ -389,12 +402,13 @@
               </div>
             </div>
             <div class="portfolio-meta-box">
-              <span class="meta-tag">Branding System</span>
-              <h3>Aethera Cosmetic Line</h3>
-              <p>Custom packaging, minimalist layout grids, and visual style manuals.</p>
+              <span class="meta-tag">Brand Identity</span>
+              <h3>Modern Brand Identity</h3>
+              <p>Professional logo design, brand guidelines, typography, and visual assets created to help businesses build a strong and memorable brand.</p>
             </div>
           </div>
 
+          <!-- Card 2: Website Design -->
           <div class="portfolio-show-card fade-up" data-category="web" data-img="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1200&q=80">
             <div class="portfolio-media-container">
               <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80" alt="Elysian SaaS Interface Design" class="portfolio-image">
@@ -403,13 +417,14 @@
               </div>
             </div>
             <div class="portfolio-meta-box">
-              <span class="meta-tag">Web Engineering</span>
-              <h3>Elysian SaaS Interface</h3>
-              <p>Performance web app design with complex API routing integrations.</p>
+              <span class="meta-tag">Website Design</span>
+              <h3>Business Website Development</h3>
+              <p>Responsive, SEO-friendly, and high-performance websites designed to improve user experience and generate quality business enquiries.</p>
             </div>
           </div>
 
-          <div class="portfolio-show-card fade-up" data-category="marketing" data-img="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80">
+          <!-- Card 3: Social Media (ক্যাটাগরি 'social' করে দেওয়া হয়েছে) -->
+          <div class="portfolio-show-card fade-up" data-category="social" data-img="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80">
             <div class="portfolio-media-container">
               <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Campaign Dashboard Build" class="portfolio-image">
               <div class="portfolio-hover-overlay">
@@ -417,13 +432,14 @@
               </div>
             </div>
             <div class="portfolio-meta-box">
-              <span class="meta-tag">Growth Campaign</span>
-              <h3>Vertex Ad Infrastructure</h3>
-              <p>Automated conversion funnels, custom landing pages, and lead tracking.</p>
+              <span class="meta-tag">Social Media</span>
+              <h3>Social Media Management</h3>
+              <p>Creative content planning, engaging post designs, and platform management to help businesses grow their online presence.</p>
             </div>
           </div>
 
-          <div class="portfolio-show-card fade-up" data-category="branding" data-img="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80">
+          <!-- Card 4: Digital Marketing (ক্যাটাগরি 'marketing' করে দেওয়া হয়েছে) -->
+          <div class="portfolio-show-card fade-up" data-category="marketing" data-img="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80">
             <div class="portfolio-media-container">
               <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="Nexus Brand Architecture" class="portfolio-image">
               <div class="portfolio-hover-overlay">
@@ -431,64 +447,112 @@
               </div>
             </div>
             <div class="portfolio-meta-box">
-              <span class="meta-tag">Corporate Identity</span>
-              <h3>Nexus Spatial Guidelines</h3>
-              <p>Geometric design frameworks, identity guidelines, and typography assets.</p>
+              <span class="meta-tag">Digital Marketing</span>
+              <h3>Performance Marketing</h3>
+              <p>Meta Ads strategy, campaign management, and conversion-focused marketing solutions designed to generate leads and increase brand visibility.</p>
             </div>
           </div>
-        </div>
-      </div>
+
+          <!-- Card 5: Graphic Design (ক্যাটাগরি 'creative' করে দেওয়া হয়েছে) -->
+          <div class="portfolio-show-card fade-up" data-category="creative" data-img="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80">
+            <div class="portfolio-media-container">
+              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="Nexus Brand Architecture" class="portfolio-image">
+              <div class="portfolio-hover-overlay">
+                <div class="overlay-button-circle"><i class="fa-solid fa-expand"></i></div>
+              </div>
+            </div>
+            <div class="portfolio-meta-box">
+              <span class="meta-tag">Graphic Design</span>
+              <h3>Creative Design Solutions</h3>
+              <p>Professional brochures, flyers, banners, business cards, packaging, and marketing materials designed for both print and digital media.</p>
+            </div>
+          </div>
+
+          <!-- Card 6: Video Editing (ক্যাটাগরি 'video' করে দেওয়া হয়েছে) -->
+          <div class="portfolio-show-card fade-up" data-category="video" data-img="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80">
+            <div class="portfolio-media-container">
+              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="Nexus Brand Architecture" class="portfolio-image">
+              <div class="portfolio-hover-overlay">
+                <div class="overlay-button-circle"><i class="fa-solid fa-expand"></i></div>
+              </div>
+            </div>
+            <div class="portfolio-meta-box">
+              <span class="meta-tag">Video Editing</span>
+              <h3>Professional Video Production</h3>
+              <p>High-quality promotional videos, social media reels, corporate presentations, and motion graphics designed to capture attention and drive engagement.</p>
+            </div>
+          </div>
+        </div> <!-- portfolio-asymmetrical-grid ক্লোজিং -->
+      </div> <!-- container ক্লোজিং -->
     </section>
 
     <section class="pricing-section" id="pricing">
       <div class="container">
         <div class="pricing-header-wrapper text-center fade-up">
-          <span class="section-label">TRANSPARENT PRICING</span>
-          <h2>Tailored Investment <span class="text-primary">Packages</span></h2>
-          <p>Strictly premium visual architectures engineered for high scaling conversion. Choose your roadmap.</p>
+          <span class="section-label">PRICING PLANS</span>
+          <h2>Flexible Packages for <span class="text-primary"> Every Business</span></h2>
+          <p>Choose the right package for your business needs. Whether you're starting a new business or looking to grow an established brand, our branding, website design, digital marketing, and social media solutions are designed to help you achieve long-term business growth with transparent pricing and professional support.</p>
         </div>
 
         <div class="pricing-layouts-grid">
           <div class="pricing-package-card">
-            <span class="package-tag">LAUNCH</span>
-            <div class="price-val"><span>₹</span>1,200</div>
-            <p class="price-brief">Strategic digital startup foundations</p>
+            <span class="package-tag">STARTER</span>
+            <div class="price-val"><span>₹</span>9,999</div>
+            <p class="price-brief">Complete digital solutions for new and growing businesses.</p>
             <ul class="package-perks">
-              <li><i class="fa-solid fa-check text-primary"></i> Standard Visual Brand Identity</li>
-              <li><i class="fa-solid fa-check text-primary"></i> High-Speed Responsive Landing Page</li>
-              <li><i class="fa-solid fa-check text-primary"></i> Core Technical SEO Setup</li>
-              <li><i class="fa-solid fa-check text-primary"></i> 1 Month Delivery SLA</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Professional Logo Design</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Brand Color & Typography Setup</li>
+              <li><i class="fa-solid fa-check text-primary"></i> 1-Page Responsive Website</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Basic Technical SEO</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Google Business Profile Setup</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Social Media Management</li>
+              <li><i class="fa-solid fa-check text-primary"></i> 10 Social Media & Meta Ads Creative Designs</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Basic Meta Ads Strategy</li>
+              <li><i class="fa-solid fa-check text-primary"></i> 30 Days Free Support</li>
             </ul>
             <a href="contact.html" class="btn btn-pkg-action">Get Started</a>
           </div>
 
           <div class="pricing-package-card premium-pkg-active">
             <div class="best-value-ribbon">BEST VALUED</div>
-            <span class="package-tag">SCALE PLATINUM</span>
-            <div class="price-val"><span>₹</span>2,800</div>
-            <p class="price-brief">Comprehensive market-scaling system</p>
+            <span class="package-tag">BUSINESS PRO</span>
+            <div class="price-val"><span>₹</span>18,999</div>
+            <p class="price-brief">Advanced branding and marketing solutions to accelerate business growth.</p>
             <ul class="package-perks">
-              <li><i class="fa-solid fa-check text-primary"></i> Full High-End Corporate Branding</li>
-              <li><i class="fa-solid fa-check text-primary"></i> Multi-Page custom Web Application</li>
-              <li><i class="fa-solid fa-check text-primary"></i> Stretched SEO Rolling Integration</li>
-              <li><i class="fa-solid fa-check text-primary"></i> Conversion-Optimized Ad Creatives</li>
-              <li><i class="fa-solid fa-check text-primary"></i> Dynamic Motion Transitions</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Complete Brand Identity</li>
+              <li><i class="fa-solid fa-check text-primary"></i> 5–8 Page Premium Website</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Advanced Technical SEO</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Social Media Management</li>
+              <li><i class="fa-solid fa-check text-primary"></i> 20 Social Media & Meta Ads Creative Designs</li>
+              <li><i class="fa-solid fa-check text-primary"></i> 4 Professional Video Editing</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Motion Graphics Design</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Advanced Meta Ads Strategy</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Google Analytics & Search Console Setup</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Website Speed Optimization</li>
+              <li><i class="fa-solid fa-check text-primary"></i> 30 Days Free Support</li>
             </ul>
-            <a href="contact.html" class="btn btn-pkg-action btn-pkg-active">Accelerate Scale</a>
+            <a href="contact.html" class="btn btn-pkg-action btn-pkg-active">Accelerate Growth</a>
           </div>
 
           <div class="pricing-package-card">
             <span class="package-tag">ENTERPRISE</span>
-            <div class="price-val"><span>₹</span>5,500</div>
-            <p class="price-brief">Custom corporate market domination</p>
+            <div class="price-val"><span>₹</span>39,999</div>
+            <p class="price-brief">Complete digital growth solutions for established brands and enterprises.</p>
             <ul class="package-perks">
-              <li><i class="fa-solid fa-check text-primary"></i> Bespoke Brand Guidelines & Licensing</li>
-              <li><i class="fa-solid fa-check text-primary"></i> Complex Web Engine / Portal Development</li>
-              <li><i class="fa-solid fa-check text-primary"></i> Continuous Growth Campaigns SLA</li>
-              <li><i class="fa-solid fa-check text-primary"></i> High-Def 2D/3D Motion Visual assets</li>
-              <li><i class="fa-solid fa-check text-primary"></i> 24/7 Technical Operations Support</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Premium Brand Identity System</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Custom Business Website / Web Application</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Advanced Technical SEO</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Social Media Management</li>
+              <li><i class="fa-solid fa-check text-primary"></i> 30 Social Media & Meta Ads Creative Designs</li>
+              <li><i class="fa-solid fa-check text-primary"></i> 12 Professional Video Editing</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Premium Motion Graphics Design</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Complete Meta Ads Strategy</li>
+              <li><i class="fa-solid fa-check text-primary"></i> High-Converting Landing Page</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Google Analytics 4 & Conversion Tracking</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Priority Project Support</li>
+              <li><i class="fa-solid fa-check text-primary"></i> 30 Days Free Support</li>
             </ul>
-            <a href="contact.html" class="btn btn-pkg-action">Connect Experts</a>
+            <a href="contact.html" class="btn btn-pkg-action">Contact Us</a>
           </div>
         </div>
       </div>
@@ -567,8 +631,8 @@
       <div class="container">
         <div class="testimonials-header text-center fade-up">
           <span class="section-label">CLIENT APPRECIATION</span>
-          <h2>Aura of <span class="text-primary">Real Experience</span></h2>
-          <p class="section-subtitle">Read how we transformed brand visibility and delivered absolute ROI for local businesses across West Bengal.</p>
+          <h2>AWhat Our <span class="text-primary">Clients Say</span></h2>
+          <p class="section-subtitle">Read genuine feedback from businesses that have trusted GRAPHIX WALA for branding, website development, SEO, digital marketing, social media management, and creative design services.</p>
         </div>
 
         <div class="testimonials-layouts-grid">
@@ -686,8 +750,8 @@
       <div class="cta-dynamic-glow" aria-hidden="true"></div>
       <div class="container">
         <div class="cta-banner-card fade-up">
-          <h2 class="giant-headline">ACCELERATE YOUR DIGITAL BRAND</h2>
-          <p>Are you ready to transcend ordinary interface layouts? Partner with us to scale brand positioning with premium aesthetics, customized code configurations, and conversion strategies.</p>
+          <h2 class="giant-headline">GROW YOUR BUSINESS WITH GRAPHIX WALA</h2>
+          <p>Ready to build a stronger brand online? From professional branding and website development to SEO, social media management, digital marketing, and creative design, our team helps your business attract more customers and achieve long-term growth.</p>
           <div class="cta-buttons-row">
             <a href="contact.html" class="btn btn--primary magnetic-element">Get A Free Quote</a>
             <a href="portfolio.html" class="btn btn--secondary magnetic-element">Explore Portfolio</a>
@@ -704,7 +768,7 @@
           <a href="index.html" class="logo">
             <img src="assets/logo.svg" alt="Graphix Wala Logo">
           </a>
-          <p>Bespoke digital design architectures, responsive visual systems, and campaign configurations designed for ambitious corporate expansion.</p>
+          <p>Professional branding, website design, digital marketing, SEO, and social media solutions tailored to help businesses build a strong online presence and achieve sustainable growth.</p>
           <div class="footer-social-row">
             <a href="https://wa.me/919064089364" target="_blank" rel="noreferrer" aria-label="WhatsApp" class="magnetic-element"><i class="fa-brands fa-whatsapp"></i></a>
             <a href="#" aria-label="Instagram" class="magnetic-element"><i class="fa-brands fa-instagram"></i></a>
@@ -787,6 +851,10 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+  <!-- Lenis Smooth Scroll JS -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  
   <script src="script.js"></script>
 </body>
 

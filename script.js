@@ -1,3 +1,25 @@
+// ==========================================================================
+// LENIS SMOOTH SCROLL INITIALIZATION (স্মুথ স্ক্রলিং ইঞ্জিন)
+// ==========================================================================
+const lenis = new Lenis({
+  duration: 1.2, 
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // স্ক্রল স্পিডের কার্ভ
+  direction: 'vertical',
+  gestureDirection: 'vertical',
+  smooth: true,
+  smoothTouch: false, 
+  touchMultiplier: 2,
+});
+
+lenis.on('scroll', ScrollTrigger.update);
+
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
+// ==========================================================================
+
 // SAFE AND ROBUST DOM READY ENGINE (Stuck Loader & Counter Fix)
 const runWebsiteEngine = () => {
   
@@ -480,7 +502,7 @@ const runWebsiteEngine = () => {
     }
   });
 
-  // 10. BACK TO TOP BUTTON
+  // 10. BACK TO TOP BUTTON (Lenis Integration)
   const backToTopBtn = document.getElementById("backToTop");
   if (backToTopBtn) {
     window.addEventListener("scroll", () => {
@@ -492,14 +514,31 @@ const runWebsiteEngine = () => {
     });
 
     backToTopBtn.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
+      // Lenis দিয়ে স্মুথ স্ক্রলিং এর মাধ্যমে একদম উপরে নিয়ে যাবে
+      lenis.scrollTo(0, { duration: 1.2 });
     });
   }
 
-  // 11. GSAP TRIGGER INTERSECTION REVEALS (FULLY OPTIMIZED COUNTER-UP & SCROLL)
+  // 11. ANCHOR SMOOTH SCROLLS (শুধুমাত্র # হ্যাশ লিংক স্ক্রলিং সক্রিয় করে)
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault(); // ব্রাউজারের সাধারণ লাফানো বন্ধ করবে, অন্য HTML পেজ নয়
+      
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      
+      if (targetElement) {
+        // লেনিস দিয়ে পারফেক্ট হেডার অফসেট (৮২px) বাদ দিয়ে স্ক্রল করাবে
+        lenis.scrollTo(targetElement, {
+          offset: -82,
+          duration: 1.2,
+          immediate: false
+        });
+      }
+    });
+  });
+
+  // 12. GSAP TRIGGER INTERSECTION REVEALS (FULLY OPTIMIZED COUNTER-UP & SCROLL)
   const initiateCounterAnimations = () => {
     const counterElements = document.querySelectorAll(".counter-num");
     if (counterElements.length === 0) return;
