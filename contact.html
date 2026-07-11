@@ -32,6 +32,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  
+  <!-- Lenis CSS (স্মুথ স্ক্রলিং এর জন্য) -->
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
+  
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
@@ -73,7 +77,7 @@
   </header>
 
   <main>
-    <!-- হিরো সেকশন (সম্পূর্ণ হিউম্যান ও কাস্টমার ফ্রেন্ডলি কন্টেন্ট) -->
+    <!-- হিরো সেকশন -->
     <section class="hero" id="hero">
       <div class="hero__background">
         <div class="hero__orb hero__orb--one"></div>
@@ -92,7 +96,7 @@
             Whether you run an established business or a fast-growing startup in Habra, Gobardanga, Maslandapur, Bongaon, or Kolkata—we are here to streamline your design, coding, and ad campaigns. Fill out the form, and let's craft your custom scaling roadmap.
           </p>
           
-          <!-- কন্টাক্ট ডিটেইলস কার্ড (উজ্জ্বল হলুদ ফন্ট কালার) -->
+          <!-- কন্টাক্ট ডিটেইলস কার্ড -->
           <div class="contact-card glass-card border-glow-blue" style="margin-top: 2rem; width: 100%;">
             <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
               <li style="font-size: 16px; color: var(--white); display: flex; align-items: center; gap: 15px;">
@@ -108,30 +112,38 @@
           </div>
         </div>
 
-        <!-- কন্টাক্ট ফর্ম মডিউল -->
+        <!-- কন্টাক্ট ফর্ম মডিউল (Formspree ইন্টিগ্রেশন এবং ইনপুট নামসমূহ ঠিক করা হয়েছে) -->
         <div class="hero__visual" style="align-items: stretch;">
           <div class="journey-glass-card border-glow-blue" style="width: 100%; padding: 40px;">
-            <form class="form-grid" style="display: flex; flex-direction: column; gap: 20px;" onsubmit="event.preventDefault();">
+            
+            <!-- এখানে 'YOUR_FORM_ID' এর জায়গায় আপনার Formspree থেকে পাওয়া কোডটি বসিয়ে দেবেন -->
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="form-grid" style="display: flex; flex-direction: column; gap: 20px;">
+              
               <div style="display: flex; flex-direction: column; gap: 8px;">
                 <label for="name" style="font-size: 13px; font-weight: 600; color: var(--primary); letter-spacing: 1px;">YOUR NAME</label>
-                <input id="name" type="text" placeholder="John Doe" required style="width: 100%; height: 50px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white); outline: none;" />
+                <input id="name" name="name" type="text" placeholder="John Doe" required style="width: 100%; height: 50px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white); outline: none;" />
               </div>
+              
               <div style="display: flex; flex-direction: column; gap: 8px;">
                 <label for="email" style="font-size: 13px; font-weight: 800; letter-spacing: 1px; color: var(--primary);">EMAIL ADDRESS</label>
-                <input type="email" placeholder="name@business.com" required id="activeEmail" class="form-input" style="width: 100%; height: 52px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white);" />
+                <input id="email" name="email" type="email" placeholder="name@business.com" required style="width: 100%; height: 52px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white); outline: none;" />
               </div>
+              
               <div style="display: flex; flex-direction: column; gap: 8px;">
                 <label for="phone" style="font-size: 13px; font-weight: 800; letter-spacing: 1px; color: var(--primary);">PHONE NUMBER</label>
-                <input id="phone" type="tel" placeholder="Your phone number" required style="width: 100%; height: 50px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white); outline: none;" />
+                <input id="phone" name="phone" type="tel" placeholder="Your phone number" required style="width: 100%; height: 50px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white); outline: none;" />
               </div>
+              
               <div style="display: flex; flex-direction: column; gap: 8px;">
                 <label for="company" style="font-size: 13px; font-weight: 600; color: var(--primary);">BUSINESS NAME</label>
-                <input id="company" type="text" placeholder="Your business name" style="width: 100%; height: 50px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white); outline: none;" />
+                <input id="company" name="company" type="text" placeholder="Your business name" style="width: 100%; height: 50px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white); outline: none;" />
               </div>
+              
               <div style="display: flex; flex-direction: column; gap: 8px;">
                 <label for="message" style="font-size: 13px; font-weight: 600; color: var(--primary);">PROJECT BRIEF</label>
-                <textarea id="message" placeholder="Tell us about your brand goals..." style="width: 100%; height: 120px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white); outline: none; resize: none;"></textarea>
+                <textarea id="message" name="message" placeholder="Tell us about your brand goals..." style="width: 100%; height: 120px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white); outline: none; resize: none;"></textarea>
               </div>
+              
               <div style="margin-top: 10px; display: flex; gap: 15px;">
                 <button class="btn btn--primary magnetic-element" type="submit" style="height: 52px; width: 60%; display: grid; place-items: center; border-radius: 12px;">Send Message</button>
                 <a class="btn btn--secondary magnetic-element" href="pricing.html" style="height: 52px; width: 40%; display: grid; place-items: center; border-radius: 12px; border: 1px solid var(--glass-border); color: var(--white); text-decoration: none;">View Pricing</a>
@@ -147,7 +159,7 @@
       <div class="container">
         <div class="journey-glass-card border-glow-blue" style="padding: 20px;">
           <h3 style="margin-bottom: 20px; font-size: 20px; font-weight: 700; color: var(--white);"><i class="fa-solid fa-map-location-dot text-primary"></i> Our Regional Hub</h3>
-          <!-- Google Maps Premium Dark Map Frame matching Habra/Bongaon region context -->
+          <!-- Google Maps Frame Context -->
           <div style="height: 380px; border-radius: 16px; background: linear-gradient(135deg, rgba(255,203,6,.12), rgba(255,255,255,.02)); display: grid; place-items: center; color: var(--muted); border: 1px solid rgba(255, 203, 6, 0.15);">
             <div style="text-align: center; padding: 20px;">
               <i class="fa-solid fa-earth-asia text-primary" style="font-size: 48px; margin-bottom: 15px; animation: rotate-slow 20s linear infinite;"></i>
@@ -160,7 +172,7 @@
     </section>
   </main>
 
-  <!-- প্রিমিয়াম ফুটার সেকশন (হোমপেজের সাথে হুবху সিঙ্ক করা) -->
+  <!-- প্রিমিয়াম ফুটার সেকশন (হোমপেজের সাথে হুবহু সিঙ্ক করা) -->
   <footer class="premium-footer">
     <div class="container">
       <div class="footer-layout-grid">
@@ -238,7 +250,12 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="script.js"></script>
+  
+  <!-- Lenis Smooth Scroll JS (নতুন যুক্ত করা হয়েছে) -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  
+  <!-- ক্যাশ বাস্টিং ট্রিক সহ স্ক্রিপ্ট লোড (যাতে ব্রাউজার সরাসরি নতুন ফাইল লোড করে) -->
+  <script src="script.js?v=1.1"></script>
 </body>
 
 </html>

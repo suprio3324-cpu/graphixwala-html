@@ -1,5 +1,5 @@
 // ==========================================================================
-// LENIS SMOOTH SCROLL INITIALIZATION (স্মুথ স্ক্রলিং ইঞ্জিন)
+// LENIS SMOOTH SCROLL INITIALIZATION (সুরক্ষিত ও বাগমুক্ত সেটআপ)
 // ==========================================================================
 const lenis = new Lenis({
   duration: 1.2, 
@@ -11,13 +11,25 @@ const lenis = new Lenis({
   touchMultiplier: 2,
 });
 
-lenis.on('scroll', ScrollTrigger.update);
+// GSAP এবং ScrollTrigger পেজে লোড হয়েছে কি না তা চেক করে সিঙ্ক করা (যাতে অন্য পেজে ক্র্যাশ না করে)
+if (typeof gsap !== "undefined") {
+  if (typeof ScrollTrigger !== "undefined") {
+    lenis.on('scroll', ScrollTrigger.update);
+  }
 
-gsap.ticker.add((time) => {
-  lenis.raf(time * 1000);
-});
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+  });
 
-gsap.ticker.lagSmoothing(0);
+  gsap.ticker.lagSmoothing(0);
+} else {
+  // পেজে GSAP না থাকলে সাধারণ ব্রাউজার রেন্ডার ফ্রেম দিয়ে লেনিস স্মুথ স্ক্রল চালানো
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+}
 // ==========================================================================
 
 // SAFE AND ROBUST DOM READY ENGINE (Stuck Loader & Counter Fix)
@@ -150,11 +162,11 @@ const runWebsiteEngine = () => {
     });
   }
 
-  // 4. CUSTOM MOUSE FOLLOWER
+  // 4. CUSTOM MOUSE FOLLOWER (GSAP সেফটি গার্ড যুক্ত করা হয়েছে)
   const cursorDot = document.querySelector(".custom-cursor-dot");
   const cursorRing = document.querySelector(".custom-cursor-ring");
 
-  if (cursorDot && cursorRing && window.innerWidth > 768) {
+  if (cursorDot && cursorRing && window.innerWidth > 768 && typeof gsap !== "undefined") {
     document.addEventListener("mousemove", (event) => {
       gsap.to(cursorDot, {
         x: event.clientX,
@@ -210,9 +222,9 @@ const runWebsiteEngine = () => {
     });
   }
 
-  // 5. MAGNETIC BUTTON SYSTEM
+  // 5. MAGNETIC BUTTON SYSTEM (GSAP সেফটি গার্ড যুক্ত করা হয়েছে)
   const magneticElements = document.querySelectorAll(".magnetic-element");
-  if (magneticElements.length > 0 && window.innerWidth > 768) {
+  if (magneticElements.length > 0 && window.innerWidth > 768 && typeof gsap !== "undefined") {
     magneticElements.forEach(elem => {
       elem.addEventListener("mousemove", (event) => {
         const boundary = elem.getBoundingClientRect();
@@ -324,7 +336,7 @@ const runWebsiteEngine = () => {
   const activeMemberDesc = document.getElementById("activeMemberDesc");
   const widgetViewport = document.querySelector(".widget-viewport");
 
-  if (teamNavButtons.length > 0 && activeLargeCutout) {
+  if (teamNavButtons.length > 0 && activeLargeCutout && typeof gsap !== "undefined") {
     const handleMemberTransition = (index) => {
       const data = teamMembersData[index];
 
@@ -403,7 +415,7 @@ const runWebsiteEngine = () => {
     }
   }
 
-  // 7. ASYMMETRICAL PORTFOLIO FILTER SYSTEM
+  // 7. ASYMMETRICAL PORTFOLIO FILTER SYSTEM (GSAP সেফটি গার্ড যুক্ত করা হয়েছে)
   const portfolioGridCards = document.querySelectorAll(".portfolio-show-card");
   const portfolioFilterButtons = document.querySelectorAll(".portfolio-filters-row .filter-btn");
 
@@ -420,10 +432,12 @@ const runWebsiteEngine = () => {
 
           if (selectedValue === "all" || itemCategory === selectedValue) {
             card.style.display = "block";
-            gsap.fromTo(card, 
-              { opacity: 0, scale: 0.94, y: 15 },
-              { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "power2.out" }
-            );
+            if (typeof gsap !== "undefined") {
+              gsap.fromTo(card, 
+                { opacity: 0, scale: 0.94, y: 15 },
+                { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "power2.out" }
+              );
+            }
           } else {
             card.style.display = "none";
           }
@@ -551,21 +565,23 @@ const runWebsiteEngine = () => {
       const targetVal = parseInt(counter.textContent, 10);
       if (isNaN(targetVal)) return;
 
-      // Fail-Safe Counter-up Mechanism
-      gsap.fromTo(counter, 
-        { textContent: 0 },
-        {
-          textContent: targetVal,
-          duration: 2.5,
-          ease: "power2.out",
-          snap: { textContent: 1 }, // দশমিক ছাড়া পূর্ণ সংখ্যায় অ্যানিমেশন হবে
-          scrollTrigger: {
-            trigger: triggerElement,
-            start: "top 95%", // কন্টেইনারটি স্ক্রিনে আসামাত্র কাউন্ট শুরু হবে
-            toggleActions: "play none none none"
+      // Fail-Safe Counter-up Mechanism (GSAP সেফটি গার্ড যুক্ত করা হয়েছে)
+      if (typeof gsap !== "undefined") {
+        gsap.fromTo(counter, 
+          { textContent: 0 },
+          {
+            textContent: targetVal,
+            duration: 2.5,
+            ease: "power2.out",
+            snap: { textContent: 1 }, // দশমিক ছাড়া পূর্ণ সংখ্যায় অ্যানিমেশন হবে
+            scrollTrigger: {
+              trigger: triggerElement,
+              start: "top 95%", // কন্টেইনারটি স্ক্রিনে আসামাত্র কাউন্ট শুরু হবে
+              toggleActions: "play none none none"
+            }
           }
-        }
-      );
+        );
+      }
     });
   };
 

@@ -31,6 +31,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  
+  <!-- Lenis CSS (স্মুথ স্ক্রলিং এর জন্য) -->
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
+  
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
@@ -72,7 +76,7 @@
   </header>
 
   <main>
-    <!-- হিরো সেকশন (সম্পূর্ণ হিউম্যান ও কলকাতা-ভিত্তিক কপিরাইটিং) -->
+    <!-- হিরো সেকশন -->
     <section class="hero" id="hero">
       <div class="hero__background">
         <div class="hero__orb hero__orb--one"></div>
@@ -108,7 +112,7 @@
       </div>
     </section>
 
-    <!-- মিশন ও ভিশন সেকশন (নিখুঁত এবং হাই-কনট্রাস্ট কন্টেন্ট) -->
+    <!-- মিশন ও ভিশন সেকশন -->
     <section class="gw-whatwedo" style="border-top: 1px solid var(--glass-border);">
       <div class="container">
         <div class="journey-vertical-timeline" style="gap: 50px;">
@@ -189,7 +193,7 @@
     </section>
   </main>
 
-  <!-- প্রিমিয়াম ফুটার সেকশন (হোমপেজের সাথে হুবহু সিঙ্ক করা) -->
+  <!-- ফুটার সেকশন -->
   <footer class="premium-footer">
     <div class="container">
       <div class="footer-layout-grid">
@@ -251,7 +255,7 @@
     </div>
   </footer>
 
-  <!-- ফ্লোটিং বাটন এবং ব্যাক টু টপ -->
+  <!-- ফ্লোটিং অ্যাকশনস -->
   <div class="floating-actions">
     <a class="whatsapp-btn magnetic-element" href="https://wa.me/919064089364" target="_blank" rel="noreferrer" aria-label="WhatsApp">
       <i class="fa-brands fa-whatsapp"></i>
@@ -267,7 +271,12 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="script.js"></script>
+  
+  <!-- Lenis Smooth Scroll JS -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  
+  <!-- ক্যাশ বাস্টিং ট্রিক সহ স্ক্রিপ্ট লোড (যাতে ব্রাউজার সরাসরি নতুন ফাইল লোড করে) -->
+  <script src="script.js?v=1.1"></script>
 </body>
 
 </html>
