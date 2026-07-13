@@ -370,24 +370,23 @@ body.loading {
   position: relative;
   min-height: 100vh;
   height: auto;
-  padding-top: calc(var(--header-height) + 20px);
-  padding-bottom: 40px; /* বাটন শ্যাডোর জন্য প্যাডিং বাড়ানো হয়েছে */
+  padding: calc(var(--header-height) + 20px) 0 40px;
   margin-bottom: 0;
-  overflow: visible;    /* বাটন শ্যাডো যাতে কাটা না পড়ে */
+  overflow: visible;
   isolation: isolate;
   background: transparent;
 }
 
 .hero__visual {
   display: flex;
-  align-items: flex-end; /* ছবিটিকে কন্টেইনারের নিচে সেট করার জন্য */
+  align-items: flex-end; 
   justify-content: center;
   height: 100%;
   perspective: 1400px;
   transform-style: preserve-3d;
-  pointer-events: none; 
-  align-self: end; /* গ্রিডের একদম নিচে ছবিটিকে লক করার জন্য */
-  margin-bottom: -45px; /* শুধুমাত্র নিচের মার্জিন কমানো হলো (নেগেটিভ মার্জিন দিয়ে নিচে নামানো হলো) */
+  pointer-events: none;
+  align-self: end;
+  margin-bottom: -45px;
 }
 
 .hero::before,
@@ -523,7 +522,6 @@ body.loading {
   color: #ffffff;
 }
 
-/* হলুদ লেখাটিতে চমৎকার গ্রেডিয়েন্ট কালার যুক্ত করা হয়েছে */
 .hero__word .hero__yellow {
   background: linear-gradient(135deg, #FFCB06 0%, #FF7B00 100%);
   -webkit-background-clip: text;
@@ -601,13 +599,13 @@ body.loading {
 
 .hero__visual {
   display: flex;
-  align-items: flex-end; /* ছবিটিকে কন্টেইনারের নিচে সেট করার জন্য */
+  align-items: flex-end;
   justify-content: center;
   height: 100%;
   perspective: 1400px;
   transform-style: preserve-3d;
-  pointer-events: none; 
-  align-self: end; /* গ্রিডের একদম নিচে ছবিটিকে লক করার জন্য */
+  pointer-events: none;
+  align-self: end;
   margin-bottom: 0;
 }
 
@@ -670,7 +668,6 @@ body.loading {
   color: #FFCB06;
 }
 
-/* দুই পাশে যাতে সোজা লাইনে লোগো না কাটে, তাই ফেড ইফেক্ট যুক্ত করা হয়েছে */
 .trusted__marquee {
   overflow: hidden;
   position: relative;
@@ -2399,7 +2396,6 @@ body.loading {
   object-fit: cover;
 }
 
-/* লাইটবক্সে ভিডিওর জন্য iframe স্টাইল */
 .lightbox-media-box iframe {
   position: absolute;
   top: 0;
@@ -2411,7 +2407,7 @@ body.loading {
 
 .lightbox-media-box {
   position: relative;
-  aspect-ratio: 16 / 9; /* ভিডিওর জন্য আদর্শ অনুপাত */
+  aspect-ratio: 16 / 9;
 }
 .lightbox-info-box {
   padding: 40px;
@@ -2626,7 +2622,6 @@ body.loading {
 
   .services-asymmetrical-grid,
   .testimonials-layouts-grid {
-    /* এই মিডিয়া কোয়েরিতে testimonials-layouts-grid কে 1fr করা হয়েছে */
     grid-template-columns: 1fr;
   }
 
@@ -2957,7 +2952,6 @@ body.loading {
     gap: 24px;
   }
 
-  /* লোগো ফিল্টার বাটন মোবাইলে ডানে-বামে সুন্দরভাবে স্ক্রল হবে */
   .portfolio-filters-row {
     justify-content: flex-start;
     flex-wrap: nowrap;
@@ -2970,7 +2964,6 @@ body.loading {
     display: none;
   }
 
-  /* মোবাইলে যাতে ফিল্টার বাটন টেক্সট ভেঙে ডাবল লাইন না হয়ে যায় */
   .portfolio-filters-row .filter-btn {
     flex: 0 0 auto;
     min-height: 44px;
@@ -3180,7 +3173,7 @@ body.loading {
   display: flex;
   gap: 30px;
   width: max-content;
-  animation: portfolio-marquee-scroll 25s linear infinite; /* গতি আরও বাড়ানো হয়েছে */
+  animation: portfolio-marquee-scroll 25s linear infinite;
   will-change: transform;
 }
 
@@ -3229,7 +3222,6 @@ body.loading {
   opacity: 1;
 }
 
-/* ভিডিও আইটেমের জন্য প্লে আইকন */
 .marquee-portfolio-item[data-video-id] .marquee-item-overlay i {
   font-size: 36px;
 }
@@ -3275,7 +3267,7 @@ body.loading {
 }
 
 /* ==========================================================================
-   HERO SECTION FADE MASK (হিরো সেকশনের ব্যাকগ্রাউন্ড দাগ পুরোপুরি মেলাতে সাহায্য করবে)
+   HERO SECTION FADE MASK
    ========================================================================== */
 .hero::before,
 .hero::after,

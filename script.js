@@ -1,17 +1,17 @@
 // ==========================================================================
-// LENIS SMOOTH SCROLL INITIALIZATION (সুরক্ষিত ও বাগমুক্ত সেটআপ)
+// LENIS SMOOTH SCROLL INITIALIZATION
 // ==========================================================================
 const lenis = new Lenis({
-  duration: 1.6, // স্ক্রল অ্যানিমেশনের সময় বাড়ানো হয়েছে (আগের মান ১.২)
+  duration: 1.6,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
   direction: 'vertical',
   gestureDirection: 'vertical',
   smooth: true,
-  smoothTouch: false, 
+  smoothTouch: false,
   touchMultiplier: 2,
 });
 
-// GSAP এবং ScrollTrigger পেজে লোড হয়েছে কি না তা চেক করে সিঙ্ক করা (যাতে অন্য পেজে ক্র্যাশ না করে)
+// Sync with GSAP and ScrollTrigger if they are loaded on the page
 if (typeof gsap !== "undefined") {
   if (typeof ScrollTrigger !== "undefined") {
     lenis.on('scroll', ScrollTrigger.update);
@@ -23,7 +23,7 @@ if (typeof gsap !== "undefined") {
 
   gsap.ticker.lagSmoothing(0);
 } else {
-  // পেজে GSAP না থাকলে সাধারণ ব্রাউজার রেন্ডার ফ্রেম দিয়ে লেনিস স্মুথ স্ক্রল চালানো
+  // Fallback to basic requestAnimationFrame if GSAP is not present
   function raf(time) {
     lenis.raf(time);
     requestAnimationFrame(raf);
@@ -34,7 +34,7 @@ if (typeof gsap !== "undefined") {
 
 // SAFE AND ROBUST DOM READY ENGINE (Stuck Loader & Counter Fix)
 const runWebsiteEngine = () => {
-  
+
   // 1. PAGE LOADER INITIALIZATION (Clear preloader safely)
   const clearPreloader = () => {
     const loader = document.querySelector(".loader");
@@ -42,7 +42,7 @@ const runWebsiteEngine = () => {
       loader.classList.add("hidden");
     }
     document.body.classList.remove("loading");
-    
+
     // Fire entry GSAP animations on page load
     initializePageRevealAnimations();
   };
@@ -79,7 +79,7 @@ const runWebsiteEngine = () => {
       const viewportHeight = window.innerHeight;
       const triggerPoint = viewportHeight * 0.7;
       const progressInContainer = triggerPoint - rect.top;
-      
+
       if (rect.height > 0) {
         let percentage = (progressInContainer / rect.height) * 100;
         percentage = Math.max(0, Math.min(100, percentage));
@@ -162,7 +162,7 @@ const runWebsiteEngine = () => {
     });
   }
 
-  // 4. CUSTOM MOUSE FOLLOWER (GSAP সেফটি গার্ড যুক্ত করা হয়েছে)
+  // 4. CUSTOM MOUSE FOLLOWER
   const cursorDot = document.querySelector(".custom-cursor-dot");
   const cursorRing = document.querySelector(".custom-cursor-ring");
 
@@ -174,7 +174,7 @@ const runWebsiteEngine = () => {
         duration: 0.05,
         ease: "power2.out"
       });
-      
+
       gsap.to(cursorRing, {
         x: event.clientX,
         y: event.clientY,
@@ -222,7 +222,7 @@ const runWebsiteEngine = () => {
     });
   }
 
-  // 5. MAGNETIC BUTTON SYSTEM (GSAP সেফটি গার্ড যুক্ত করা হয়েছে)
+  // 5. MAGNETIC BUTTON SYSTEM
   const magneticElements = document.querySelectorAll(".magnetic-element");
   if (magneticElements.length > 0 && window.innerWidth > 768 && typeof gsap !== "undefined") {
     magneticElements.forEach(elem => {
@@ -415,7 +415,7 @@ const runWebsiteEngine = () => {
     }
   }
 
-  // 7. ASYMMETRICAL PORTFOLIO FILTER SYSTEM (GSAP সেফটি গার্ড যুক্ত করা হয়েছে)
+  // 7. ASYMMETRICAL PORTFOLIO FILTER SYSTEM
   const portfolioGridCards = document.querySelectorAll(".portfolio-show-card");
   const portfolioFilterButtons = document.querySelectorAll(".portfolio-filters-row .filter-btn");
 
@@ -433,7 +433,7 @@ const runWebsiteEngine = () => {
           if (selectedValue === "all" || itemCategory === selectedValue) {
             card.style.display = "block";
             if (typeof gsap !== "undefined") {
-              gsap.fromTo(card, 
+              gsap.fromTo(card,
                 { opacity: 0, scale: 0.94, y: 15 },
                 { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "power2.out" }
               );
@@ -454,14 +454,34 @@ const runWebsiteEngine = () => {
   const lightboxTitle = document.getElementById("lightboxTitle");
   const lightboxDesc = document.getElementById("lightboxDescription");
 
-  // নতুন marquee আইটেমগুলো সিলেক্ট করা হয়েছে
   const marqueeItems = document.querySelectorAll(".marquee-portfolio-item");
   const allPortfolioItems = [...portfolioGridCards, ...marqueeItems];
 
   if (lightboxModal && closeLightboxBtn && allPortfolioItems.length > 0) {
     allPortfolioItems.forEach(card => {
-      card.addEventListener("click", () => {
-        // প্রথমে মিডিয়া বক্স খালি করা হয়েছে
+      card.addEventListener("click", (e) => {
+        // If the card is a link, let the browser handle it.
+        if (card.tagName === 'A') {
+          return;
+        }
+
+        // If the card is a link, let the browser handle it.
+        if (card.tagName === 'A') {
+          return;
+        }
+
+        const behanceUrl = card.getAttribute('data-behance-url');
+
+        // যদি Behance লিঙ্ক থাকে, তবে নতুন ট্যাবে লিঙ্কটি খোলা হবে
+        if (behanceUrl && !card.hasAttribute('data-video-id')) {
+          window.open(behanceUrl, '_blank');
+          return; // লাইটবক্স খোলা থেকে বিরত রাখা হচ্ছে
+        }
+
+        // "See All" বাটনে ক্লিক করলে লাইটবক্স খোলা থেকে বিরত রাখা
+        if (e.target.closest('.see-all-btn')) {
+          return;
+        }
         lightboxImage.style.display = "none";
         const existingIframe = lightboxModal.querySelector("iframe");
         if (existingIframe) {
@@ -470,8 +490,6 @@ const runWebsiteEngine = () => {
 
         const imageSrc = card.getAttribute("data-img");
         const videoId = card.getAttribute("data-video-id");
-
-        // বিভিন্ন সোর্স থেকে ডেটা নেওয়ার জন্য লজিক অ্যাডজাস্ট করা হয়েছে
         const categoryText = card.getAttribute("data-category") || card.querySelector(".meta-tag")?.textContent;
         const titleText = card.getAttribute("data-title") || card.querySelector("h3")?.textContent;
         const descriptionText = card.getAttribute("data-description") || card.querySelector("p")?.textContent;
@@ -485,7 +503,6 @@ const runWebsiteEngine = () => {
           iframe.setAttribute("allowfullscreen", "");
           lightboxModal.querySelector(".lightbox-media-box").appendChild(iframe);
         } else if (imageSrc) {
-          // যদি ইমেজ সোর্স থাকে, তবে ইমেজ দেখানো হবে
           lightboxImage.setAttribute("src", imageSrc);
           lightboxImage.setAttribute("alt", titleText);
           lightboxImage.style.display = "block";
@@ -505,7 +522,6 @@ const runWebsiteEngine = () => {
       lightboxModal.classList.remove("active");
       lightboxModal.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
-      // লাইটবক্স বন্ধ করার সময় iframe সরিয়ে ফেলা হচ্ছে যাতে ভিডিও চলতে না থাকে
       const iframe = lightboxModal.querySelector("iframe");
       if (iframe) {
         iframe.remove();
@@ -521,7 +537,7 @@ const runWebsiteEngine = () => {
       }
     });
 
-    // Marquee আইটেমগুলোর জন্য ট্র্যাক ডুপ্লিকেট করা হয়েছে যাতে লুপটি স্মুথ হয়
+    // Duplicate marquee track for smooth looping
     document.querySelectorAll(".portfolio-marquee__track").forEach(track => {
       if (track) {
         const trackContent = track.innerHTML;
@@ -530,7 +546,7 @@ const runWebsiteEngine = () => {
     });
   }
 
-  // "See All" বাটনের জন্য স্ক্রল এবং শো/হাইড লজিক
+  // "See All" button scroll logic
   const seeAllButtons = document.querySelectorAll(".see-all-btn");
   if (seeAllButtons.length > 0) {
     seeAllButtons.forEach(button => {
@@ -542,8 +558,6 @@ const runWebsiteEngine = () => {
         const targetSection = document.querySelector(targetId);
 
         if (targetSection) {
-          // স্মুথ স্ক্রল করে সেকশনে নিয়ে যাওয়া হচ্ছে
-          // যেহেতু সেকশনগুলো এখন দৃশ্যমান, তাই শুধু স্ক্রল করলেই হবে
           lenis.scrollTo(targetSection, { offset: -100, duration: 1.5 });
         }
       });
@@ -588,21 +602,19 @@ const runWebsiteEngine = () => {
     });
 
     backToTopBtn.addEventListener("click", () => {
-      // Lenis দিয়ে স্মুথ স্ক্রলিং এর মাধ্যমে একদম উপরে নিয়ে যাবে
       lenis.scrollTo(0, { duration: 1.2 });
     });
   }
 
-  // 11. ANCHOR SMOOTH SCROLLS (শুধুমাত্র # হ্যাশ লিংক স্ক্রলিং সক্রিয় করে)
+  // 11. ANCHOR SMOOTH SCROLLS
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-      e.preventDefault(); // ব্রাউজারের সাধারণ লাফানো বন্ধ করবে, অন্য HTML পেজ নয়
-      
+      e.preventDefault();
+
       const targetId = this.getAttribute('href');
       const targetElement = document.querySelector(targetId);
-      
+
       if (targetElement) {
-        // লেনিস দিয়ে পারফেক্ট হেডার অফসেট (৮২px) বাদ দিয়ে স্ক্রল করাবে
         lenis.scrollTo(targetElement, {
           offset: -82,
           duration: 1.2,
@@ -617,26 +629,23 @@ const runWebsiteEngine = () => {
     const counterElements = document.querySelectorAll(".counter-num");
     if (counterElements.length === 0) return;
 
-    // ব্লক লেভেল প্যারেন্ট গ্রিডকে ট্রিগার হিসেবে সিলেক্ট করা হলো
     const triggerElement = document.querySelector(".timeline-stats-row") || document.querySelector(".creative-journey-container");
 
     counterElements.forEach(counter => {
-      // সরাসরি এইচটিএমএল এডিট করা কন্টেন্ট থেকে টার্গেট নাম্বার রিড করা হচ্ছে
       const targetVal = parseInt(counter.textContent, 10);
       if (isNaN(targetVal)) return;
 
-      // Fail-Safe Counter-up Mechanism (GSAP সেফটি গার্ড যুক্ত করা হয়েছে)
       if (typeof gsap !== "undefined") {
-        gsap.fromTo(counter, 
+        gsap.fromTo(counter,
           { textContent: 0 },
           {
             textContent: targetVal,
             duration: 2.5,
             ease: "power2.out",
-            snap: { textContent: 1 }, // দশমিক ছাড়া পূর্ণ সংখ্যায় অ্যানিমেশন হবে
+            snap: { textContent: 1 },
             scrollTrigger: {
               trigger: triggerElement,
-              start: "top 95%", // কন্টেইনারটি স্ক্রিনে আসামাত্র কাউন্ট শুরু হবে
+              start: "top 95%",
               toggleActions: "play none none none"
             }
           }
@@ -731,7 +740,7 @@ const runWebsiteEngine = () => {
 
       // Launch Counter-up
       initiateCounterAnimations();
-      
+
       // Refresh ScrollTrigger to recalculate exact layout heights
       ScrollTrigger.refresh();
     }
