@@ -2,8 +2,8 @@
 // LENIS SMOOTH SCROLL INITIALIZATION (সুরক্ষিত ও বাগমুক্ত সেটআপ)
 // ==========================================================================
 const lenis = new Lenis({
-  duration: 1.2, 
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // স্ক্রল স্পিডের কার্ভ
+  duration: 1.6, // স্ক্রল অ্যানিমেশনের সময় বাড়ানো হয়েছে (আগের মান ১.২)
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
   direction: 'vertical',
   gestureDirection: 'vertical',
   smooth: true,

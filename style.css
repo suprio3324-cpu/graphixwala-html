@@ -36,7 +36,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
@@ -2473,8 +2473,9 @@ body.loading {
     display: none;
   }
 
+  .testimonials-layouts-grid,
   .services-asymmetrical-grid {
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(2, 1fr); /* ট্যাবলেট ডিভাইসের জন্য ৩টির পরিবর্তে ২টি কলাম সেট করা হয়েছে */
     gap: 20px;
   }
 
@@ -2518,7 +2519,7 @@ body.loading {
   }
 
   .testimonials-layouts-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr; /* ছোট ট্যাবলেটের জন্য ২টি কলাম থেকে ১টি কলাম করা হয়েছে */
   }
 }
 
@@ -2596,6 +2597,7 @@ body.loading {
 
   .services-asymmetrical-grid,
   .testimonials-layouts-grid {
+    /* এই মিডিয়া কোয়েরিতে testimonials-layouts-grid কে 1fr করা হয়েছে */
     grid-template-columns: 1fr;
   }
 
