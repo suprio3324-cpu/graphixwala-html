@@ -1464,6 +1464,21 @@ body.loading {
   margin: 0;
 }
 
+/* "See All" বাটন স্টাইল */
+.see-all-btn {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+  transition: var(--transition);
+}
+
+.see-all-btn:hover {
+  transform: translateX(5px);
+  color: var(--primary-light);
+}
+
 /* ==========================================================================
    PRICING SECTION
    ========================================================================== */
@@ -2384,6 +2399,20 @@ body.loading {
   object-fit: cover;
 }
 
+/* লাইটবক্সে ভিডিওর জন্য iframe স্টাইল */
+.lightbox-media-box iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.lightbox-media-box {
+  position: relative;
+  aspect-ratio: 16 / 9; /* ভিডিওর জন্য আদর্শ অনুপাত */
+}
 .lightbox-info-box {
   padding: 40px;
 }
@@ -3125,6 +3154,109 @@ body.loading {
   .glass-desc-content p {
     font-size: 13px;
   }
+}
+
+/* ==========================================================================
+   PORTFOLIO MARQUEE SHOWCASE
+   ========================================================================== */
+.portfolio-marquee-section {
+  padding: 120px 0;
+  background: #090909;
+  border-top: 1px solid var(--glass-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-marquee-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin-top: 70px;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.portfolio-marquee__track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  animation: portfolio-marquee-scroll 25s linear infinite; /* গতি আরও বাড়ানো হয়েছে */
+  will-change: transform;
+}
+
+.portfolio-marquee-wrapper:hover .portfolio-marquee__track {
+  animation-play-state: paused;
+}
+
+.marquee-portfolio-item {
+  width: 320px;
+  aspect-ratio: 4 / 3;
+  flex-shrink: 0;
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.marquee-portfolio-item:hover {
+  transform: scale(1.03);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
+.marquee-portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.marquee-item-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 7, 7, 0.7);
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  color: var(--primary);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.marquee-portfolio-item:hover .marquee-item-overlay {
+  opacity: 1;
+}
+
+/* ভিডিও আইটেমের জন্য প্লে আইকন */
+.marquee-portfolio-item[data-video-id] .marquee-item-overlay i {
+  font-size: 36px;
+}
+
+/* বিভিন্ন aspect ratio-র জন্য নতুন ক্লাস */
+.marquee-portfolio-item--1-1 {
+  aspect-ratio: 1 / 1;
+  width: 280px;
+}
+
+.marquee-portfolio-item--16-9 {
+  aspect-ratio: 16 / 9;
+  width: 420px;
+}
+
+.marquee-portfolio-item--9-16 {
+  aspect-ratio: 9 / 16;
+  width: 240px;
+}
+
+.portfolio-marquee-wrapper.reverse .portfolio-marquee__track {
+  animation-direction: reverse;
+}
+
+@keyframes portfolio-marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 15px)); }
 }
 
 @media (prefers-reduced-motion: reduce) {

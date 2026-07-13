@@ -454,16 +454,43 @@ const runWebsiteEngine = () => {
   const lightboxTitle = document.getElementById("lightboxTitle");
   const lightboxDesc = document.getElementById("lightboxDescription");
 
-  if (lightboxModal && closeLightboxBtn && portfolioGridCards.length > 0) {
-    portfolioGridCards.forEach(card => {
-      card.addEventListener("click", () => {
-        const imageSrc = card.getAttribute("data-img");
-        const categoryText = card.querySelector(".meta-tag").textContent;
-        const titleText = card.querySelector("h3").textContent;
-        const descriptionText = card.querySelector("p").textContent;
+  // নতুন marquee আইটেমগুলো সিলেক্ট করা হয়েছে
+  const marqueeItems = document.querySelectorAll(".marquee-portfolio-item");
+  const allPortfolioItems = [...portfolioGridCards, ...marqueeItems];
 
-        lightboxImage.setAttribute("src", imageSrc);
-        lightboxImage.setAttribute("alt", titleText);
+  if (lightboxModal && closeLightboxBtn && allPortfolioItems.length > 0) {
+    allPortfolioItems.forEach(card => {
+      card.addEventListener("click", () => {
+        // প্রথমে মিডিয়া বক্স খালি করা হয়েছে
+        lightboxImage.style.display = "none";
+        const existingIframe = lightboxModal.querySelector("iframe");
+        if (existingIframe) {
+          existingIframe.remove();
+        }
+
+        const imageSrc = card.getAttribute("data-img");
+        const videoId = card.getAttribute("data-video-id");
+
+        // বিভিন্ন সোর্স থেকে ডেটা নেওয়ার জন্য লজিক অ্যাডজাস্ট করা হয়েছে
+        const categoryText = card.getAttribute("data-category") || card.querySelector(".meta-tag")?.textContent;
+        const titleText = card.getAttribute("data-title") || card.querySelector("h3")?.textContent;
+        const descriptionText = card.getAttribute("data-description") || card.querySelector("p")?.textContent;
+
+        if (videoId) {
+          // যদি ভিডিও আইডি থাকে, তবে iframe তৈরি হবে
+          const iframe = document.createElement("iframe");
+          iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+          iframe.setAttribute("frameborder", "0");
+          iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+          iframe.setAttribute("allowfullscreen", "");
+          lightboxModal.querySelector(".lightbox-media-box").appendChild(iframe);
+        } else if (imageSrc) {
+          // যদি ইমেজ সোর্স থাকে, তবে ইমেজ দেখানো হবে
+          lightboxImage.setAttribute("src", imageSrc);
+          lightboxImage.setAttribute("alt", titleText);
+          lightboxImage.style.display = "block";
+        }
+
         lightboxMeta.textContent = categoryText;
         lightboxTitle.textContent = titleText;
         lightboxDesc.textContent = descriptionText;
@@ -478,6 +505,11 @@ const runWebsiteEngine = () => {
       lightboxModal.classList.remove("active");
       lightboxModal.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
+      // লাইটবক্স বন্ধ করার সময় iframe সরিয়ে ফেলা হচ্ছে যাতে ভিডিও চলতে না থাকে
+      const iframe = lightboxModal.querySelector("iframe");
+      if (iframe) {
+        iframe.remove();
+      }
     };
 
     closeLightboxBtn.addEventListener("click", closeLightboxSequence);
@@ -487,6 +519,34 @@ const runWebsiteEngine = () => {
       if (event.key === "Escape" && lightboxModal.classList.contains("active")) {
         closeLightboxSequence();
       }
+    });
+
+    // Marquee আইটেমগুলোর জন্য ট্র্যাক ডুপ্লিকেট করা হয়েছে যাতে লুপটি স্মুথ হয়
+    document.querySelectorAll(".portfolio-marquee__track").forEach(track => {
+      if (track) {
+        const trackContent = track.innerHTML;
+        track.innerHTML += trackContent;
+      }
+    });
+  }
+
+  // "See All" বাটনের জন্য স্ক্রল এবং শো/হাইড লজিক
+  const seeAllButtons = document.querySelectorAll(".see-all-btn");
+  if (seeAllButtons.length > 0) {
+    seeAllButtons.forEach(button => {
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // কার্ডের লাইটবক্স খোলা থেকে বিরত রাখবে
+
+        const targetId = button.getAttribute("href");
+        const targetSection = document.querySelector(targetId);
+
+        if (targetSection) {
+          // স্মুথ স্ক্রল করে সেকশনে নিয়ে যাওয়া হচ্ছে
+          // যেহেতু সেকশনগুলো এখন দৃশ্যমান, তাই শুধু স্ক্রল করলেই হবে
+          lenis.scrollTo(targetSection, { offset: -100, duration: 1.5 });
+        }
+      });
     });
   }
 
