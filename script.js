@@ -1,6 +1,3 @@
-// ==========================================================================
-// LENIS SMOOTH SCROLL INITIALIZATION
-// ==========================================================================
 const lenis = new Lenis({
   duration: 1.6,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -11,7 +8,6 @@ const lenis = new Lenis({
   touchMultiplier: 2,
 });
 
-// Sync with GSAP and ScrollTrigger if they are loaded on the page
 if (typeof gsap !== "undefined") {
   if (typeof ScrollTrigger !== "undefined") {
     lenis.on('scroll', ScrollTrigger.update);
@@ -23,19 +19,15 @@ if (typeof gsap !== "undefined") {
 
   gsap.ticker.lagSmoothing(0);
 } else {
-  // Fallback to basic requestAnimationFrame if GSAP is not present
   function raf(time) {
     lenis.raf(time);
     requestAnimationFrame(raf);
   }
   requestAnimationFrame(raf);
 }
-// ==========================================================================
 
-// SAFE AND ROBUST DOM READY ENGINE (Stuck Loader & Counter Fix)
 const runWebsiteEngine = () => {
 
-  // 1. PAGE LOADER INITIALIZATION (Clear preloader safely)
   const clearPreloader = () => {
     const loader = document.querySelector(".loader");
     if (loader) {
@@ -43,18 +35,15 @@ const runWebsiteEngine = () => {
     }
     document.body.classList.remove("loading");
 
-    // Fire entry GSAP animations on page load
     initializePageRevealAnimations();
   };
 
-  // Check if window is already loaded (Prevent racing conditions)
   if (document.readyState === "complete") {
     clearPreloader();
   } else {
     window.addEventListener("load", clearPreloader);
   }
 
-  // Reliable Fallback: Maximum 2 seconds wait time under any condition
   setTimeout(() => {
     const loader = document.querySelector(".loader");
     if (loader && !loader.classList.contains("hidden")) {
@@ -62,7 +51,6 @@ const runWebsiteEngine = () => {
     }
   }, 2000);
 
-  // 2. ACTIVE SCROLL PROGRESS TRACKER & TIME CONNECTOR
   window.addEventListener("scroll", () => {
     const progressBar = document.querySelector(".scroll-progress");
     if (progressBar) {
@@ -71,7 +59,6 @@ const runWebsiteEngine = () => {
       progressBar.style.width = `${scrolledRatio}%`;
     }
 
-    // Creative Journey Timeline line tracker filling logic
     const timelineFill = document.querySelector(".timeline-center-fill");
     const timelineContainer = document.querySelector(".journey-vertical-timeline");
     if (timelineFill && timelineContainer) {
@@ -86,7 +73,6 @@ const runWebsiteEngine = () => {
         timelineFill.style.height = `${percentage}%`;
       }
 
-      // Activate alternating index nodes (Clean CSS State Control)
       const nodeCircles = document.querySelectorAll(".timeline-node-circle");
       nodeCircles.forEach(circle => {
         const circleRect = circle.getBoundingClientRect();
@@ -98,7 +84,6 @@ const runWebsiteEngine = () => {
       });
     }
 
-    // Header scrolled transition setup
     const siteHeader = document.querySelector(".site-header");
     if (siteHeader) {
       if (window.scrollY > 40) {
@@ -109,7 +94,6 @@ const runWebsiteEngine = () => {
     }
   });
 
-  // 3. RESPONSIVE MOBILE MENU
   const navMenuToggle = document.querySelector(".nav-toggle");
   const navLinksMenu = document.querySelector(".nav-links");
   if (navMenuToggle && navLinksMenu) {
@@ -123,7 +107,6 @@ const runWebsiteEngine = () => {
       navMenuToggle.textContent = navLinksMenu.classList.contains("open") ? "✕" : "☰";
     });
 
-    // Close options on link clicks
     navLinksMenu.querySelectorAll("a").forEach(option => {
       option.addEventListener("click", () => {
         navLinksMenu.classList.remove("open");
@@ -162,7 +145,6 @@ const runWebsiteEngine = () => {
     });
   }
 
-  // 4. CUSTOM MOUSE FOLLOWER
   const cursorDot = document.querySelector(".custom-cursor-dot");
   const cursorRing = document.querySelector(".custom-cursor-ring");
 
@@ -183,7 +165,6 @@ const runWebsiteEngine = () => {
       });
     });
 
-    // Cursor scaling states
     const interactiveSelectors = "a, button, .filter-btn, .accordion-trigger-button, .nav-avatar-btn";
     document.querySelectorAll(interactiveSelectors).forEach((element) => {
       element.addEventListener("mouseenter", () => {
@@ -222,7 +203,6 @@ const runWebsiteEngine = () => {
     });
   }
 
-  // 5. MAGNETIC BUTTON SYSTEM
   const magneticElements = document.querySelectorAll(".magnetic-element");
   if (magneticElements.length > 0 && window.innerWidth > 768 && typeof gsap !== "undefined") {
     magneticElements.forEach(elem => {
@@ -250,7 +230,6 @@ const runWebsiteEngine = () => {
     });
   }
 
-  // 6. GRAPHIX WALA 9 NEW core team members (Exact image paths config)
   const teamMembersData = [
     {
       name: "SUPRIO KARMAKAR",
@@ -340,12 +319,10 @@ const runWebsiteEngine = () => {
     const handleMemberTransition = (index) => {
       const data = teamMembersData[index];
 
-      // Safe clean previous GSAP animations
       gsap.killTweensOf([activeLargeCutout, activeOutlineText, activeCardAvatar, activeMemberName, activeMemberRole, activeMemberDesc]);
 
       const tl = gsap.timeline();
 
-      // Fade out timeline swap
       tl.to([activeLargeCutout, activeCardAvatar], {
         opacity: 0,
         scale: 0.95,
@@ -373,7 +350,6 @@ const runWebsiteEngine = () => {
         }
       }, "<");
 
-      // Slide and pop back in with modern 3D smoothness
       tl.to(activeLargeCutout, {
         opacity: 1,
         scale: 1,
@@ -415,7 +391,6 @@ const runWebsiteEngine = () => {
     }
   }
 
-  // 7. ASYMMETRICAL PORTFOLIO FILTER SYSTEM
   const portfolioGridCards = document.querySelectorAll(".portfolio-show-card");
   const portfolioFilterButtons = document.querySelectorAll(".portfolio-filters-row .filter-btn");
 
@@ -446,7 +421,6 @@ const runWebsiteEngine = () => {
     });
   }
 
-  // 8. PORTFOLIO LIGHTBOX MODAL
   const lightboxModal = document.getElementById("portfolioLightbox");
   const closeLightboxBtn = document.getElementById("closeLightbox");
   const lightboxImage = document.getElementById("lightboxMainImage");
@@ -460,25 +434,21 @@ const runWebsiteEngine = () => {
   if (lightboxModal && closeLightboxBtn && allPortfolioItems.length > 0) {
     allPortfolioItems.forEach(card => {
       card.addEventListener("click", (e) => {
-        // If the card is a link, let the browser handle it.
         if (card.tagName === 'A') {
           return;
         }
 
-        // If the card is a link, let the browser handle it.
         if (card.tagName === 'A') {
           return;
         }
 
         const behanceUrl = card.getAttribute('data-behance-url');
 
-        // যদি Behance লিঙ্ক থাকে, তবে নতুন ট্যাবে লিঙ্কটি খোলা হবে
         if (behanceUrl && !card.hasAttribute('data-video-id')) {
           window.open(behanceUrl, '_blank');
-          return; // লাইটবক্স খোলা থেকে বিরত রাখা হচ্ছে
+          return;
         }
 
-        // "See All" বাটনে ক্লিক করলে লাইটবক্স খোলা থেকে বিরত রাখা
         if (e.target.closest('.see-all-btn')) {
           return;
         }
@@ -495,7 +465,6 @@ const runWebsiteEngine = () => {
         const descriptionText = card.getAttribute("data-description") || card.querySelector("p")?.textContent;
 
         if (videoId) {
-          // যদি ভিডিও আইডি থাকে, তবে iframe তৈরি হবে
           const iframe = document.createElement("iframe");
           iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
           iframe.setAttribute("frameborder", "0");
@@ -537,7 +506,6 @@ const runWebsiteEngine = () => {
       }
     });
 
-    // Duplicate marquee track for smooth looping
     document.querySelectorAll(".portfolio-marquee__track").forEach(track => {
       if (track) {
         const trackContent = track.innerHTML;
@@ -546,13 +514,12 @@ const runWebsiteEngine = () => {
     });
   }
 
-  // "See All" button scroll logic
   const seeAllButtons = document.querySelectorAll(".see-all-btn");
   if (seeAllButtons.length > 0) {
     seeAllButtons.forEach(button => {
       button.addEventListener("click", (e) => {
         e.preventDefault();
-        e.stopPropagation(); // কার্ডের লাইটবক্স খোলা থেকে বিরত রাখবে
+        e.stopPropagation();
 
         const targetId = button.getAttribute("href");
         const targetSection = document.querySelector(targetId);
@@ -564,7 +531,6 @@ const runWebsiteEngine = () => {
     });
   }
 
-  // 9. ACCORDION DETAILED TOGGLE SPRINT
   const faqAccordionItems = document.querySelectorAll(".accordion-luxury-item");
   faqAccordionItems.forEach(item => {
     const trigger = item.querySelector(".accordion-trigger-button");
@@ -574,7 +540,6 @@ const runWebsiteEngine = () => {
       trigger.addEventListener("click", () => {
         const activeState = item.classList.contains("active");
 
-        // Collapse open elements
         faqAccordionItems.forEach(faqItem => {
           faqItem.classList.remove("active");
           faqItem.querySelector(".accordion-trigger-button").setAttribute("aria-expanded", "false");
@@ -590,7 +555,6 @@ const runWebsiteEngine = () => {
     }
   });
 
-  // 10. BACK TO TOP BUTTON (Lenis Integration)
   const backToTopBtn = document.getElementById("backToTop");
   if (backToTopBtn) {
     window.addEventListener("scroll", () => {
@@ -606,7 +570,6 @@ const runWebsiteEngine = () => {
     });
   }
 
-  // 11. ANCHOR SMOOTH SCROLLS
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -624,7 +587,6 @@ const runWebsiteEngine = () => {
     });
   });
 
-  // 12. GSAP TRIGGER INTERSECTION REVEALS (FULLY OPTIMIZED COUNTER-UP & SCROLL)
   const initiateCounterAnimations = () => {
     const counterElements = document.querySelectorAll(".counter-num");
     if (counterElements.length === 0) return;
@@ -658,7 +620,6 @@ const runWebsiteEngine = () => {
     if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
       gsap.registerPlugin(ScrollTrigger);
 
-      // Hero content reveals
       gsap.from(".hero__content .hero__word", {
         opacity: 0,
         y: 40,
@@ -682,7 +643,6 @@ const runWebsiteEngine = () => {
         ease: "power4.out"
       });
 
-      // Lazy scroll fade up reveals
       const fadeElements = document.querySelectorAll(".fade-up");
       fadeElements.forEach(elem => {
         gsap.from(elem, {
@@ -698,7 +658,6 @@ const runWebsiteEngine = () => {
         });
       });
 
-      // Special animation sequence for Alternating Journey Rows (Safe Smooth Load)
       gsap.from(".journey-row", {
         scrollTrigger: {
           trigger: ".journey-vertical-timeline",
@@ -712,7 +671,6 @@ const runWebsiteEngine = () => {
         ease: "power3.out"
       });
 
-      // Staggered reveal for Services Cards
       gsap.from(".premium-service-card", {
         scrollTrigger: {
           trigger: ".services-asymmetrical-grid",
@@ -725,7 +683,6 @@ const runWebsiteEngine = () => {
         ease: "power2.out"
       });
 
-      // Staggered reveal for Pricing Cards
       gsap.from(".pricing-package-card", {
         scrollTrigger: {
           trigger: ".pricing-layouts-grid",
@@ -738,16 +695,13 @@ const runWebsiteEngine = () => {
         ease: "power2.out"
       });
 
-      // Launch Counter-up
       initiateCounterAnimations();
 
-      // Refresh ScrollTrigger to recalculate exact layout heights
       ScrollTrigger.refresh();
     }
   };
 };
 
-// INITIALIZE RUNNER SYSTEM (Guarantees execution)
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", runWebsiteEngine);
 } else {
