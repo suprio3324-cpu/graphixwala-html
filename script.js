@@ -28,47 +28,6 @@ if (typeof gsap !== "undefined") {
 
 const runWebsiteEngine = () => {
 
-  const contactForm = document.querySelector('.form-grid[action="https://api.web3forms.com/submit"]');
-  if (contactForm) {
-    const submitButton = contactForm.querySelector('button[type="submit"]');
-    const submitStatus = contactForm.querySelector(".form-submit-status");
-
-    contactForm.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      if (submitButton.disabled) return;
-
-      const buttonText = submitButton.textContent;
-      submitButton.disabled = true;
-      submitButton.textContent = "Sending...";
-      submitStatus.hidden = false;
-      submitStatus.dataset.state = "pending";
-      submitStatus.textContent = "Sending your message...";
-
-      try {
-        const response = await fetch(contactForm.action, {
-          method: "POST",
-          body: new FormData(contactForm),
-          headers: { Accept: "application/json" }
-        });
-        const result = await response.json();
-
-        if (!response.ok || !result.success) {
-          throw new Error(result.message || "Unable to send your message.");
-        }
-
-        contactForm.reset();
-        submitStatus.dataset.state = "success";
-        submitStatus.textContent = "Thanks for reaching out. Your message was sent successfully.";
-      } catch (error) {
-        submitStatus.dataset.state = "error";
-        submitStatus.textContent = error.message || "Something went wrong. Please try again.";
-      } finally {
-        submitButton.disabled = false;
-        submitButton.textContent = buttonText;
-      }
-    });
-  }
-
   const clearPreloader = () => {
     const loader = document.querySelector(".loader");
     if (loader) {
