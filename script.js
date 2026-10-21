@@ -514,23 +514,6 @@ const runWebsiteEngine = () => {
     });
   }
 
-  const seeAllButtons = document.querySelectorAll(".see-all-btn");
-  if (seeAllButtons.length > 0) {
-    seeAllButtons.forEach(button => {
-      button.addEventListener("click", (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-
-        const targetId = button.getAttribute("href");
-        const targetSection = document.querySelector(targetId);
-
-        if (targetSection) {
-          lenis.scrollTo(targetSection, { offset: -100, duration: 1.5 });
-        }
-      });
-    });
-  }
-
   const faqAccordionItems = document.querySelectorAll(".accordion-luxury-item");
   faqAccordionItems.forEach(item => {
     const trigger = item.querySelector(".accordion-trigger-button");
