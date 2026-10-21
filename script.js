@@ -654,18 +654,6 @@ const runWebsiteEngine = () => {
         ease: "power3.out"
       });
 
-      gsap.from(".premium-service-card", {
-        scrollTrigger: {
-          trigger: ".services-asymmetrical-grid",
-          start: "top 85%"
-        },
-        opacity: 0,
-        y: 35,
-        stagger: 0.15,
-        duration: 0.8,
-        ease: "power2.out"
-      });
-
       gsap.from(".pricing-package-card", {
         scrollTrigger: {
           trigger: ".pricing-layouts-grid",
