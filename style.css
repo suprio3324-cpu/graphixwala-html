@@ -333,9 +333,14 @@ body.loading {
   box-shadow: 0 15px 35px rgba(255, 203, 6, .25);
 }
 
+.nav-links .btn::after {
+  display: none;
+}
+
 .nav-links .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 25px 55px rgba(255, 203, 6, .35);
+  color: #111;
 }
 
 .nav-toggle {
