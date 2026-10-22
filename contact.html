@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
   
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/css/intlTelInput.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 
@@ -111,27 +112,27 @@
               
               <div style="display: flex; flex-direction: column; gap: 8px;">
                 <label for="name" style="font-size: 13px; font-weight: 600; color: var(--primary); letter-spacing: 1px;">YOUR NAME</label>
-                <input id="name" name="name" type="text" placeholder="John Doe" required style="width: 100%; height: 50px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white); outline: none;" />
+                <input id="name" name="name" type="text" placeholder="Enter your full name" autocomplete="name" required style="width: 100%; height: 50px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white); outline: none;" />
               </div>
               
               <div style="display: flex; flex-direction: column; gap: 8px;">
                 <label for="email" style="font-size: 13px; font-weight: 800; letter-spacing: 1px; color: var(--primary);">EMAIL ADDRESS</label>
-                <input id="email" name="email" type="email" placeholder="name@business.com" required style="width: 100%; height: 52px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white); outline: none;" />
+                <input id="email" name="email" type="email" placeholder="Enter your email address" autocomplete="email" required style="width: 100%; height: 52px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white); outline: none;" />
               </div>
               
               <div style="display: flex; flex-direction: column; gap: 8px;">
                 <label for="phone" style="font-size: 13px; font-weight: 800; letter-spacing: 1px; color: var(--primary);">PHONE NUMBER</label>
-                <input id="phone" name="phone" type="tel" placeholder="Your phone number" required style="width: 100%; height: 50px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white); outline: none;" />
+                <input id="phone" name="phone" type="tel" placeholder="Your phone number" autocomplete="tel-national" required style="width: 100%; height: 50px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white); outline: none;" />
               </div>
               
               <div style="display: flex; flex-direction: column; gap: 8px;">
                 <label for="company" style="font-size: 13px; font-weight: 600; color: var(--primary);">BUSINESS NAME</label>
-                <input id="company" name="company" type="text" placeholder="Your business name" style="width: 100%; height: 50px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white); outline: none;" />
+                <input id="company" name="company" type="text" placeholder="Your business name" required style="width: 100%; height: 50px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white); outline: none;" />
               </div>
               
               <div style="display: flex; flex-direction: column; gap: 8px;">
                 <label for="message" style="font-size: 13px; font-weight: 600; color: var(--primary);">PROJECT BRIEF</label>
-                <textarea id="message" name="message" placeholder="Tell us about your brand goals..." style="width: 100%; height: 120px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white); outline: none; resize: none;"></textarea>
+                <textarea id="message" name="message" placeholder="Tell us about your brand goals..." required style="width: 100%; height: 120px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: var(--white); outline: none; resize: none;"></textarea>
               </div>
 
               <p class="form-submit-status" role="status" aria-live="polite" hidden></p>
@@ -252,6 +253,7 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/intlTelInput.min.js"></script>
   
   <script src="script.js?v=1.2"></script>
   <script>
@@ -259,6 +261,15 @@
       const contactForm = document.querySelector('.form-grid[action="https://api.web3forms.com/submit"]');
       if (!contactForm) return;
 
+      const phoneInput = contactForm.querySelector("#phone");
+      const phoneInputPlugin = window.intlTelInput(phoneInput, {
+        initialCountry: "in",
+        separateDialCode: true,
+        nationalMode: true,
+        loadUtils: () => import("https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js")
+      });
+      phoneInput.addEventListener("input", () => phoneInput.setCustomValidity(""));
+      phoneInput.addEventListener("countrychange", () => phoneInput.setCustomValidity(""));
       const submitButton = contactForm.querySelector('button[type="submit"]');
       const submitStatus = contactForm.querySelector(".form-submit-status");
 
@@ -267,13 +278,22 @@
         if (submitButton.disabled) return;
 
         const buttonText = submitButton.textContent;
-        submitButton.disabled = true;
-        submitButton.textContent = "Sending...";
-        submitStatus.hidden = false;
-        submitStatus.dataset.state = "pending";
-        submitStatus.textContent = "Sending your message...";
-
         try {
+          await phoneInputPlugin.promise;
+          if (!phoneInputPlugin.isValidNumber()) {
+            const errorMessage = "Enter a valid phone number for the selected country.";
+            phoneInput.setCustomValidity(errorMessage);
+            phoneInput.reportValidity();
+            throw new Error(errorMessage);
+          }
+
+          submitButton.disabled = true;
+          submitButton.textContent = "Sending...";
+          submitStatus.hidden = false;
+          submitStatus.dataset.state = "pending";
+          submitStatus.textContent = "Sending your message...";
+
+          phoneInput.value = phoneInputPlugin.getNumber();
           const response = await fetch(contactForm.action, {
             method: "POST",
             body: new FormData(contactForm),
@@ -289,6 +309,7 @@
           submitStatus.dataset.state = "success";
           submitStatus.textContent = "Thanks for reaching out. Your message was sent successfully.";
         } catch (error) {
+          submitStatus.hidden = false;
           submitStatus.dataset.state = "error";
           submitStatus.textContent = error.message || "Something went wrong. Please try again.";
         } finally {

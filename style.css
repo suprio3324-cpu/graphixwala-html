@@ -3279,6 +3279,20 @@ body.loading {
   opacity: 0.7;
 }
 
+.iti {
+  width: 100%;
+  --iti-border-color: var(--glass-border);
+  --iti-text-color: var(--white);
+  --iti-hover-color: rgba(255, 255, 255, 0.08);
+  --iti-dropdown-bg: #151515;
+  --iti-dialcode-color: var(--muted);
+  --iti-arrow-color: var(--muted);
+}
+
+.iti__country-list {
+  z-index: 1100;
+}
+
 .form-submit-status {
   margin: 0;
   font-size: 14px;
