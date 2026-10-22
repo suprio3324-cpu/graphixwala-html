@@ -37,7 +37,7 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: var(--black);
   color: var(--text);
   line-height: 1.6;
